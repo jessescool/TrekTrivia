@@ -12,6 +12,9 @@ TASKS
 -- Keypress visuals and tutorial integration
 -- Bash script for pushing to server... (lightspeed, or some good, cool name)
 -- Custom buttons
+-- Audio on correct/incorrect answers
+-- Get size down...
+-- Python program to write directly to csv?  Or submissions directly appended to Google Sheet?
 
 FONTS
 -- Legitima
