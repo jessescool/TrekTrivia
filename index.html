@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+
+<html lang = "en">
+
+  <head>
+    <title>Trek Trivia</title>
+    <meta name = "description" content = "A fan-made quiz on all things Star Trek comprised of community-sourced questions">
+    <meta http-equiv = "Content-Type" content = "text/html" charset = "UTF-8">
+    <link rel = "icon" type = "image/png" href = "assets/favicon.png">
+    <script defer src = "assets/vault.js"></script>
+    <script defer src = "assets/script.js"></script>
+    <link href = "assets/style.css" rel = "stylesheet" type = "text/css">
+  </head>
+
+  <body>
+    <center>
+
+      <div id = "welcome">
+        <h1 class = "banner">Trek Trivia</h1>
+        <h2>Welcome!</h2>
+        <p> This is a fan-made quiz comprised of questions sourced from the community.
+            It's written in basic HTML.
+            No trackers, ads, or any of that junk.
+            Have at it!
+        </p>
+        <div id = "settings">
+          <p> Select the series you'd like to appear. </p>
+          <div id = "seriesSelection">
+            <b class = "selection">TOS: <input type = "checkbox" value = "TOS" id = "TOS" onclick = "toggleSeries('TOS');"></b>
+            <b class = "selection">TNG: <input type = "checkbox" value = "TNG" id = "TNG" onclick = "toggleSeries('TNG');"></b>
+            <b class = "selection">DS9: <input type = "checkbox" value = "DS9" id = "DS9" onclick = "toggleSeries('DS9');"></b>
+            <b class = "selection">ENT: <input type = "checkbox" value = "ENT" id = "ENT" onclick = "toggleSeries('ENT');"></b>
+            <b class = "selection">DIS: <input type = "checkbox" value = "DIS" id = "DIS" onclick = "toggleSeries('DIS');"></b>
+            <b class = "selection">PIC: <input type = "checkbox" value = "PIC" id = "PIC" onclick = "toggleSeries('PIC');"></b>
+            <b class = "selection">General: <input type = "checkbox" value = "General" id = "General" onclick = "toggleSeries('General');"></b>
+          </div>
+          <p>If none are selected, they'll all appear!</p>
+        </div>
+
+        <input type = "button" value = "NEXT" id = "play" onclick = "tutor();">
+      </div>
+
+      <div id = "tutorial">
+
+        <h2>real quick...</h1>
+
+        <div class = "difficultyrange">
+          <p class = "difficultyrange">Difficulties range from</p>
+          <div class = "difficultyrange" id = "mindif"></div>
+          <p class = "difficultyrange">to</p>
+          <div class = "difficultyrange" id = "maxdif"></div>
+        </div>
+
+        <div id = "movieselect">
+          <p>Include corresponding movies?<p>
+          <input type = "checkbox" value = "Movies" id = "Movies" onclick = "toggleMovies();">
+        </div>
+
+        <input type = "button" value = "ENGAGE" id = "play" onclick = "gameOn();">
+
+      </div>
+
+      <div id = "game">
+
+        <div id = "interact">
+          <p id = "question"></p>
+          <input type = "button" value = "" class = "guess" id = "option0" onclick = "check(0);">
+          <input type = "button" value = "" class = "guess" id = "option1" onclick = "check(1);">
+          <input type = "button" value = "" class = "guess" id = "option2" onclick = "check(2);">
+          <input type = "button" value = "" class = "guess" id = "option3" onclick = "check(3);">
+        </div>
+
+        <div id = "inform">
+          <p id = "score"></p>
+          <p id = "remaining"></p>
+          <div id = difficulty></div>
+        </div>
+
+        <input type = "button" value = "Abort" id = "endquiz" onclick = "gameOver();">
+      </div>
+
+      <div id = "end">
+        <h2>Thanks for Playing!</h2>
+        <p id = "scoreReport"></p>
+        <p>(<a href = "https://docs.google.com/forms/d/e/1FAIpQLScmM7IK7FF-50tFEJUtM2Mcw79Fu8moz4isMeaPGz8PI6kXbg/viewform?usp=sf_link" target = "_blank">contribute a question!</a>)</p>
+        <p>(<a href = "https://docs.google.com/forms/d/e/1FAIpQLScbsGV9TFulqs7wgHzGz0jiaeohTpK2QL4gHe8Seb59dTz1ew/viewform?usp=sf_link" target = "_blank">spotted an error?</a>)</p>
+        <p>(<a href = "./memos/about.html" target = "_blank">about</a>)</p>
+      </div>
+
+    </center>
+  </body>
+
+</html>

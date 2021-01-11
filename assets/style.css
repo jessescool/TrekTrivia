@@ -1,0 +1,186 @@
+/* hello and welcome to the STYLESHEET */
+
+
+/* imported fonts */
+
+@font-face {
+  font-family: mario;
+  src: url(./fonts/super-mario-bros.ttf);
+}
+
+@font-face {
+  font-family: trek-italic;
+  src: url(./fonts/trek-italic.ttf);
+}
+
+@font-face {
+  font-family: trek-normal;
+  src: url(./fonts/trek-normal.ttf);
+}
+
+/* change "regular" to "normal" */
+
+@font-face {
+  font-family: kepler-regular;
+  src: url(./fonts/Kepler-Std-Regular.otf);
+}
+
+
+/* global styling */
+
+* {
+  font-family: "Times New Roman", serif;
+}
+
+.banner {
+  font-family: trek-italic;
+  font-size: 80px;
+}
+
+input[type = button] {
+  background-color: #75BBFF;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  height: 50px;
+  width: 250px;
+  border-radius: 20px;
+  transition: 0.2s;
+  opacity: 1;
+  margin-top: 2px;
+  margin-bottom: 2px;
+  margin-left: 1px;
+  margin-right: 1px;
+}
+
+input[type = button]:hover {
+  opacity: 0.6;
+}
+
+input[type = button]:focus {
+  outline: 0;
+  box-shadow: none;
+  /* will be changed when 1, 2, 3, 4 give inputs */
+}
+
+p {
+  font-size: 20px;
+  max-width: 90%;
+  text-align: center;
+}
+
+
+/* section (div) styling */
+
+div[id = welcome] {
+  max-width: 600px;
+  display: inline-block;
+}
+
+div[id = tutorial] {
+  max-width: 600px;
+  display: none;
+}
+
+div[id = game] {
+  max-width: 540px;
+  display: none;
+}
+
+div[id = end] {
+  display: none;
+}
+
+
+
+
+/* welcome-specific styling */
+
+.selection {
+  display: block;
+}
+
+#play {
+  height: 50px;
+  width: 200px;
+  background-color: #F2C300;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+
+/* tutorial specific styling */
+
+  /* background is NOT dynamic... fix */
+
+.difficultyrange {
+  display: inline;
+  width: 700px;
+}
+
+/* backgrounds for these aren't dynamic.. fix */
+
+#mindif {
+  width: 25px;
+  height: 25px;
+  border: 1px solid gray;
+  margin: 1px;
+  background: #00FF00;
+}
+
+#maxdif {
+  width: 25px;
+  height: 25px;
+  border: 1px solid gray;
+  margin: 1px;
+  background: #FF0000;
+}
+
+
+/* game-specific styling */
+
+  /* interact */
+
+#question {
+  height: 100px;
+}
+
+#interact {
+
+}
+
+#inform {
+
+}
+
+  /* inform */
+
+#difficulty {
+  width: 25px;
+  height: 25px;
+  border: 1px solid gray;
+  margin: 20px;
+  background: none;
+}
+
+#score {
+
+}
+
+#remaining {
+
+}
+
+
+
+
+
+
+/* end-specific styling */
+
+#endquiz {
+  height: 35px;
+  width: 80px;
+  background-color: orange;
+}
