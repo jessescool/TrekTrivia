@@ -38,27 +38,7 @@
           <p>If none are selected, they'll all appear!</p>
         </div>
 
-        <input type = "button" value = "NEXT" id = "play" onclick = "tutor();">
-      </div>
-
-      <div id = "tutorial">
-
-        <h2>real quick...</h1>
-
-        <div class = "difficultyrange">
-          <p class = "difficultyrange">Difficulties range from</p>
-          <div class = "difficultyrange" id = "mindif"></div>
-          <p class = "difficultyrange">to</p>
-          <div class = "difficultyrange" id = "maxdif"></div>
-        </div>
-
-        <div id = "movieselect">
-          <p>Include corresponding movies?<p>
-          <input type = "checkbox" value = "Movies" id = "Movies" onclick = "toggleMovies();">
-        </div>
-
-        <input type = "button" value = "ENGAGE" id = "play" onclick = "gameOn();">
-
+        <input type = "button" value = "ENGAGE" id = "play" onclick = "engage();">
       </div>
 
       <div id = "game">
@@ -77,7 +57,7 @@
           <div id = difficulty></div>
         </div>
 
-        <input type = "button" value = "Abort" id = "endquiz" onclick = "gameOver();">
+        <input type = "button" value = "Abort" id = "endquiz" onclick = "allStop();">
       </div>
 
       <div id = "end">

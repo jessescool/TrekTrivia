@@ -208,7 +208,7 @@ function check(guess) {
     generateSet();
     setButtons();
   } else {
-    gameOver();
+    allStop();
   };
 };
 
@@ -223,7 +223,7 @@ function keypress(event) {
   };
 
   if (x === 'Escape') {
-    gameOver();
+    allStop();
   };
 };
 
@@ -233,14 +233,7 @@ disableKeyInputs = () => document.removeEventListener('keyup', keypress);
 
 // transition functions
 
-function tutor() {
-  let x = document.getElementById('welcome');
-  let y = document.getElementById('tutorial');
-  x.style.display = 'none';
-  y.style.display = 'inline-block';
-}
-
-function gameOn() {
+function engage() {
 
   if (!settings.series.length) {
     settings.series = settings._settings._series;
@@ -256,14 +249,14 @@ function gameOn() {
   generateSet();
   setButtons();
 
-  let x = document.getElementById('tutorial');
+  let x = document.getElementById('welcome');
   let y = document.getElementById('game');
   x.style.display = 'none';
   y.style.display = 'inline-block';
 
 };
 
-function gameOver() {
+function allStop() {
 
   disableKeyInputs()
 

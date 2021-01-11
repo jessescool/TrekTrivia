@@ -1,33 +1,19 @@
 /* hello and welcome to the STYLESHEET */
 
-
-/* imported fonts */
-
-@font-face {
-  font-family: mario;
-  src: url(./fonts/super-mario-bros.ttf);
-}
-
-@font-face {
-  font-family: trek-italic;
-  src: url(./fonts/trek-italic.ttf);
-}
-
-@font-face {
-  font-family: trek-normal;
-  src: url(./fonts/trek-normal.ttf);
-}
-
-/* change "regular" to "normal" */
+/* font imports */
+@import url(./fonts/fonts.css);
 
 /* global styling */
 
 * {
-  font-family: "Times New Roman", serif;
+  font-family: 'Tiempos Text';
+  font-weight: normal;
+  font-style: normal;
 }
 
 .banner {
-  font-family: trek-italic;
+  font-family: 'Trek Headline';
+  font-style: italic;
   font-size: 80px;
 }
 
@@ -167,14 +153,10 @@ div[id = end] {
 }
 
 
-
-
-
-
 /* end-specific styling */
 
 #endquiz {
   height: 35px;
   width: 80px;
-  background-color: orange;
+  background-color: #F2C300;
 }

@@ -13,6 +13,7 @@ TASKS
 -- Custom buttons
 -- Audio on correct/incorrect answers
 -- Python program to write directly to csv?  Or submissions directly appended to Google Sheet?
+-- Seperate fonts stylesheet (fonts.css)
 
 FONTS
 -- Legitima

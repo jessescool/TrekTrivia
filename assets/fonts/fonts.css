@@ -1,0 +1,73 @@
+/* Mario */
+
+@font-face {
+  font-family: 'Mario';
+  src: url(./Mario/super-mario-bros.ttf) format('truetype');
+}
+
+
+/* Trek */
+
+@font-face {
+  font-family: 'Trek Headline';
+  src: url(./Trek/TrekHeadline-Normal.ttf) format('truetype');
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Trek Headline';
+  src: url(./Trek/TrekHeadline-Italic.ttf) format('truetype');
+  font-style: italic;
+}
+
+
+/* Tiempos */
+
+@font-face {
+    font-family: 'Tiempos Text';
+    src: url(./Tiempos/TiemposText-BoldItalic.ttf) format('truetype');
+    font-weight: bold;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Tiempos Headline';
+    src: url(./Tiempos/TiemposHeadline-Black.ttf) format('truetype');
+    font-weight: 900;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Tiempos Headline';
+    src: url(./Tiempos/TiemposHeadline-Medium.ttf) format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Tiempos Text';
+    src: url(./Tiempos/TiemposText-Regular.ttf) format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Tiempos Text';
+    src: url(./Tiempos/TiemposText-Italic.ttf) format('truetype');
+    font-weight: normal;
+    font-style: italic;
+}
+
+@font-face {
+    font-family: 'Tiempos Headline';
+    src: url(./Tiempos/TiemposHeadline-Light.ttf) format('truetype');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Tiempos Text';
+    src: url(./Tiempos/TiemposText-Bold.ttf) format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
