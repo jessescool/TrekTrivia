@@ -1,4 +1,4 @@
-// IMPORT FROM VAULT.js (var = vault)
+// IMPORT FROM VAULT.js (in source order)
 
 var settings = {
   series: [],
