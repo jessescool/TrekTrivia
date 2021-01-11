@@ -20,12 +20,6 @@
 
 /* change "regular" to "normal" */
 
-@font-face {
-  font-family: kepler-regular;
-  src: url(./fonts/Kepler-Std-Regular.otf);
-}
-
-
 /* global styling */
 
 * {
