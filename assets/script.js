@@ -38,8 +38,6 @@ const profile = {}; // for form submission at end
 
 // critical functions
 
-
-// fix this to only take (verified === TRUE)
 function withdraw() {
 
   function removeCorrespondingItems(object, index) {
@@ -123,7 +121,7 @@ function withdraw() {
   shuffleCorrespondingArrays(withdrawal);
 
   return withdrawal;
-  
+
 };
 
 function generateSet() {
@@ -221,23 +219,17 @@ function check(guess) {
 
 // keypress functionality (make last two arrow functions)
 
-// currently, keyPress() does nothing.
-// restructure this to be one function called toggleKeyInput();
-
 function keyPress(event) {
-
-  function showKeyPress() {};
-
   let x = event.key;
 
   if (1 <= x && x <= 4) {
-    // click (x - 1);
+    document.getElementById(`option${x - 1}`).classlist.add('button-active');
   };
 
   if (x === 'Escape') {
-    // click abort
+    document.getElementById(`endquiz`).classlist.toggle('button-active');
   };
-}
+};
 
 function keyRelease(event) {
   let x = event.key;
@@ -251,8 +243,15 @@ function keyRelease(event) {
   };
 };
 
-enableKeyInputs = () => document.addEventListener('keyup', keyRelease);
-disableKeyInputs = () => document.removeEventListener('keyup', keyRelease);
+function enableKeyboardInput() {
+  document.addEventListener('keypress', keyPress);
+  document.addEventListener('keyup', keyRelease);
+};
+
+function disableKeyboardInput() {
+  document.removeEventListener('keypress', keyPress);
+  document.removeEventListener('keyup', keyRelease);
+};
 
 
 // transition functions
@@ -263,7 +262,7 @@ function engage() {
     settings.series = settings._settings._series;
   };
 
-  enableKeyInputs();
+  enableKeyboardInput();
 
   withdrawal = withdraw();
 
@@ -282,7 +281,7 @@ function engage() {
 
 function allStop() {
 
-  disableKeyInputs()
+  disableKeyboardInput();
 
   let x = document.getElementById('game');
   let y = document.getElementById('end');

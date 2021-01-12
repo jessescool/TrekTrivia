@@ -1,6 +1,7 @@
 trektrivia.com TODO
 
 TASKS
+-- add percentile...
 -- Alert if on mobile
 -- Fix publi.sh
 -- movie boolean selection

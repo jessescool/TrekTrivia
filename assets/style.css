@@ -69,6 +69,13 @@ a.hiddennavlink {
   color: black;
 }
 
+em {
+  font-family: 'Tiempos Headline';
+  font-style: normal;
+  font-weight: 500;
+  color: #780D0D;
+}
+
 /* section (div) styling */
 
 div[id = welcome] {
