@@ -1,3 +1,3 @@
 #!/bin/zsh
 
-scp -r ../*  $MEME9/TrekTrivia/
+rsync -rv --delete-before ../ /Users/jessecool/Desktop/
