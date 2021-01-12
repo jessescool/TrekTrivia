@@ -1,7 +1,7 @@
 from random import shuffle, randrange
 from pandas import read_csv
 
-data = read_csv(r'startrekdata.csv')
+data = read_csv(r'startrekdata.csv').fillna(value='null')
 questions = data['Question'].tolist()
 answers = data['Answer'].tolist()
 alternate1 = data['Alternate1'].tolist()
@@ -10,7 +10,6 @@ alternate3 = data['Alternate3'].tolist()
 difficulty = data['Difficulty'].tolist()
 source = data['Source'].tolist()
 verified = data['Verified'].tolist()
-
 
 f = open('../assets/vault.js', 'w')
 f.write('const vault = { \n');

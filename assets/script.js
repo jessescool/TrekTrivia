@@ -97,27 +97,33 @@ function withdraw() {
 
   let toRemove = [];
 
+  // verified checker
+  for (i in withdrawal.verified) {
+    if (!withdrawal.verified[i]) {
+      toRemove.unshift(i);
+    };
+  };
+
+  // source option checker
   for (i in sources) {
     if (!allowed.includes(sources[i])) {
       toRemove.unshift(i);
     };
   };
 
+  // toRemove sorting and duplicate removal
+  toRemove.sort((a, b) => b - a);
+  toRemove = [...new Set(toRemove)];
+
+  // remover
   for (i in toRemove) {
     removeCorrespondingItems(withdrawal, toRemove[i]);
   };
 
-  /* something like...
-
-  verified.forEach(function() {
-    if ()
-  }
-
-  */
-
   shuffleCorrespondingArrays(withdrawal);
 
   return withdrawal;
+  
 };
 
 function generateSet() {
@@ -215,7 +221,25 @@ function check(guess) {
 
 // keypress functionality (make last two arrow functions)
 
-function keypress(event) {
+// currently, keyPress() does nothing.
+// restructure this to be one function called toggleKeyInput();
+
+function keyPress(event) {
+
+  function showKeyPress() {};
+
+  let x = event.key;
+
+  if (1 <= x && x <= 4) {
+    // click (x - 1);
+  };
+
+  if (x === 'Escape') {
+    // click abort
+  };
+}
+
+function keyRelease(event) {
   let x = event.key;
 
   if (1 <= x && x <= 4) {
@@ -227,8 +251,8 @@ function keypress(event) {
   };
 };
 
-enableKeyInputs = () => document.addEventListener('keyup', keypress);
-disableKeyInputs = () => document.removeEventListener('keyup', keypress);
+enableKeyInputs = () => document.addEventListener('keyup', keyRelease);
+disableKeyInputs = () => document.removeEventListener('keyup', keyRelease);
 
 
 // transition functions

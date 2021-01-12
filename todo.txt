@@ -5,7 +5,6 @@ TASKS
 -- Fix publi.sh
 -- movie boolean selection
 -- difficulty explanation
--- update withdraw() to vet questions via verification
 -- write full About page
 -- Original Favicon (svg or ico, or both)
 -- Set up GitHub?

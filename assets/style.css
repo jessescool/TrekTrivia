@@ -58,6 +58,16 @@ p {
   text-align: center;
 }
 
+a {
+  outline: 0;
+  box-shadow: none;
+  text-decoration: none;
+  color: SteelBlue;
+}
+
+a.hiddennavlink {
+  color: black;
+}
 
 /* section (div) styling */
 
