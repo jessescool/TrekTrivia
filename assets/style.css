@@ -44,12 +44,20 @@ input[type = button]:focus {
   /* will be changed when 1, 2, 3, 4 give inputs */
 }
 
+h1 {
+  font-family: 'Tiempos Headline';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 90px;
+}
+
 h2 {
   font-family: 'Tiempos Headline';
   font-style: normal;
-  font-weight: normal;
+  font-weight: 500;
   font-size: 28px;
-  letter-spacing: 0.03em
+  letter-spacing: 0.03em;
+  margin-top: 50px;
 }
 
 p {
@@ -74,6 +82,21 @@ em {
   font-style: normal;
   font-weight: 500;
   color: #780D0D;
+}
+
+i {
+  font-family: 'Tiempos Text';
+  font-style: italic;
+  font-weight: normal;
+}
+
+ul {
+  list-style-position: inside;
+  text-align: center;
+}
+
+li {
+  font-size: 16px;
 }
 
 /* section (div) styling */
@@ -106,7 +129,11 @@ div[id = end] {
   display: block;
 }
 
-#play {
+p.mini {
+  font-size: 14px;
+}
+
+#play, #reset {
   height: 50px;
   width: 200px;
   background-color: #F2C300;

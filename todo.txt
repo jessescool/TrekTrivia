@@ -1,7 +1,10 @@
 trektrivia.com TODO
 
 TASKS
+-- 50 questions per series...
+-- Message google form
 -- add percentile...
+-- LI styling
 -- Alert if on mobile
 -- Fix publi.sh
 -- movie boolean selection
