@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/zsh
 
 # A script for pushing code changes AND new questions to web server
 

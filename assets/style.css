@@ -14,7 +14,7 @@
 .banner {
   font-family: 'Trek Headline';
   font-style: italic;
-  font-size: 80px;
+  font-size: 90px;
 }
 
 input[type = button] {
@@ -42,6 +42,14 @@ input[type = button]:focus {
   outline: 0;
   box-shadow: none;
   /* will be changed when 1, 2, 3, 4 give inputs */
+}
+
+h2 {
+  font-family: 'Tiempos Headline';
+  font-style: normal;
+  font-weight: normal;
+  font-size: 28px;
+  letter-spacing: 0.03em
 }
 
 p {

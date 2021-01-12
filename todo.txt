@@ -1,19 +1,18 @@
 trektrivia.com TODO
 
 TASKS
--- gameOn() and gameOver() to engage() and allStop()
+-- Alert if on mobile
+-- Fix publi.sh
 -- movie boolean selection
 -- difficulty explanation
 -- update withdraw() to vet questions via verification
 -- write full About page
--- "Engage"
 -- Original Favicon (svg or ico, or both)
 -- Set up GitHub?
 -- Keypress visuals and tutorial integration
 -- Custom buttons
 -- Audio on correct/incorrect answers
 -- Python program to write directly to csv?  Or submissions directly appended to Google Sheet?
--- Seperate fonts stylesheet (fonts.css)
 
 FONTS
 -- Legitima
