@@ -1,6 +1,8 @@
 trektrivia.com TODO
 
 TASKS
+
+-- Hyperlinks on :hover
 -- 50 questions per series...
 -- Message google form
 -- add percentile...
@@ -15,3 +17,7 @@ TASKS
 -- Audio on correct/incorrect answers
 -- Python program to write directly to csv?  Or submissions directly appended to Google Sheet?
 -- Check out MsWms font ideas...
+-- Mobile buttons not stay highlighted
+-- difficulty selector
+-- # of questions slider
+-- Progress bar...
