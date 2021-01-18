@@ -1,0 +1,6 @@
+MOBILE:
+
+-- custom button styling
+-- no highlight on touch
+-- no zoom....
+-- (not only mobile) create new score, remaining, difficulty diagram...

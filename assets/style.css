@@ -23,10 +23,8 @@ input[type = button] {
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
-  max-height: 50px;
-  max-width: 250px;
   height: 50px;
-  width: 75%;
+  width: 250px;
   border-radius: 20px;
   transition: 0.2s;
   opacity: 1;
