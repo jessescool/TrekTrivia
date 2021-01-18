@@ -1,7 +1,8 @@
 trektrivia.com TODO
 
 TASKS
-
+-- Unindent bullet lists in About...
+-- PRIORITY => message me link
 -- Hyperlinks on :hover
 -- 50 questions per series...
 -- Message google form
