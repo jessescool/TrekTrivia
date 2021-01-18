@@ -33,6 +33,7 @@ input[type = button] {
 
 input[type = button]:hover {
   opacity: 0.6;
+  background-color: inherit || #75BBFF;
 }
 
 input[type = button]:focus {
@@ -136,6 +137,7 @@ p.mini {
   background-color: #F2C300;
   font-size: 20px;
   font-weight: 500;
+  margin-bottom: 20px;
 }
 
 
