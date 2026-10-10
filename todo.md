@@ -2,9 +2,8 @@
 
 -- more questions (TOS, ENT, DIS, PIC are thin; 50 per series would be nice)
 -- add percentile...
--- difficulty explanation / selector
+-- difficulty selector
 -- # of questions slider
--- Progress bar...
 -- Audio on correct/incorrect answers
 -- Keypress visuals
 -- Original Favicon (svg or ico, or both)

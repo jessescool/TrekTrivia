@@ -4,6 +4,7 @@ let deck = [];      // questions still to be asked, easiest first
 let current;        // the question on screen, with its options shuffled
 let score = 0;
 let contents = 0;   // questions answered so far
+let total;          // size of the deck at engage
 
 
 // constants
@@ -30,6 +31,12 @@ function shuffle(array) {
     [array[i], array[j]] = [array[j], array[i]];
   }
   return array;
+}
+
+function flash(verdict) {
+  document.body.classList.remove('correct', 'incorrect');
+  void document.body.offsetWidth; // restart the animation if it's already running
+  document.body.classList.add(verdict);
 }
 
 function show(id) {
@@ -59,8 +66,9 @@ function generateSet() {
 function check(guess) {
   if (current.options[guess] === current.answer) {
     score++;
+    flash('correct');
   } else {
-    // does nothing (for now)
+    flash('incorrect');
   }
 
   contents++;
@@ -93,6 +101,7 @@ function keyRelease(event) {
 
 function engage() {
   deck = withdraw();
+  total = deck.length;
   generateSet();
   setButtons();
   show('game');
@@ -118,7 +127,10 @@ function setButtons() {
   });
   document.getElementById('score').innerHTML = 'score: ' + score;
   document.getElementById('remaining').innerHTML = 'remaining: ' + (deck.length || 'none'); // vanity
-  document.getElementById('difficulty').style.background = `#${difficulties[current.difficulty]}`;
+  const difficulty = document.getElementById('difficulty');
+  difficulty.innerHTML = current.difficulty;
+  difficulty.style.background = `#${difficulties[current.difficulty]}`;
+  document.getElementById('bar').style.width = `${100 * contents / total}%`;
 }
 
 console.log(`Source successful!`);

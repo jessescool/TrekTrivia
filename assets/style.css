@@ -100,8 +100,10 @@ input[type = button] {
   touch-action: manipulation;
 }
 
-input[type = button]:hover {
-  opacity: 0.6;
+@media (hover: hover) {
+  input[type = button]:hover {
+    opacity: 0.6;
+  }
 }
 
 input[type = button]:focus {
@@ -161,9 +163,47 @@ p.mini {
 }
 
 #difficulty {
-  width: 25px;
-  height: 25px;
+  display: inline-block;
+  width: 28px;
+  height: 28px;
+  line-height: 28px;
   border: 1px solid gray;
+  font-size: 16px;
+  vertical-align: middle;
+}
+
+#progress {
+  width: 100%;
+  max-width: 400px;
+  height: 6px;
+  background: #eee;
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+#bar {
+  height: 100%;
+  width: 0;
+  background: #75BBFF;
+  transition: width 0.3s;
+}
+
+/* the whole screen flashes on an answer */
+
+@keyframes correct {
+  from { background-color: #B9F6CA; }
+}
+
+@keyframes incorrect {
+  from { background-color: #FFCDD2; }
+}
+
+body.correct {
+  animation: correct 0.6s;
+}
+
+body.incorrect {
+  animation: incorrect 0.6s;
 }
 
 /* about-specific styling */
