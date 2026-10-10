@@ -1,4 +1,4 @@
-trektrivia.com TODO
+# trektrivia.com TODO
 
 TASKS
 -- Unindent bullet lists in About...
@@ -22,3 +22,10 @@ TASKS
 -- difficulty selector
 -- # of questions slider
 -- Progress bar...
+
+
+
+-- custom button styling
+-- no highlight on touch
+-- no zoom....
+-- (not only mobile) create new score, remaining, difficulty diagram...
