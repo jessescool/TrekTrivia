@@ -6,52 +6,47 @@
 /* global styling */
 
 * {
+  box-sizing: border-box;
   font-family: 'Tiempos Text';
   font-weight: normal;
   font-style: normal;
 }
 
+body {
+  margin: 0;
+  padding: 1rem;
+}
+
+main {
+  max-width: 600px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+section[hidden] {
+  display: none;
+}
+
 .banner {
   font-family: 'Trek Headline';
   font-style: italic;
-  font-size: 90px;
-}
-
-input[type = button] {
-  background-color: #75BBFF;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  height: 50px;
-  width: 250px;
-  border-radius: 20px;
-  transition: 0.2s;
-  opacity: 1;
-  margin: 2px 1px;
-}
-
-input[type = button]:hover {
-  opacity: 0.6;
-  background-color: inherit || #75BBFF;
-}
-
-input[type = button]:focus {
-  outline: 0;
-  box-shadow: none;
-  /* will be changed when 1, 2, 3, 4 give inputs */
 }
 
 h1 {
   font-family: 'Tiempos Headline';
-  font-style: normal;
   font-weight: 500;
-  font-size: 90px;
+  font-size: clamp(48px, 15vw, 90px);
+  margin: 0.5em 0 0;
 }
 
 h2 {
   font-family: 'Tiempos Headline';
-  font-style: normal;
   font-weight: 500;
   font-size: 28px;
   letter-spacing: 0.03em;
@@ -60,13 +55,9 @@ h2 {
 
 p {
   font-size: 20px;
-  max-width: 90%;
-  text-align: center;
 }
 
 a {
-  outline: 0;
-  box-shadow: none;
   text-decoration: none;
   color: SteelBlue;
 }
@@ -83,56 +74,41 @@ em {
 }
 
 i {
-  font-family: 'Tiempos Text';
   font-style: italic;
-  font-weight: normal;
-}
-
-ul {
-  list-style-position: inside;
-  text-align: center;
 }
 
 li {
   font-size: 16px;
 }
 
-/* section (div) styling */
+/* buttons */
 
-div[id = welcome] {
-  max-width: 600px;
-  display: inline-block;
+input[type = button] {
+  background-color: #75BBFF;
+  border: none;
+  border-radius: 20px;
+  font-size: 16px;
+  min-height: 50px;
+  width: 100%;
+  max-width: 400px;
+  padding: 10px 20px;
+  margin: 4px 0;
+  white-space: normal;
+  cursor: pointer;
+  transition: 0.2s;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
 }
 
-div[id = tutorial] {
-  max-width: 600px;
-  display: none;
+input[type = button]:hover {
+  opacity: 0.6;
 }
 
-div[id = game] {
-  max-width: 540px;
-  display: none;
-}
-
-div[id = end] {
-  display: none;
-}
-
-
-
-
-/* welcome-specific styling */
-
-.selection {
-  display: block;
-}
-
-p.mini {
-  font-size: 14px;
+input[type = button]:focus {
+  outline: 0;
 }
 
 #play, #reset {
-  height: 50px;
   width: 200px;
   background-color: #F2C300;
   font-size: 20px;
@@ -140,74 +116,64 @@ p.mini {
   margin-bottom: 20px;
 }
 
-
-/* tutorial specific styling */
-
-  /* background is NOT dynamic... fix */
-
-.difficultyrange {
-  display: inline;
-  width: 700px;
+#endquiz {
+  min-height: 35px;
+  width: 80px;
+  background-color: #F2C300;
+  margin-top: 20px;
 }
 
-/* backgrounds for these aren't dynamic.. fix */
+/* welcome-specific styling */
 
-#mindif {
-  width: 25px;
-  height: 25px;
-  border: 1px solid gray;
-  margin: 1px;
-  background: #00FF00;
+#seriesSelection {
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  gap: 6px 24px;
 }
 
-#maxdif {
-  width: 25px;
-  height: 25px;
-  border: 1px solid gray;
-  margin: 1px;
-  background: #FF0000;
+#seriesSelection label {
+  font-weight: bold;
 }
 
+p.mini {
+  font-size: 14px;
+}
 
 /* game-specific styling */
 
-  /* interact */
-
-#question {
-  height: 100px;
+#interact {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-#interact {
-
+#question {
+  min-height: 100px;
+  display: flex;
+  align-items: center;
 }
 
 #inform {
-
+  display: flex;
+  align-items: center;
+  gap: 20px;
 }
-
-  /* inform */
 
 #difficulty {
   width: 25px;
   height: 25px;
   border: 1px solid gray;
-  margin: 20px;
-  background: none;
 }
 
-#score {
+/* about-specific styling */
 
+ul {
+  padding: 0;
+  max-width: 500px;
 }
 
-#remaining {
-
-}
-
-
-/* end-specific styling */
-
-#endquiz {
-  height: 35px;
-  width: 80px;
-  background-color: #F2C300;
+#coffee {
+  width: 120px;
+  margin: 50px auto;
 }

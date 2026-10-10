@@ -1,25 +1,19 @@
-from random import shuffle, randrange
-from pandas import read_csv
+# Turns startrekdata.csv into assets/vault.js, one object per question.
+# Run from inside creation/.
 
-data = read_csv(r'startrekdata.csv').fillna(value='null')
-questions = data['Question'].tolist()
-answers = data['Answer'].tolist()
-alternate1 = data['Alternate1'].tolist()
-alternate2 = data['Alternate2'].tolist()
-alternate3 = data['Alternate3'].tolist()
-difficulty = data['Difficulty'].tolist()
-source = data['Source'].tolist()
-verified = data['Verified'].tolist()
+import csv, json
 
-f = open('../assets/vault.js', 'w')
-f.write('const vault = { \n');
-f.write('questions: '+ str(questions) + ', \n')
-f.write('answers: '+ str(answers) + ', \n')
-f.write('alternates1: '+ str(alternate1) + ', \n')
-f.write('alternates2: '+ str(alternate2) + ', \n')
-f.write('alternates3: '+ str(alternate3) + ', \n')
-f.write('difficulty: '+ str(difficulty) + ', \n')
-f.write('source: ' + str(source) + ', \n')
-f.write('verified: ' + str(verified))
-f.write('\n};')
-f.close()
+rows = list(csv.DictReader(open('startrekdata.csv')))
+
+vault = [{
+  'question': r['Question'],
+  'answer': r['Answer'],
+  'alternates': [r['Alternate1'], r['Alternate2'], r['Alternate3']],
+  'difficulty': int(r['Difficulty']),
+  'source': r['Source'],
+} for r in rows if r['Verified'] == '1']
+
+with open('../assets/vault.js', 'w') as f:
+  f.write('const vault = ' + json.dumps(vault, indent=2, ensure_ascii=False) + ';\n')
+
+print(f'deposited {len(vault)} questions')

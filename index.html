@@ -4,22 +4,22 @@
 
   <head>
     <title>Trek Trivia</title>
-    <meta http-equiv = "Content-Type" content = "text/html" charset = "UTF-8">
+    <meta charset = "UTF-8">
     <meta name = "description" content = "A community-made quiz on all things Star Trek!">
-    <meta name = "viewport" content = "width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name = "viewport" content = "width=device-width, initial-scale=1.0">
     <meta name = "keywords" content = "Star Trek, Trek, Trek Trivia, Star Trek Quiz, Star Trek Trivia, Star Trek">
     <meta name = "robots" content = "index, follow">
     <link rel = "icon" type = "image/svg+xml" href = "assets/icons/favicon.svg">
-    <link rel="mask-icon" type = "image/svg+xml" href="assets/icons/favicon.svg">
+    <link rel = "mask-icon" type = "image/svg+xml" href = "assets/icons/favicon.svg">
     <script defer src = "assets/vault.js"></script>
     <script defer src = "assets/script.js"></script>
     <link href = "assets/style.css" rel = "stylesheet" type = "text/css">
   </head>
 
   <body>
-    <center>
+    <main>
 
-      <div id = "welcome">
+      <section id = "welcome">
         <h1 class = "banner">Trek Trivia</h1>
         <h2><a href = "https://i.imgur.com/SP9Pu.gif" target = "_blank" class = "hiddennavlink">Welcome!</a></h2>
         <p> This is a fan-made quiz on all things Star Trek, programmed
@@ -31,22 +31,23 @@
         <div id = "settings">
           <p> Select the series you'd like to appear. </p>
           <div id = "seriesSelection">
-            <b class = "selection">TOS: <input type = "checkbox" value = "TOS" id = "TOS" onclick = "toggleSeries('TOS');"></b>
-            <b class = "selection">TNG: <input type = "checkbox" value = "TNG" id = "TNG" onclick = "toggleSeries('TNG');"></b>
-            <b class = "selection">DS9: <input type = "checkbox" value = "DS9" id = "DS9" onclick = "toggleSeries('DS9');"></b>
-            <b class = "selection">VOY: <input type = "checkbox" value = "VOY" id = "VOY" onclick = "toggleSeries('VOY');"></b>
-            <b class = "selection">ENT: <input type = "checkbox" value = "ENT" id = "ENT" onclick = "toggleSeries('ENT');"></b>
-            <b class = "selection">DIS: <input type = "checkbox" value = "DIS" id = "DIS" onclick = "toggleSeries('DIS');"></b>
-            <b class = "selection">PIC: <input type = "checkbox" value = "PIC" id = "PIC" onclick = "toggleSeries('PIC');"></b>
-            <b class = "selection">General: <input type = "checkbox" value = "General" id = "General" onclick = "toggleSeries('General');"></b>
+            <label><input type = "checkbox" value = "TOS"> TOS</label>
+            <label><input type = "checkbox" value = "TNG"> TNG</label>
+            <label><input type = "checkbox" value = "DS9"> DS9</label>
+            <label><input type = "checkbox" value = "VOY"> VOY</label>
+            <label><input type = "checkbox" value = "ENT"> ENT</label>
+            <label><input type = "checkbox" value = "DIS"> DIS</label>
+            <label><input type = "checkbox" value = "PIC"> PIC</label>
+            <label><input type = "checkbox" value = "Movie"> Movies</label>
+            <label><input type = "checkbox" value = "General"> General</label>
           </div>
           <p>If none are selected, they'll all appear!</p>
         </div>
 
         <input type = "button" value = "ENGAGE" id = "play" onclick = "engage();">
-      </div>
+      </section>
 
-      <div id = "game">
+      <section id = "game" hidden>
 
         <div id = "interact">
           <p id = "question"></p>
@@ -58,23 +59,23 @@
 
         <div id = "inform">
           <p id = "score"></p>
+          <div id = "difficulty"></div>
           <p id = "remaining"></p>
-          <div id = difficulty></div>
         </div>
 
         <input type = "button" value = "Abort" id = "endquiz" onclick = "allStop();">
-      </div>
+      </section>
 
-      <div id = "end">
+      <section id = "end" hidden>
         <h2>Thanks for Playing!</h2>
         <p id = "scoreReport"></p>
         <input type = "button" value = "PLAY AGAIN!" id = "reset" onclick = "window.location.reload();">
         <p>(<a href = "https://docs.google.com/forms/d/e/1FAIpQLScmM7IK7FF-50tFEJUtM2Mcw79Fu8moz4isMeaPGz8PI6kXbg/viewform?usp=sf_link" target = "_blank">contribute a question!</a>)</p>
         <p>(<a href = "https://docs.google.com/forms/d/e/1FAIpQLScbsGV9TFulqs7wgHzGz0jiaeohTpK2QL4gHe8Seb59dTz1ew/viewform?usp=sf_link" target = "_blank">spotted an error?</a>)</p>
         <p>(<a href = "./about" target = "_blank">about</a>)</p>
-      </div>
+      </section>
 
-    </center>
+    </main>
   </body>
 
 </html>

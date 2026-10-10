@@ -1,31 +1,11 @@
 # trektrivia.com TODO
 
-TASKS
--- Unindent bullet lists in About...
--- PRIORITY => message me link
--- Hyperlinks on :hover
--- 50 questions per series...
--- Message google form
+-- more questions (TOS, ENT, DIS, PIC are thin; 50 per series would be nice)
 -- add percentile...
--- LI styling
--- Fix publi.sh
--- movie boolean selection
--- difficulty explanation
--- Original Favicon (svg or ico, or both)
--- Set up GitHub?
--- Keypress visuals and tutorial integration
--- Custom buttons
--- Audio on correct/incorrect answers
--- Python program to write directly to csv?  Or submissions directly appended to Google Sheet?
--- Check out MsWms font ideas...
--- Mobile buttons not stay highlighted
--- difficulty selector
+-- difficulty explanation / selector
 -- # of questions slider
 -- Progress bar...
-
-
-
--- custom button styling
--- no highlight on touch
--- no zoom....
--- (not only mobile) create new score, remaining, difficulty diagram...
+-- Audio on correct/incorrect answers
+-- Keypress visuals
+-- Original Favicon (svg or ico, or both)
+-- submissions directly appended to Google Sheet?
