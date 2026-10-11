@@ -240,6 +240,17 @@ button[hidden] {
   color: var(--lilac);
 }
 
+/* the two bottom panels are links and readouts, not slabs */
+
+.panel-6 {
+  height: 70px;
+  max-height: 70px;
+}
+
+.left-frame .panel-7 {
+  height: 60px;
+}
+
 /* text bars label each block of the screen; keep them in step with the content width */
 
 .lcars-text-bar {
