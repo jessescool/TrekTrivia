@@ -45,6 +45,32 @@ button, a, input {
   }
 }
 
+/* short windows (landscape phones, 720p laptops): no cascade, tighter top panel, so the game fits */
+
+@media (height <= 760px) {
+  .data-cascade-wrapper {
+    display: none;
+  }
+
+  :root {
+    --panel-1-height: 70px;
+    --radius-top: 0 0 0 50px;     /* the elbow's curve sets the header's minimum height */
+    --radius-bottom: 50px 0 0 0;
+    --bar-height: 16px;
+  }
+
+  main {
+    padding-top: 0.5rem;
+  }
+
+  #question {
+    min-height: calc(2 * 1.3em + 0.5rem);
+  }
+
+  .answers { gap: 0.35rem; }
+  .answers button { height: 2.6rem; }
+}
+
 /* a shorter header: smaller top panel, smaller banner, nav in one row */
 
 :root {
