@@ -503,8 +503,12 @@ audio {
   .answers button { height: 2.7rem; font-size: 0.9rem; }
 
   #question { /* narrower screen, smaller type, four lines reserved */
-    font-size: 1.05rem;
+    font-size: 0.95rem;
     min-height: calc(4 * 1.3em + 0.5rem);
+  }
+
+  main p { /* body copy a notch smaller on phones */
+    font-size: 0.9rem;
   }
 
   .toggles button {
