@@ -1,7 +1,8 @@
 // The API behind trektrivia.com. The vault lives in KV; submissions get vetted by Claude against Memory Alpha.
 
-import Anthropic from '@anthropic-ai/sdk';
 import { rubric, verdictTool } from './vetting.js';
+
+const daily = 40; // submissions per day, so a bad night can't run up the bill
 
 const cors = {
   'Access-Control-Allow-Origin': '*',
@@ -41,9 +42,13 @@ export default {
 };
 
 async function submit(request, env) {
-  const ip = request.headers.get('CF-Connecting-IP') || 'unknown';
-  const { success } = await env.SUBMIT.limit({ key: ip });
+  const { success } = await env.SUBMIT.limit({ key: request.headers.get('CF-Connecting-IP') || 'unknown' });
   if (!success) return json({ verdict: 'reject', reason: 'Too many submissions, try again in a minute.' }, 429);
+
+  const today = `count:${new Date().toISOString().slice(0, 10)}`;
+  const count = Number(await env.VAULT.get(today)) || 0;
+  if (count >= daily) return json({ verdict: 'reject', reason: 'The computer has had enough for today. Try tomorrow!' }, 429);
+  await env.VAULT.put(today, String(count + 1), { expirationTtl: 172800 });
 
   const body = await request.json().catch(() => ({}));
   const { question, answer, alternates } = body;
@@ -54,7 +59,7 @@ async function submit(request, env) {
   const vault = await read(env, 'vault');
   const verdict = await vet({ question, answer, alternates }, vault, env);
 
-  const entry = { ...verdict, submitted: body, ip, at: new Date().toISOString() };
+  const entry = { ...verdict, submitted: body, at: new Date().toISOString() };
   const log = await read(env, 'log');
   log.unshift(entry);
   await write(env, 'log', log.slice(0, 500));
@@ -90,38 +95,37 @@ async function decide(request, env, approve) {
 const row = v => ({ question: v.question, answer: v.answer, alternates: v.alternates, difficulty: v.difficulty, source: v.source });
 
 async function vet(submission, vault, env) {
-  const client = new Anthropic({ apiKey: env.ANTHROPIC_API_KEY });
-
   const messages = [{
     role: 'user',
     content: `Existing questions, so you can catch duplicates:\n${vault.map(q => '- ' + q.question).join('\n')}\n\nSubmission:\n${JSON.stringify(submission, null, 2)}`,
   }];
 
-  const params = {
-    model: 'claude-opus-5-5',
-    max_tokens: 16000,
-    output_config: { effort: 'high' },
-    betas: ['server-side-fallback-2026-07-01'],
-    fallbacks: 'default',
+  const body = {
+    model: 'claude-haiku-5-5',
+    max_tokens: 4096,
     system: rubric,
     tools: [
-      { type: 'web_search_20260209', name: 'web_search', max_uses: 4, allowed_domains: ['memory-alpha.fandom.com'] },
-      { type: 'web_fetch_20260209', name: 'web_fetch', max_uses: 4, allowed_domains: ['memory-alpha.fandom.com'] },
+      { type: 'web_search_20250305', name: 'web_search', max_uses: 2, allowed_domains: ['memory-alpha.fandom.com'] },
+      { type: 'web_fetch_20250910', name: 'web_fetch', max_uses: 3, allowed_domains: ['memory-alpha.fandom.com'], max_content_tokens: 20000 },
       verdictTool,
     ],
     messages,
   };
 
-  // server tools run on Anthropic's side; we only loop to catch the verdict or resume a paused turn
-  for (let i = 0; i < 6; i++) {
-    const response = await client.beta.messages.create(params);
+  // search and fetch run on Anthropic's side; we only loop to catch the verdict or resume a paused turn
+  for (let i = 0; i < 4; i++) {
+    const response = await fetch('https://api.anthropic.com/v1/messages', {
+      method: 'POST',
+      headers: { 'x-api-key': env.ANTHROPIC_API_KEY, 'anthropic-version': '2023-06-01', 'content-type': 'application/json' },
+      body: JSON.stringify(body),
+    }).then(r => r.json());
+
+    if (response.type === 'error') throw new Error(response.error.message);
+
     const call = response.content.find(b => b.type === 'tool_use' && b.name === 'verdict');
     if (call) return call.input;
-    if (response.stop_reason === 'pause_turn') {
-      messages.push({ role: 'assistant', content: response.content });
-      continue;
-    }
-    break;
+    if (response.stop_reason !== 'pause_turn') break;
+    messages.push({ role: 'assistant', content: response.content });
   }
 
   return { ...submission, verdict: 'review', difficulty: 5, source: 'General', reason: 'The vetter never reached a verdict.' };

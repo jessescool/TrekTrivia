@@ -1,6 +1,7 @@
 # trektrivia-api
 
-Cloudflare Worker. KV holds the vault; Claude vets submissions against Memory Alpha.
+Cloudflare Worker. KV holds the vault; Claude (Haiku) vets submissions against Memory Alpha.
+Capped at 40 submissions a day (`daily` in src/index.js), roughly three cents each. Put the key in its own Console workspace with a spend limit anyway.
 
 ## First deploy
     npm install

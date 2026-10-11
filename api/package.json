@@ -7,9 +7,6 @@
     "deploy": "wrangler deploy",
     "seed": "cd ../creation && python3 deposit.py && cd ../api && wrangler kv key put --binding VAULT --remote vault --path ../creation/vault.json"
   },
-  "dependencies": {
-    "@anthropic-ai/sdk": "^0.110.0"
-  },
   "devDependencies": {
     "wrangler": "^4"
   }
