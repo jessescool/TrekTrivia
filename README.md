@@ -32,7 +32,7 @@ One-time: save your admin password where the scripts can read it (gitignored, st
     python creation/pipe.py drafts.csv --direct   # straight into the vault, marked checked. The god path.
 
 CSV columns: `Question, Answer, Alternate1, Alternate2, Alternate3`. For `--direct` also `Difficulty` (1 to 10)
-and `Source` (TOS, TNG, DS9, VOY, ENT, DIS, PIC, Movie, General).
+and `Source` (TOS, TNG, DS9, VOY, ENT, DIS, PIC, SNW, LD, PRO, TAS, SFA, Movie, General). A series with no questions shows greyed out on the site until it has some.
 
 ### Getting questions out
 

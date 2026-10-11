@@ -168,7 +168,7 @@ function more() {
 }
 
 function allStop() {
-  document.getElementById('source').textContent = '9';   // back to the resting readouts
+  document.getElementById('source').textContent = new Set(vault.map(q => q.source)).size; // back to the resting readouts
   document.getElementById('level').textContent = '10';
   clearTimeout(timer);
   document.removeEventListener('click', advance);
@@ -234,6 +234,13 @@ async function pose(event) {
 // the sidebar readouts
 function readouts() {
   const put = (id, value) => { const e = document.getElementById(id); if (e) e.textContent = value; };
+  // a series with no questions yet is shown but greyed out; it wakes up on its own once questions land
+  const stocked = new Set(vault.map(q => q.source));
+  for (const button of document.querySelectorAll('#seriesSelection button')) {
+    button.disabled = !stocked.has(button.dataset.series);
+    if (button.disabled) button.classList.remove('selected');
+  }
+  put('source', stocked.size);
   put('bank', vault.length);
   put('build', typeof build === 'undefined' ? 'dev' : build); // stamped by `npm run deploy`
 }

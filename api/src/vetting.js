@@ -15,7 +15,7 @@ Then call the verdict tool exactly once:
 - review: plausible, but you could not confirm it, or something is borderline (an alternate might also be correct, canon status is unclear).
 - reject: wrong, unverifiable nonsense, off-canon, a duplicate, or not a Star Trek question.
 
-Difficulty is 1 (any casual viewer knows it) to 10 (only a devoted fan of that series would). Source is the series the question is about; use Movie for films and General for franchise-wide questions.`;
+Difficulty is 1 (any casual viewer knows it) to 10 (only a devoted fan of that series would). Source is the series the question is about: TOS, TNG, DS9, VOY, ENT, DIS, PIC, SNW (Strange New Worlds), LD (Lower Decks), PRO (Prodigy), TAS (The Animated Series), SFA (Starfleet Academy); Movie for films including Section 31; General for franchise-wide questions. Short Treks belong to their parent series.`;
 
 export const verdictTool = {
   name: 'verdict',
@@ -29,7 +29,7 @@ export const verdictTool = {
       answer: { type: 'string' },
       alternates: { type: 'array', items: { type: 'string' }, description: 'Exactly three' },
       difficulty: { type: 'integer', description: '1 to 10' },
-      source: { type: 'string', enum: ['TOS', 'TNG', 'DS9', 'VOY', 'ENT', 'DIS', 'PIC', 'Movie', 'General'] },
+      source: { type: 'string', enum: ['TOS', 'TNG', 'DS9', 'VOY', 'ENT', 'DIS', 'PIC', 'SNW', 'LD', 'PRO', 'TAS', 'SFA', 'Movie', 'General'] },
       citation: { type: 'string', description: 'The Memory Alpha URL that confirms the answer, or empty' },
       reason: { type: 'string', description: 'One sentence for the submitter' },
     },

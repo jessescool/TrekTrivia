@@ -2,7 +2,7 @@
 #   python3 pipe.py drafts.csv            through the vetter (accepts land unchecked)
 #   python3 pipe.py drafts.csv --direct   straight into the vault, marked checked (the god path)
 # Reads your admin password from creation/.key. CSV columns: Question, Answer, Alternate1, Alternate2, Alternate3,
-# and for --direct also Difficulty and Source.
+# and for --direct also Difficulty and Source (TOS TNG DS9 VOY ENT DIS PIC SNW LD PRO TAS SFA Movie General).
 
 import csv, json, os, sys, urllib.request
 

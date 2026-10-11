@@ -166,6 +166,12 @@ main p {
   background-color: var(--orange);
 }
 
+.toggles button:disabled { /* a series with no questions yet */
+  background-color: var(--dirty-mauve);
+  color: #555;
+  pointer-events: none;
+}
+
 .buttons button.minor.button-red { background-color: var(--red); }
 .buttons button.minor.button-lilac { background-color: var(--lilac); }
 
