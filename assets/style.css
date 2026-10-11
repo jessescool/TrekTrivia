@@ -233,7 +233,10 @@ main > section > p:first-child {
   .panel-1.logo { /* the phone panel is narrow: two short lines, no mid-word breaks */
     font-size: 0.95rem;
     padding: 0.2rem;
+    letter-spacing: 0;
+    word-break: normal;
     overflow-wrap: normal;
+    hyphens: none;
   }
 
   #question { /* narrower screen, smaller type, four lines reserved */
