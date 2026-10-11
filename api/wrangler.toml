@@ -6,7 +6,7 @@ compatibility_flags = ["nodejs_compat"]
 # the vault lives here; create with `wrangler kv namespace create VAULT` and paste the id
 [[kv_namespaces]]
 binding = "VAULT"
-id = "REPLACE_ME"
+id = "fb3cec519f8d41d5838cc8363e08e6f0"
 
 # five submissions a minute per IP, so bots can't burn API credit
 [[ratelimits]]

@@ -1,6 +1,6 @@
 // IMPORT FROM VAULT.js (in source order)
 
-const api = 'https://trektrivia-api.REPLACE_ME.workers.dev'; // where the live vault and the vetting live
+const api = 'https://trektrivia-api.trektrivia-api.workers.dev'; // where the live vault and the vetting live
 
 let pool = [];      // every question that fits the settings, shuffled
 let deck = [];      // the hand dealt from the pool, easiest first
