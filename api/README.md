@@ -9,8 +9,13 @@ Capped at 40 submissions a day (`daily` in src/index.js), roughly three cents ea
     npx wrangler kv namespace create VAULT      # paste the id into wrangler.toml
     npx wrangler secret put ANTHROPIC_API_KEY
     npx wrangler secret put ADMIN_KEY           # anything long and random
-    npm run seed                                # CSV -> KV
+    (cd ../creation && python3 deposit.py)      # CSV -> creation/vault.json, first time only
+    npm run seed                                # creation/vault.json -> KV
     npm run deploy                              # prints the workers.dev URL; paste it into assets/script.js
+
+## After that, the live vault in KV is the source of truth
+    npm run backup                              # KV -> creation/vault.json
+    npm run seed                                # creation/vault.json -> KV (restores a backup; overwrites what's live)
 
 ## Reviewing the queue
     curl "https://<worker>/pending?key=$ADMIN_KEY"
