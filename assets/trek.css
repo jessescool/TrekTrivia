@@ -472,6 +472,13 @@ footer:empty {
   .left-frame {
     min-height: 0; /* on phones the column just runs the length of the content; a floor left a long empty strip under short screens */
   }
+
+  /* stacked labels need less height, and the column shouldn't outrun a short screen like the form */
+  .left-frame .panel-3, .left-frame .panel-4 { height: 72px; min-height: 0; }
+  .left-frame .panel-5 { height: 60px; }
+  .panel-6 { height: 56px; max-height: 56px; font-size: 1em; } /* the column-width sizing is for desktop; here the label is stacked anyway */
+  .left-frame .panel-7 { height: 50px; }
+  .panel-spacer { min-height: 24px; }
 }
 
 .lcars-text-bar h3 {
