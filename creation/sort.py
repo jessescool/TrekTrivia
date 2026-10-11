@@ -36,7 +36,7 @@ def fields(q):
   return {k: q[k] for k in ('question', 'answer', 'alternates', 'difficulty', 'source')}
 
 def verdict_note(e):
-  return f"\n    vetter:     {e.get('reason', '')}" + (f"\n    source:     {e['citation']}" if e.get('citation') else '')
+  return f"\n    vetter:     {e.get('verdict', '?').upper()}: {e.get('reason', '')}" + (f"\n    source:     {e['citation']}" if e.get('citation') else '')
 
 # 1. auto-accepted, not human-checked
 vault = call('/vault')
@@ -54,7 +54,7 @@ if changed: print(' ', call('/vault', 'PUT', vault))
 # 2. the vetter wasn't sure
 if not quit_:
   pending = call('/pending')
-  print(f"\n== {len(pending)} the vetter wasn't sure about ==")
+  print(f"\n== {len(pending)} waiting on you (the vetter's accepts and reviews) ==")
   for i in reversed(range(len(pending))):  # highest index first so earlier indexes stay valid
     k = ask(pending[i], verdict_note(pending[i]))
     if k == 'q': quit_ = True; break

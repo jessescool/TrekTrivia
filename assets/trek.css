@@ -433,6 +433,25 @@ main > section > :last-child, main > :last-child {
   display: none; /* the verdict line takes no space until there is a verdict */
 }
 
+#response strong {
+  display: block;
+  font-weight: normal;
+  color: var(--almond-creme);
+  font-size: 1.15em;
+  margin-bottom: 0.4rem;
+}
+
+#response .lcars-button {
+  display: flex;
+  margin-top: 1rem;
+  height: 3rem;
+  padding-bottom: 0.45rem;
+}
+
+#pose[hidden] {
+  display: none;
+}
+
 #pose .buttons {
   margin-bottom: 0;
 }

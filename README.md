@@ -14,8 +14,9 @@ first drafts. They work, but expect rough edges and changes.
 - The question bank lives in Cloudflare KV, a hosted key-value store, under one key called `vault`. It is the
   source of truth. There is no local database.
 - When a player submits a question, the Worker asks Claude (Haiku) to check it against Memory Alpha and return
-  accept, review, or reject. Accepts go straight into the vault, marked `checked: false`. Reviews go to a queue
-  for Jesse. Rejects are logged and dropped.
+  accept, review, or reject. For now both accepts and reviews wait in the queue for Jesse (`autoAccept` in
+  `api/src/index.js` is off until the vetter has earned trust); once it's on, accepts go live marked
+  `checked: false`. Rejects are logged and dropped.
 - `creation/startrekdata.csv` was the original seed. `creation/pipe.py` gets new questions in; `creation/sort.py` is where you judge what the vetter did.
 
 ## Your interface

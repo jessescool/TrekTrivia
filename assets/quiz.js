@@ -264,11 +264,27 @@ async function pose(event) {
     }),
   }).then(r => r.json()).catch(() => ({ verdict: 'error', reason: 'The computer is not responding.' }));
 
-  const openers = { accept: 'Added!', review: 'Sent to the captain for review.', reject: 'Not this time.' };
-  response.innerHTML = `${openers[reply.verdict] || 'Hmm.'} ${reply.reason}`;
+  const openers = {
+    accept: 'Logged. The computer vouches for it; the captain has the final word.',
+    review: 'Logged for the captain to look over.',
+    reject: 'The computer couldn\'t confirm this one.',
+  };
+  const kept = reply.verdict === 'accept' || reply.verdict === 'review';
+  response.innerHTML = `<strong>${openers[reply.verdict] || 'The computer is not responding.'}</strong><br>${reply.reason}`
+    + (kept ? ' <button type="button" class="lcars-button button-lilac" onclick="poseAnother()">Pose another</button>' : '');
 
   document.getElementById('send').disabled = false;
-  if (reply.verdict === 'accept') form.reset();
+  if (kept) form.hidden = true;
+}
+
+
+function poseAnother() {
+  beep(2);
+  const form = document.getElementById('pose');
+  form.reset();
+  form.hidden = false;
+  document.getElementById('response').innerHTML = '';
+  form.querySelector('input').focus();
 }
 
 

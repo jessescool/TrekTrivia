@@ -3,6 +3,7 @@
 import { rubric, verdictTool } from './vetting.js';
 
 const daily = 40; // submissions per day, so a bad night can't run up the bill
+const autoAccept = false; // while off, the vetter's accepts wait in the pile for Jesse instead of going live
 
 const cors = {
   'Access-Control-Allow-Origin': '*',
@@ -92,10 +93,10 @@ async function submit(request, env, admin) {
   log.unshift(entry);
   await write(env, 'log', log.slice(0, 500));
 
-  if (verdict.verdict === 'accept') {
+  if (verdict.verdict === 'accept' && autoAccept) {
     vault.push(row(verdict, false));
     await write(env, 'vault', vault);
-  } else if (verdict.verdict === 'review') {
+  } else if (verdict.verdict === 'accept' || verdict.verdict === 'review') {
     const pending = await read(env, 'pending');
     pending.push(entry);
     await write(env, 'pending', pending);
