@@ -44,10 +44,13 @@ function shuffle(array) {
   return array;
 }
 
+const screens = { welcome: 'Quiz', game: 'Quiz', end: 'Results', contribute: 'Pose' };
+
 function show(id) {
   for (const section of ['welcome', 'game', 'end', 'contribute']) {
     document.getElementById(section).hidden = section !== id;
   }
+  document.getElementById('screen').textContent = screens[id];
   window.scrollTo(0, 0);
 }
 
@@ -227,5 +230,6 @@ fetch(`${api}/vault`)
   .finally(() => { document.getElementById('bank').textContent = vault.length; });
 
 if (location.hash === '#pose') show('contribute');
+window.addEventListener('hashchange', () => { if (location.hash === '#pose') show('contribute'); }); // the nav button, from this same page
 
 console.log(`Source successful!`);

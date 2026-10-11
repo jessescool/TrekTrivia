@@ -3,18 +3,19 @@
 
 @import url(./fonts/fonts.css);
 
-/* the one non-LCARS flourish: the old title font in the banner */
+/* the one non-LCARS flourish: the old title font, in the top-left panel */
 
-.banner {
+.panel-1.logo {
+  justify-content: center;
+  align-items: center;
+  padding: 0.5rem;
   font-family: 'Trek Headline';
   font-style: italic;
+  font-weight: normal;
+  font-size: clamp(1.1rem, 1.6vw, 1.7rem);
+  line-height: 1.1;
+  text-align: center;
   text-transform: none;
-}
-
-.banner #stardate, .banner .dot {
-  font-family: 'Antonio', sans-serif;
-  font-style: normal;
-  font-size: 0.7em;
 }
 
 section[hidden] {

@@ -17,11 +17,11 @@
   <section class="wrap-standard" id="column-3">
     <div class="wrap">
       <div class="left-frame-top">
-        <button onclick="go('')" class="panel-1">Trek<span class="hop">Trivia</span></button>
-        <button onclick="go('about/')" class="panel-2">02<span class="hop">-about</span></button>
+        <button class="panel-1 logo">Trek Trivia</button>
+        <button class="panel-2">02<span class="hop">-262000</span></button>
       </div>
       <div class="right-frame-top">
-        <div class="banner">Trek Trivia <span class="dot">&#149;</span> <span id="stardate"> </span></div>
+        <div class="banner"><span id="screen">Quiz</span> &#149; <span id="stardate"> </span></div>
         <div class="data-cascade-button-group">
           <div class="data-cascade-wrapper" id="default">
           <div class="data-column"><div class="dc-row-1">72-494725</div><div class="dc-row-1">69-599984</div><div class="dc-row-2">85-210700</div><div class="dc-row-3">41-268110</div><div class="dc-row-3">17-356370</div><div class="dc-row-4">75-269901</div><div class="dc-row-5">45-733505</div><div class="dc-row-6">58-287449</div><div class="dc-row-7">17-776163</div></div>
@@ -35,9 +35,8 @@
           </div>
           <nav>
             <button onclick="go('')" class="nav-1 animation-on">01-quiz</button>
-            <button onclick="go('about/')" class="nav-2 ">02-about</button>
-            <button onclick="go('#pose')" class="nav-3">03-pose</button>
-            <button onclick="go('https://memory-alpha.fandom.com/wiki/Portal:Main')" class="nav-4">04-alpha</button>
+            <button onclick="go('#pose')" class="nav-2 animation-on">02-pose</button>
+            <button onclick="go('about/')" class="nav-3 ">03-about</button>
           </nav>
         </div>
         <div class="bar-panel first-bar-panel">
@@ -49,10 +48,10 @@
       <div class="left-frame">
         <button onclick="topFunction(); playSound()" id="topBtn"><span class="hop">screen</span> top</button>
         <div>
-          <button onclick="go('')" class="panel-3">03<span class="hop">-quiz</span></button>
-          <button onclick="go('#pose')" class="panel-4">04<span class="hop">-pose</span></button>
+          <button class="panel-3">03<span class="hop">-111968</span></button>
+          <button class="panel-4">04<span class="hop">-041969</span></button>
           <button class="panel-5"><span id="bank">&nbsp;</span><span class="hop">-questions</span></button>
-          <button onclick="go('https://memory-alpha.fandom.com/wiki/Portal:Main')" class="panel-6">06<span class="hop">-alpha</span></button>
+          <button class="panel-6">06<span class="hop">-071984</span></button>
           <div class="panel-spacer"></div>
         </div>
         <div>
@@ -66,7 +65,7 @@
         <main>
           <section id="welcome">
             <p>A fan-made quiz on all things Star Trek, built to accommodate a constantly expanding set of questions.
-              Know one? <a href="#" onclick="show('contribute'); return false;">Pose it</a> and the ship's computer will check it against Memory Alpha.</p>
+              Know one? Pose it, and the ship's computer will check it against Memory Alpha.</p>
 
             <div class="lcars-text-bar"><h3>Series</h3></div>
             <p>Pick the shows you want. Pick none and you get all of them.</p>
@@ -110,7 +109,6 @@
             <div class="buttons">
               <button id="more" class="button-orange" onclick="more();">25 more</button>
               <button id="reset" class="button-butterscotch" onclick="window.location.reload();">Play again</button>
-              <button class="button-lilac" onclick="show('contribute');">Pose a question</button>
               <button class="button-bluey" onclick="go('https://docs.google.com/forms/d/e/1FAIpQLScbsGV9TFulqs7wgHzGz0jiaeohTpK2QL4gHe8Seb59dTz1ew/viewform?usp=sf_link')">Spotted an error?</button>
             </div>
           </section>
@@ -118,7 +116,7 @@
           <section id="contribute" hidden>
             <div class="lcars-text-bar"><h3>Pose a question</h3></div>
             <p>Phrase it like <i>Captain Picard prefers <u>this</u> type of tea.</i> Give the answer and three plausible wrong ones.
-              The computer checks it against Memory Alpha before it goes in.</p>
+              The computer checks it against <a href="https://memory-alpha.fandom.com/wiki/Portal:Main">Memory Alpha</a> before it goes in.</p>
             <form id="pose" onsubmit="pose(event);">
               <input type="text" name="question" placeholder="The question" required>
               <input type="text" name="answer" placeholder="The answer" required>
