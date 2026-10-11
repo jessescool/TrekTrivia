@@ -192,12 +192,12 @@ p.mini {
 
 /* the verdict shows on the buttons */
 
-.guess.correct {
+input[type = button].correct {
   background-color: #4CAF50;
   opacity: 1;
 }
 
-.guess.incorrect {
+input[type = button].incorrect {
   background-color: #E53935;
   opacity: 1;
 }
