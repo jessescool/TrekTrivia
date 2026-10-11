@@ -17,6 +17,12 @@ Capped at 40 submissions a day (`daily` in src/index.js), roughly three cents ea
     npm run backup                              # KV -> creation/vault.json
     npm run seed                                # creation/vault.json -> KV (restores a backup; overwrites what's live)
 
+## Getting questions in
+    export TREK_ADMIN_KEY=...
+    python3 ../creation/pipe.py drafts.csv            # through the vetter, no daily cap
+    python3 ../creation/pipe.py drafts.csv --direct   # straight in, marked checked
+    curl https://trektrivia.com/vault.csv             # the whole bank as CSV
+
 ## Reviewing the queue
     curl "https://<worker>/pending?key=$ADMIN_KEY"
     curl -X POST "https://<worker>/approve?key=$ADMIN_KEY" -d '{"index":0}'

@@ -28,15 +28,22 @@ export default {
       });
     }
 
-    if (url.pathname === '/submit' && request.method === 'POST') return submit(request, env);
+    if (url.pathname === '/vault.csv' && request.method === 'GET') {
+      return new Response(csv(await read(env, 'vault')), { headers: { 'Content-Type': 'text/csv', ...cors } });
+    }
+
+    const admin = url.searchParams.get('key') === env.ADMIN_KEY;
+
+    if (url.pathname === '/submit' && request.method === 'POST') return submit(request, env, admin);
 
     // the admin bits, for Jesse
-    if (['/pending', '/log', '/approve', '/reject'].includes(url.pathname)) {
-      if (url.searchParams.get('key') !== env.ADMIN_KEY) return json({ error: 'not found' }, 404);
+    if (['/pending', '/log', '/approve', '/reject', '/add'].includes(url.pathname)) {
+      if (!admin) return json({ error: 'not found' }, 404);
       if (url.pathname === '/pending') return json(await read(env, 'pending'));
       if (url.pathname === '/log') return json(await read(env, 'log'));
       if (url.pathname === '/approve' && request.method === 'POST') return decide(request, env, true);
       if (url.pathname === '/reject' && request.method === 'POST') return decide(request, env, false);
+      if (url.pathname === '/add' && request.method === 'POST') return add(request, env);
     }
 
     // everything else is the site itself
@@ -44,14 +51,16 @@ export default {
   },
 };
 
-async function submit(request, env) {
-  const { success } = await env.SUBMIT.limit({ key: request.headers.get('CF-Connecting-IP') || 'unknown' });
-  if (!success) return json({ verdict: 'reject', reason: 'Too many submissions, try again in a minute.' }, 429);
+async function submit(request, env, admin) {
+  if (!admin) { // the public gets rate limited and capped; Jesse's bulk piping doesn't
+    const { success } = await env.SUBMIT.limit({ key: request.headers.get('CF-Connecting-IP') || 'unknown' });
+    if (!success) return json({ verdict: 'reject', reason: 'Too many submissions, try again in a minute.' }, 429);
 
-  const today = `count:${new Date().toISOString().slice(0, 10)}`;
-  const count = Number(await env.VAULT.get(today)) || 0;
-  if (count >= daily) return json({ verdict: 'reject', reason: 'The computer has had enough for today. Try tomorrow!' }, 429);
-  await env.VAULT.put(today, String(count + 1), { expirationTtl: 172800 });
+    const today = `count:${new Date().toISOString().slice(0, 10)}`;
+    const count = Number(await env.VAULT.get(today)) || 0;
+    if (count >= daily) return json({ verdict: 'reject', reason: 'The computer has had enough for today. Try tomorrow!' }, 429);
+    await env.VAULT.put(today, String(count + 1), { expirationTtl: 172800 });
+  }
 
   const body = await request.json().catch(() => ({}));
   const { question, answer, alternates } = body;
@@ -94,6 +103,23 @@ async function decide(request, env, approve) {
     await write(env, 'vault', vault);
   }
   return json({ ok: true, remaining: pending.length });
+}
+
+// the god path: Jesse adds questions straight to the vault, no vetting, marked checked
+async function add(request, env) {
+  const body = await request.json();
+  const incoming = Array.isArray(body) ? body : [body];
+  const vault = await read(env, 'vault');
+  for (const q of incoming) vault.push(row(q, true));
+  await write(env, 'vault', vault);
+  return json({ ok: true, added: incoming.length, vault: vault.length });
+}
+
+function csv(vault) {
+  const cell = v => `"${String(v).replace(/"/g, '""')}"`;
+  const header = 'Question,Answer,Alternate1,Alternate2,Alternate3,Difficulty,Source,Checked';
+  const lines = vault.map(q => [q.question, q.answer, ...q.alternates, q.difficulty, q.source, q.checked ? 1 : 0].map(cell).join(','));
+  return [header, ...lines].join('\n') + '\n';
 }
 
 // what the vault stores, shaped like the rows deposit.py makes; checked means a human looked at it
