@@ -46,7 +46,7 @@ Walks you through three piles, one question at a time, with the vetter's reason 
 2. the vetter wasn't sure: `y` approves it into the vault as checked, `n` drops it
 3. the vetter rejected it: `y` overrules and adds it as checked, `n` leaves it dropped
 
-Enter skips, `q` quits. Rejects you've already judged are remembered in `creation/.sorted` and don't come back.
+`e` edits the question, answer, alternates, difficulty, or source first (enter keeps a value), then asks again. Enter skips, `q` quits. Rejects you've already judged are remembered in `creation/.sorted` and don't come back.
 
 The same things by hand, if you'd rather:
 

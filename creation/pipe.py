@@ -7,7 +7,7 @@
 import csv, json, os, sys, urllib.request
 
 site = os.environ.get('TREK_SITE', 'https://trektrivia-api.trektrivia-api.workers.dev')
-key = open(os.path.join(os.path.dirname(os.path.abspath(__file__)), '.key')).read().strip()  # your admin password, one line
+key = os.environ.get('TREK_ADMIN_KEY') or open(os.path.join(os.path.dirname(os.path.abspath(__file__)), '.key')).read().strip()  # your admin password
 path, direct = sys.argv[1], '--direct' in sys.argv
 
 rows = list(csv.DictReader(open(path)))

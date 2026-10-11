@@ -1,11 +1,11 @@
 # Sort the piles. Walks you through what the vetter did and lets you overrule it.
 #   python3 sort.py
-# Reads your admin password from creation/.key. Keys: y keep, n toss, enter skip, q quit.
+# Reads your admin password from creation/.key. Keys: y keep, n toss, e edit, enter skip, q quit.
 
 import json, os, urllib.request
 
 site = os.environ.get('TREK_SITE', 'https://trektrivia-api.trektrivia-api.workers.dev')
-key = open(os.path.join(os.path.dirname(os.path.abspath(__file__)), '.key')).read().strip()  # your admin password, one line
+key = os.environ.get('TREK_ADMIN_KEY') or open(os.path.join(os.path.dirname(os.path.abspath(__file__)), '.key')).read().strip()  # your admin password
 seen_file = os.path.join(os.path.dirname(os.path.abspath(__file__)), '.sorted')  # rejects you've already looked at
 
 def call(route, method='GET', body=None):
@@ -14,12 +14,26 @@ def call(route, method='GET', body=None):
     headers={'Content-Type': 'application/json', 'User-Agent': 'Mozilla/5.0 TrekTrivia-sort'})
   with urllib.request.urlopen(req, timeout=60) as r: return json.load(r)
 
+def edit(q):
+  # enter keeps the current value
+  for field in ('question', 'answer'):
+    q[field] = input(f"    {field} [{q[field]}]: ").strip() or q[field]
+  q['alternates'] = [input(f"    alternate [{a}]: ").strip() or a for a in q['alternates']]
+  q['difficulty'] = int(input(f"    difficulty [{q.get('difficulty', 5)}]: ").strip() or q.get('difficulty', 5))
+  q['source'] = input(f"    source [{q.get('source', 'General')}]: ").strip() or q.get('source', 'General')
+
 def ask(q, extra=''):
   print(f"\n  {q['question']}\n    answer:     {q['answer']}\n    alternates: {', '.join(q['alternates'])}"
         f"\n    {q.get('source', '?')} / difficulty {q.get('difficulty', '?')}{extra}")
   while True:
-    k = input('  [y]keep [n]toss [enter]skip [q]quit > ').strip().lower()
+    k = input('  [y]keep [n]toss [e]edit [enter]skip [q]quit > ').strip().lower()
+    if k == 'e':
+      edit(q); q['edited'] = True
+      return ask(q, extra)
     if k in ('y', 'n', '', 'q'): return k
+
+def fields(q):
+  return {k: q[k] for k in ('question', 'answer', 'alternates', 'difficulty', 'source')}
 
 def verdict_note(e):
   return f"\n    vetter:     {e.get('reason', '')}" + (f"\n    source:     {e['citation']}" if e.get('citation') else '')
@@ -34,6 +48,7 @@ for q in unchecked:
   if k == 'q': quit_ = True; break
   if k == 'y': q['checked'] = True; changed = True
   if k == 'n': vault.remove(q); changed = True
+  q.pop('edited', None)
 if changed: print(' ', call('/vault', 'PUT', vault))
 
 # 2. the vetter wasn't sure
@@ -43,7 +58,9 @@ if not quit_:
   for i in reversed(range(len(pending))):  # highest index first so earlier indexes stay valid
     k = ask(pending[i], verdict_note(pending[i]))
     if k == 'q': quit_ = True; break
-    if k == 'y': print(' ', call('/approve', 'POST', {'index': i}))
+    if k == 'y' and pending[i].get('edited'): # the queue holds the old wording, so drop it and add the new
+      call('/reject', 'POST', {'index': i}); print(' ', call('/add', 'POST', fields(pending[i])))
+    elif k == 'y': print(' ', call('/approve', 'POST', {'index': i}))
     if k == 'n': print(' ', call('/reject', 'POST', {'index': i}))
 
 # 3. the vetter said no; overrule if it was wrong
@@ -54,7 +71,7 @@ if not quit_:
   for e in rejects:
     k = ask(e, verdict_note(e))
     if k == 'q': break
-    if k == 'y': print(' ', call('/add', 'POST', {k2: e[k2] for k2 in ('question', 'answer', 'alternates', 'difficulty', 'source')}))
+    if k == 'y': print(' ', call('/add', 'POST', fields(e)))
     if k in ('y', 'n'): seen.add(e['at'])
   open(seen_file, 'w').write('\n'.join(sorted(seen)))
 
