@@ -253,6 +253,10 @@ body {
   flex-direction: column;
 }
 
+.wrap-standard > .wrap {
+  width: 100%; /* in a flex column the auto margins would shrink the header to its content */
+}
+
 #gap {
   flex: 1;
 }
