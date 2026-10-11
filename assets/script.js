@@ -6,6 +6,7 @@ let current;        // the question on screen, with its options shuffled
 let score = 0;
 let contents = 0;   // questions answered so far
 let paused = false; // true while the verdict is showing
+let timer;          // the pause; clicking anywhere cuts it short
 
 const hand = 25;    // questions per deal
 
@@ -68,10 +69,13 @@ function check(guess) {
 
   contents++;
 
-  setTimeout(advance, verdict === 'correct' ? 400 : 1200);
+  timer = setTimeout(advance, verdict === 'correct' ? 400 : 1200);
+  setTimeout(() => document.addEventListener('click', advance), 0); // after this click has finished bubbling
 }
 
 function advance() {
+  clearTimeout(timer);
+  document.removeEventListener('click', advance);
   paused = false;
 
   for (const button of document.querySelectorAll('.guess')) {
@@ -99,6 +103,11 @@ function keyPress(event) {
 
 function keyRelease(event) {
   const x = event.key;
+
+  if (paused && x !== 'Escape') {
+    advance();
+    return;
+  }
 
   if (1 <= x && x <= 4) {
     document.getElementById(`option${x - 1}`).classList.remove('button-active');
@@ -128,6 +137,8 @@ function more() {
 }
 
 function allStop() {
+  clearTimeout(timer);
+  document.removeEventListener('click', advance);
   paused = false;
   document.removeEventListener('keydown', keyPress);
   document.removeEventListener('keyup', keyRelease);
