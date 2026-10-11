@@ -248,6 +248,7 @@ fetch(`${api}/vault`)
 // the series toggles wrap into even rows: 9, or 5 and 4, or 3 by 3, never 7 and 1
 function layoutToggles() {
   const grid = document.getElementById('seriesSelection');
+  if (!grid) return; // the About page has no toggles
   const buttons = [...grid.children];
   const gap = parseFloat(getComputedStyle(grid).columnGap);
   const widest = Math.max(...buttons.map(b => b.offsetWidth));
