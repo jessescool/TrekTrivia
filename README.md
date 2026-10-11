@@ -13,7 +13,7 @@ Live at trektrivia.com.
 - When a player submits a question, the Worker asks Claude (Haiku) to check it against Memory Alpha and return
   accept, review, or reject. Accepts go straight into the vault, marked `checked: false`. Reviews go to a queue
   for Jesse. Rejects are logged and dropped.
-- `creation/startrekdata.csv` was the original seed. `creation/pipe.py` is how new questions get in now.
+- `creation/startrekdata.csv` was the original seed. `creation/pipe.py` gets new questions in; `creation/sort.py` is where you judge what the vetter did.
 
 ## Your interface
 
@@ -37,7 +37,20 @@ and `Source` (TOS, TNG, DS9, VOY, ENT, DIS, PIC, Movie, General).
     curl https://trektrivia.com/vault.csv > bank.csv     # the whole bank, with a Checked column
     curl https://trektrivia.com/vault                    # same thing as JSON
 
-### The review queue
+### Sorting the piles
+
+    cd creation
+    python3 sort.py
+
+Walks you through three piles, one question at a time, with the vetter's reason and citation:
+
+1. auto-accepted but not yet human-checked: `y` marks it checked, `n` deletes it from the vault
+2. the vetter wasn't sure: `y` approves it into the vault as checked, `n` drops it
+3. the vetter rejected it: `y` overrules and adds it as checked, `n` leaves it dropped
+
+Enter skips, `q` quits. Rejects you've already judged are remembered in `creation/.sorted` and don't come back.
+
+The same things by hand, if you'd rather:
 
     curl "https://trektrivia.com/pending?key=$TREK_ADMIN_KEY"
     curl -X POST "https://trektrivia.com/approve?key=$TREK_ADMIN_KEY" -d '{"index":0}'

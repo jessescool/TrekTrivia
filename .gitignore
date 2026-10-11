@@ -6,3 +6,4 @@ api/node_modules/
 api/.wrangler/
 creation/vault.json
 api/.dev.vars
+creation/.sorted

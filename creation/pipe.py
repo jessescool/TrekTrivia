@@ -6,7 +6,7 @@
 
 import csv, json, os, sys, urllib.request
 
-site = 'https://trektrivia.com'
+site = os.environ.get('TREK_SITE', 'https://trektrivia.com')
 key = os.environ['TREK_ADMIN_KEY']
 path, direct = sys.argv[1], '--direct' in sys.argv
 

@@ -37,8 +37,13 @@ export default {
     if (url.pathname === '/submit' && request.method === 'POST') return submit(request, env, admin);
 
     // the admin bits, for Jesse
-    if (['/pending', '/log', '/approve', '/reject', '/add'].includes(url.pathname)) {
+    if (['/pending', '/log', '/approve', '/reject', '/add', '/vault'].includes(url.pathname)) {
       if (!admin) return json({ error: 'not found' }, 404);
+      if (url.pathname === '/vault' && request.method === 'PUT') { // sort.py writes the whole vault back
+        const vault = await request.json();
+        await write(env, 'vault', vault);
+        return json({ ok: true, vault: vault.length });
+      }
       if (url.pathname === '/pending') return json(await read(env, 'pending'));
       if (url.pathname === '/log') return json(await read(env, 'log'));
       if (url.pathname === '/approve' && request.method === 'POST') return decide(request, env, true);
