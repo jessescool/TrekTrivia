@@ -151,7 +151,9 @@ function keyRelease(event) {
 function engage() {
   beep(2);
   pool = withdraw();
-  document.getElementById('status').textContent = (checked('seriesSelection') || ['All series']).join(' • ');
+  const picked = checked('seriesSelection');
+  document.getElementById('status').textContent =
+    !picked ? 'All series' : picked.length > 4 ? 'Multiple series' : picked.join(' • ');
   more();
 }
 
