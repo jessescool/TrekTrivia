@@ -8,7 +8,8 @@ const vault = [
       "Christopher Pike"
     ],
     "difficulty": 1,
-    "source": "DIS"
+    "source": "DIS",
+    "checked": true
   },
   {
     "question": "Emperor Philippa Georgiou forces Michael Burnham to eat this \"delicacy.\"",
@@ -19,7 +20,8 @@ const vault = [
       "Alfarian hair pasta"
     ],
     "difficulty": 2,
-    "source": "DIS"
+    "source": "DIS",
+    "checked": true
   },
   {
     "question": "This battle marked the beginning of the Federation-Klingon War.",
@@ -30,7 +32,8 @@ const vault = [
       "The Battle of Chin'toka"
     ],
     "difficulty": 3,
-    "source": "DIS"
+    "source": "DIS",
+    "checked": true
   },
   {
     "question": "After threatening the Klingon High Council with a hydrogen bomb, this Klingon reunited the many houses of Qo'noS under one Klingon empire.",
@@ -41,7 +44,8 @@ const vault = [
       "Gowron"
     ],
     "difficulty": 5,
-    "source": "DIS"
+    "source": "DIS",
+    "checked": true
   },
   {
     "question": "Along with the USS Discovery, this Starfleet vessel was one of the two ships equipped with a displacement-activated spore hub drive.",
@@ -52,7 +56,8 @@ const vault = [
       "USS Kelvin"
     ],
     "difficulty": 6,
-    "source": "DIS"
+    "source": "DIS",
+    "checked": true
   },
   {
     "question": "Admiral Cornwell's specialty is...",
@@ -63,7 +68,8 @@ const vault = [
       "Command"
     ],
     "difficulty": 4,
-    "source": "DIS"
+    "source": "DIS",
+    "checked": true
   },
   {
     "question": "Deep Space Nine is Federation-controlled Cardassian-built space station near this planet.",
@@ -74,7 +80,8 @@ const vault = [
       "Earth"
     ],
     "difficulty": 1,
-    "source": "DS9"
+    "source": "DS9",
+    "checked": true
   },
   {
     "question": "Captain Sisko lost his first wife in this conflict.",
@@ -85,7 +92,8 @@ const vault = [
       "Dominion War"
     ],
     "difficulty": 2,
-    "source": "DS9"
+    "source": "DS9",
+    "checked": true
   },
   {
     "question": "Brunt, a Ferengi, belonged to this organization.",
@@ -96,7 +104,8 @@ const vault = [
       "Ferengi Trade Mission"
     ],
     "difficulty": 3,
-    "source": "DS9"
+    "source": "DS9",
+    "checked": true
   },
   {
     "question": "Which of these betting games DOES NOT involve spinning a wheel?",
@@ -107,7 +116,8 @@ const vault = [
       "Roulette"
     ],
     "difficulty": 2,
-    "source": "DS9"
+    "source": "DS9",
+    "checked": true
   },
   {
     "question": "In the mirror universe, Benjamin Sisko calls Miles O'Brien by this nickname.",
@@ -118,7 +128,8 @@ const vault = [
       "Putterer"
     ],
     "difficulty": 3,
-    "source": "DS9"
+    "source": "DS9",
+    "checked": true
   },
   {
     "question": "Odo gives his bucket (pail) to this person when he returns to the Great Link in DS9's \"What You Leave Behind.\"",
@@ -129,7 +140,8 @@ const vault = [
       "He keeps it"
     ],
     "difficulty": 3,
-    "source": "DS9"
+    "source": "DS9",
+    "checked": true
   },
   {
     "question": "Star Trek: Deep Space Nine showcases the first instance of these weapons.",
@@ -140,7 +152,8 @@ const vault = [
       "Gravimetric charges"
     ],
     "difficulty": 3,
-    "source": "DS9"
+    "source": "DS9",
+    "checked": true
   },
   {
     "question": "The sole source of nourishment for the Jem'Hadar which ensures their loyalty to the Founders.",
@@ -151,7 +164,8 @@ const vault = [
       "Sodium Pentathol"
     ],
     "difficulty": 3,
-    "source": "DS9"
+    "source": "DS9",
+    "checked": true
   },
   {
     "question": "This Star Trek character likes \"Jamaican blend\" coffee, \"double strong, double sweet.\"",
@@ -162,7 +176,8 @@ const vault = [
       "Montgomery Scott"
     ],
     "difficulty": 3,
-    "source": "DS9"
+    "source": "DS9",
+    "checked": true
   },
   {
     "question": "This species purchased Warp technology.",
@@ -173,7 +188,8 @@ const vault = [
       "Andorians"
     ],
     "difficulty": 4,
-    "source": "DS9"
+    "source": "DS9",
+    "checked": true
   },
   {
     "question": "This Dax host was a talented musician and a murderous psychopath.",
@@ -184,7 +200,8 @@ const vault = [
       "Torias"
     ],
     "difficulty": 4,
-    "source": "DS9"
+    "source": "DS9",
+    "checked": true
   },
   {
     "question": "Enabrin Tain belonged to this intelligence agency.",
@@ -195,7 +212,8 @@ const vault = [
       "Zhat Vash"
     ],
     "difficulty": 4,
-    "source": "DS9"
+    "source": "DS9",
+    "checked": true
   },
   {
     "question": "Vedek Bareil \"religiously\" follows this sport.",
@@ -206,7 +224,8 @@ const vault = [
       "t'Sang"
     ],
     "difficulty": 4,
-    "source": "DS9"
+    "source": "DS9",
+    "checked": true
   },
   {
     "question": "In the Cardassian military chain-of-command, this rank directly precedes the title Dukat holds.",
@@ -217,7 +236,8 @@ const vault = [
       "Prefect"
     ],
     "difficulty": 5,
-    "source": "DS9"
+    "source": "DS9",
+    "checked": true
   },
   {
     "question": "This Kai (bajoran spiritual leader) preceded Winn Adami.",
@@ -228,7 +248,8 @@ const vault = [
       "Shakaar"
     ],
     "difficulty": 5,
-    "source": "DS9"
+    "source": "DS9",
+    "checked": true
   },
   {
     "question": "During the Cardassian Occupation of Bajor, Deep Space Nine was referred to by this Cardassian name.",
@@ -239,7 +260,8 @@ const vault = [
       "Caretaker's Array"
     ],
     "difficulty": 5,
-    "source": "DS9"
+    "source": "DS9",
+    "checked": true
   },
   {
     "question": "Used in DS9's \"In the Pale Moonlight,\" this rare method of data storage is unable to be overwritten and extremely hard to counterfeit.",
@@ -250,7 +272,8 @@ const vault = [
       "Data crystal"
     ],
     "difficulty": 5,
-    "source": "DS9"
+    "source": "DS9",
+    "checked": true
   },
   {
     "question": "Before visiting the Pah-wraiths, Gul Dukat impersonated this Bajoran while in the presence of Kai Winn.",
@@ -261,7 +284,8 @@ const vault = [
       "Waatrik Pallra"
     ],
     "difficulty": 5,
-    "source": "DS9"
+    "source": "DS9",
+    "checked": true
   },
   {
     "question": "This Bajoran exposed the location of the Kendra Valley resistance cell.",
@@ -272,7 +296,8 @@ const vault = [
       "Kubus Oak"
     ],
     "difficulty": 5,
-    "source": "DS9"
+    "source": "DS9",
+    "checked": true
   },
   {
     "question": "Born in Canada, this Starfleet officer became disillusioned with the Federation and joined the Maquis resistance movement.",
@@ -283,7 +308,8 @@ const vault = [
       "Calvin Hudson"
     ],
     "difficulty": 6,
-    "source": "DS9"
+    "source": "DS9",
+    "checked": true
   },
   {
     "question": "Worf used this Klingon weapon to kill a Borg drone during a spacewalk in Star Trek: First Contact.",
@@ -294,7 +320,8 @@ const vault = [
       "Kut'luch"
     ],
     "difficulty": 6,
-    "source": "DS9"
+    "source": "DS9",
+    "checked": true
   },
   {
     "question": "Morn produces the equivalent of this much gold-pressed latinum from his second stomach.",
@@ -305,7 +332,8 @@ const vault = [
       "10 Bricks"
     ],
     "difficulty": 6,
-    "source": "DS9"
+    "source": "DS9",
+    "checked": true
   },
   {
     "question": "Which runabout crashed in the emergency-landing that killed Kai Opaka?",
@@ -316,7 +344,8 @@ const vault = [
       "USS Yukon"
     ],
     "difficulty": 6,
-    "source": "DS9"
+    "source": "DS9",
+    "checked": true
   },
   {
     "question": "Damar's favorite drink.",
@@ -327,7 +356,8 @@ const vault = [
       "Yamok sauce"
     ],
     "difficulty": 7,
-    "source": "DS9"
+    "source": "DS9",
+    "checked": true
   },
   {
     "question": "Lwaxana Troi's latinum brooch has been in her family for this many generations.",
@@ -338,7 +368,8 @@ const vault = [
       "47"
     ],
     "difficulty": 7,
-    "source": "DS9"
+    "source": "DS9",
+    "checked": true
   },
   {
     "question": "Benjamin Sisko met his future wife on a beach the morning after attending a party with this friend.",
@@ -349,7 +380,8 @@ const vault = [
       "Curzon Dax"
     ],
     "difficulty": 8,
-    "source": "DS9"
+    "source": "DS9",
+    "checked": true
   },
   {
     "question": "Where was Odo found?",
@@ -360,7 +392,8 @@ const vault = [
       "Cardassia IV"
     ],
     "difficulty": 8,
-    "source": "DS9"
+    "source": "DS9",
+    "checked": true
   },
   {
     "question": "This Cardassian official was known as the \"Butcher of Gallitep\" after committing genocide against Bajorans during the Cardassian Occupation of Bajor.",
@@ -371,7 +404,8 @@ const vault = [
       "Enabrin Tain"
     ],
     "difficulty": 8,
-    "source": "DS9"
+    "source": "DS9",
+    "checked": true
   },
   {
     "question": "Genetically similar to the Ferengi, the thoughts of this species cannot be read by Betazoids.",
@@ -382,7 +416,8 @@ const vault = [
       "Breen"
     ],
     "difficulty": 9,
-    "source": "DS9"
+    "source": "DS9",
+    "checked": true
   },
   {
     "question": "After the joint Cardassian-Dominion forces retook \"Terok Nor,\" Sisko and his crew regrouped at this Starbase.",
@@ -393,7 +428,8 @@ const vault = [
       "Farpoint Station"
     ],
     "difficulty": 7,
-    "source": "DS9"
+    "source": "DS9",
+    "checked": true
   },
   {
     "question": "Benjamin Sisko left this item on his desk before evacuating DS9.",
@@ -404,7 +440,8 @@ const vault = [
       "Horga'hn"
     ],
     "difficulty": 2,
-    "source": "DS9"
+    "source": "DS9",
+    "checked": true
   },
   {
     "question": "Jake and Nog acquire a baseball card with this all-star.",
@@ -415,7 +452,8 @@ const vault = [
       "Ted Williams"
     ],
     "difficulty": 3,
-    "source": "DS9"
+    "source": "DS9",
+    "checked": true
   },
   {
     "question": "Quark planned to smuggle loads of this mineral in the shuttle gifted to him by his cousin Gaila.",
@@ -426,7 +464,8 @@ const vault = [
       "Trellium-D"
     ],
     "difficulty": 4,
-    "source": "DS9"
+    "source": "DS9",
+    "checked": true
   },
   {
     "question": "Which of these is NOT a staple of Ferengi culture",
@@ -437,7 +476,8 @@ const vault = [
       "Slug-o-Cola"
     ],
     "difficulty": 5,
-    "source": "DS9"
+    "source": "DS9",
+    "checked": true
   },
   {
     "question": "Sisko's favorite alcholic drink.",
@@ -448,7 +488,8 @@ const vault = [
       "Altairian brandy"
     ],
     "difficulty": 7,
-    "source": "DS9"
+    "source": "DS9",
+    "checked": true
   },
   {
     "question": "The name of Kasidy's ship.",
@@ -459,7 +500,8 @@ const vault = [
       "SS Kyoto"
     ],
     "difficulty": 3,
-    "source": "DS9"
+    "source": "DS9",
+    "checked": true
   },
   {
     "question": "Which of these foods is NOT a Vorta favorite?",
@@ -470,7 +512,8 @@ const vault = [
       "Rippleberries"
     ],
     "difficulty": 4,
-    "source": "DS9"
+    "source": "DS9",
+    "checked": true
   },
   {
     "question": "This numbered Weyoun clone defected.",
@@ -481,7 +524,8 @@ const vault = [
       "Weyouns don't defect."
     ],
     "difficulty": 7,
-    "source": "DS9"
+    "source": "DS9",
+    "checked": true
   },
   {
     "question": "In the mirror universe, Kira Nerys' title is...",
@@ -492,7 +536,8 @@ const vault = [
       "Major"
     ],
     "difficulty": 4,
-    "source": "DS9"
+    "source": "DS9",
+    "checked": true
   },
   {
     "question": "The first officer of the Enterprise NX-01 was a member of this species.",
@@ -503,7 +548,8 @@ const vault = [
       "Romulan"
     ],
     "difficulty": 1,
-    "source": "ENT"
+    "source": "ENT",
+    "checked": true
   },
   {
     "question": "Jonathan Archer's pet is named...",
@@ -514,7 +560,8 @@ const vault = [
       "Number One"
     ],
     "difficulty": 2,
-    "source": "ENT"
+    "source": "ENT",
+    "checked": true
   },
   {
     "question": "The Xindi were a group of this many species.",
@@ -525,7 +572,8 @@ const vault = [
       "3"
     ],
     "difficulty": 3,
-    "source": "ENT"
+    "source": "ENT",
+    "checked": true
   },
   {
     "question": "This USS Enterprise variant drove the sphere-builders back to their trans-dimensional realm in Star Trek: Enterprise.",
@@ -536,7 +584,8 @@ const vault = [
       "D"
     ],
     "difficulty": 4,
-    "source": "ENT"
+    "source": "ENT",
+    "checked": true
   },
   {
     "question": "Malcolm Reed was allergic to this enzyme.",
@@ -547,7 +596,8 @@ const vault = [
       "Serratiopeptidase"
     ],
     "difficulty": 8,
-    "source": "ENT"
+    "source": "ENT",
+    "checked": true
   },
   {
     "question": "The NX-01 plated its hull in this material to ensure safe travel through the Delphic expanse.",
@@ -558,7 +608,8 @@ const vault = [
       "Kemocite"
     ],
     "difficulty": 3,
-    "source": "ENT"
+    "source": "ENT",
+    "checked": true
   },
   {
     "question": "The NX-01 Enterprise is rated for this Warp factor",
@@ -569,7 +620,8 @@ const vault = [
       "6"
     ],
     "difficulty": 3,
-    "source": "ENT"
+    "source": "ENT",
+    "checked": true
   },
   {
     "question": "Dr. Phlox has this many wives.",
@@ -580,7 +632,8 @@ const vault = [
       "5"
     ],
     "difficulty": 7,
-    "source": "ENT"
+    "source": "ENT",
+    "checked": true
   },
   {
     "question": "Two solid pips and one hollow pip denotes this Starfleet rank in the 24th century.",
@@ -591,7 +644,8 @@ const vault = [
       "Lieutenant"
     ],
     "difficulty": 1,
-    "source": "General"
+    "source": "General",
+    "checked": true
   },
   {
     "question": "Which of these commodities is NOT needed for a functioning Warp Drive?",
@@ -602,7 +656,8 @@ const vault = [
       "Dilithium crystals"
     ],
     "difficulty": 1,
-    "source": "General"
+    "source": "General",
+    "checked": true
   },
   {
     "question": "This scientist was NOT a cyberneticist.",
@@ -613,7 +668,8 @@ const vault = [
       "Bruce Maddox"
     ],
     "difficulty": 2,
-    "source": "General"
+    "source": "General",
+    "checked": true
   },
   {
     "question": "Romulus– the adopted Romulan homeworld and capital world for the Romulan Star Empire –is located in this quadrant of the Milky Way galaxy.",
@@ -624,7 +680,8 @@ const vault = [
       "Gamma"
     ],
     "difficulty": 2,
-    "source": "General"
+    "source": "General",
+    "checked": true
   },
   {
     "question": "This Starfleet officer appears for more time than any other character throughout the Star Trek franchise.",
@@ -635,7 +692,8 @@ const vault = [
       "James Kirk"
     ],
     "difficulty": 2,
-    "source": "General"
+    "source": "General",
+    "checked": true
   },
   {
     "question": "Vulcans have this lifespan, roughly.",
@@ -646,7 +704,8 @@ const vault = [
       "600 years"
     ],
     "difficulty": 4,
-    "source": "General"
+    "source": "General",
+    "checked": true
   },
   {
     "question": "This species prides itself on being \"a race of listeners.\"",
@@ -657,7 +716,8 @@ const vault = [
       "Betazoid"
     ],
     "difficulty": 6,
-    "source": "General"
+    "source": "General",
+    "checked": true
   },
   {
     "question": "The term for the Vulcan time of mating.",
@@ -668,7 +728,8 @@ const vault = [
       "Olan'vora"
     ],
     "difficulty": 2,
-    "source": "General"
+    "source": "General",
+    "checked": true
   },
   {
     "question": "The USS Enterprise-E is a starship of this class.",
@@ -679,7 +740,8 @@ const vault = [
       "Excelsior"
     ],
     "difficulty": 3,
-    "source": "Movie"
+    "source": "Movie",
+    "checked": true
   },
   {
     "question": "Zefram Cochrane plays this song during first contact with Vulcans.",
@@ -690,7 +752,8 @@ const vault = [
       "Where My Heart Will Take Me"
     ],
     "difficulty": 5,
-    "source": "Movie"
+    "source": "Movie",
+    "checked": true
   },
   {
     "question": "A crucial energy-production facility for the Klingon empire, this Qo'noS moon was destroyed by overmining in 2293.",
@@ -701,7 +764,8 @@ const vault = [
       "Khitomer"
     ],
     "difficulty": 7,
-    "source": "Movie"
+    "source": "Movie",
+    "checked": true
   },
   {
     "question": "Held mutually by Jean Luc-Picard and his clone, Reman Praetor Shinzon, this illness convinced Picard that Shinzon was his clone.",
@@ -712,7 +776,8 @@ const vault = [
       "Benii Syndrome"
     ],
     "difficulty": 7,
-    "source": "Movie"
+    "source": "Movie",
+    "checked": true
   },
   {
     "question": "The Borg keep their vessels at this temperature (in Celsius).",
@@ -723,7 +788,8 @@ const vault = [
       "39.7"
     ],
     "difficulty": 9,
-    "source": "Movie"
+    "source": "Movie",
+    "checked": true
   },
   {
     "question": "This man is the mastermind behind artificial intelligence in Star Trek: Picard.",
@@ -734,7 +800,8 @@ const vault = [
       "Data"
     ],
     "difficulty": 1,
-    "source": "PIC"
+    "source": "PIC",
+    "checked": true
   },
   {
     "question": "William T. Riker commands this ship in Star Trek: Picard.",
@@ -745,7 +812,8 @@ const vault = [
       "USS ibn Majid"
     ],
     "difficulty": 2,
-    "source": "PIC"
+    "source": "PIC",
+    "checked": true
   },
   {
     "question": "The abandoned Borg cube in Star Trek: Picard has this name.",
@@ -756,7 +824,8 @@ const vault = [
       "The Romulan Reclamation Site"
     ],
     "difficulty": 3,
-    "source": "PIC"
+    "source": "PIC",
+    "checked": true
   },
   {
     "question": "Jean-Luc Picard's artificial heart is composed of this alloy.",
@@ -767,7 +836,8 @@ const vault = [
       "Tritanium"
     ],
     "difficulty": 5,
-    "source": "PIC"
+    "source": "PIC",
+    "checked": true
   },
   {
     "question": "Commander Riker plays this instrument.",
@@ -778,7 +848,8 @@ const vault = [
       "Clarinet"
     ],
     "difficulty": 1,
-    "source": "TNG"
+    "source": "TNG",
+    "checked": true
   },
   {
     "question": "Jean-Luc Picard's uniform is this color.",
@@ -789,7 +860,8 @@ const vault = [
       "Gold"
     ],
     "difficulty": 2,
-    "source": "TNG"
+    "source": "TNG",
+    "checked": true
   },
   {
     "question": "Vash found this long-lost artifact in a cave on Risa.",
@@ -800,7 +872,8 @@ const vault = [
       "Stone of Gol"
     ],
     "difficulty": 3,
-    "source": "TNG"
+    "source": "TNG",
+    "checked": true
   },
   {
     "question": "Hugh, a liberated Borg drone, had this Borg designation.",
@@ -811,7 +884,8 @@ const vault = [
       "First"
     ],
     "difficulty": 2,
-    "source": "TNG"
+    "source": "TNG",
+    "checked": true
   },
   {
     "question": "Jean-Luc Picard held his first command on this Federation vessel.",
@@ -822,7 +896,8 @@ const vault = [
       "USS Enterprise-D"
     ],
     "difficulty": 2,
-    "source": "TNG"
+    "source": "TNG",
+    "checked": true
   },
   {
     "question": "The USS Stargazer has this many warp nacelles.",
@@ -833,7 +908,8 @@ const vault = [
       "5"
     ],
     "difficulty": 2,
-    "source": "TNG"
+    "source": "TNG",
+    "checked": true
   },
   {
     "question": "This person introduced Lt. Cmdr. Worf to his favorite terran beverage– prune juice.",
@@ -844,7 +920,8 @@ const vault = [
       "Q"
     ],
     "difficulty": 3,
-    "source": "TNG"
+    "source": "TNG",
+    "checked": true
   },
   {
     "question": "In TNG's \"Measure of a Man,\" Data presents a hologram of this person among his personal items.",
@@ -855,7 +932,8 @@ const vault = [
       "Geordi LaForge"
     ],
     "difficulty": 3,
-    "source": "TNG"
+    "source": "TNG",
+    "checked": true
   },
   {
     "question": "Jean-Luc Picard takes this name in \"The Inner Light.\"",
@@ -866,7 +944,8 @@ const vault = [
       "Batai"
     ],
     "difficulty": 3,
-    "source": "TNG"
+    "source": "TNG",
+    "checked": true
   },
   {
     "question": "Signed in 2293, this set of two Federation-Klingon agreements acted as the first step toward reconciliation between the two powers.",
@@ -877,7 +956,8 @@ const vault = [
       "The Buffer Treaty"
     ],
     "difficulty": 5,
-    "source": "TNG"
+    "source": "TNG",
+    "checked": true
   },
   {
     "question": "This war-torn planet was the birthplace of the USS Enterprise-D's Natasha Yar.",
@@ -888,7 +968,8 @@ const vault = [
       "Eminiar VII"
     ],
     "difficulty": 5,
-    "source": "TNG"
+    "source": "TNG",
+    "checked": true
   },
   {
     "question": "This handheld directed-energy weapon tears the body apart at the molecular level, resulting in a slow and excruciating death.",
@@ -899,7 +980,8 @@ const vault = [
       "TR-116 Projectile Rifle"
     ],
     "difficulty": 6,
-    "source": "TNG"
+    "source": "TNG",
+    "checked": true
   },
   {
     "question": "Before the Battle of Wolf 359 (an actual star less than 10ly from Earth), Commander Riker was offered the command of this Federation vessel.",
@@ -910,7 +992,8 @@ const vault = [
       "USS Enterprise-E"
     ],
     "difficulty": 6,
-    "source": "TNG"
+    "source": "TNG",
+    "checked": true
   },
   {
     "question": "Performed at the peril of a Starfleet cadet, this flight maneuver prompts Captain Picard to severely reprimand Wesley Crusher.",
@@ -921,7 +1004,8 @@ const vault = [
       "Silken Sunrise"
     ],
     "difficulty": 7,
-    "source": "TNG"
+    "source": "TNG",
+    "checked": true
   },
   {
     "question": "The USS Pegasus, an Oberth-class Federation vessel, defied this agreement by operating a cloaking device.",
@@ -932,7 +1016,8 @@ const vault = [
       "The Buffer Treaty"
     ],
     "difficulty": 8,
-    "source": "TNG"
+    "source": "TNG",
+    "checked": true
   },
   {
     "question": "To verify his humanity, Guinan stabs Q with this implement.",
@@ -943,7 +1028,8 @@ const vault = [
       "D'k tagh"
     ],
     "difficulty": 8,
-    "source": "TNG"
+    "source": "TNG",
+    "checked": true
   },
   {
     "question": "As a child, Guinan had this animal as an imaginary friend.",
@@ -954,7 +1040,8 @@ const vault = [
       "Tiberian bat"
     ],
     "difficulty": 8,
-    "source": "TNG"
+    "source": "TNG",
+    "checked": true
   },
   {
     "question": "What flower was thrown on the grave of Dr. Crusher's grandmother in TNG's \"Sub Rosa\"?",
@@ -965,7 +1052,8 @@ const vault = [
       "Lily"
     ],
     "difficulty": 9,
-    "source": "TNG"
+    "source": "TNG",
+    "checked": true
   },
   {
     "question": "Geordi La Forge fell in love with this leader in Warp field theory.",
@@ -976,7 +1064,8 @@ const vault = [
       "Robin Lefler"
     ],
     "difficulty": 3,
-    "source": "TNG"
+    "source": "TNG",
+    "checked": true
   },
   {
     "question": "This Enterprise crewmember performed Captian Jean-Luc Picard's second heart surgery.",
@@ -987,7 +1076,8 @@ const vault = [
       "Data"
     ],
     "difficulty": 5,
-    "source": "TNG"
+    "source": "TNG",
+    "checked": true
   },
   {
     "question": "This Cardassian Gul was in charge of Captain Jean-Luc Picard's interrogation.",
@@ -998,7 +1088,8 @@ const vault = [
       "Gul Benil"
     ],
     "difficulty": 6,
-    "source": "TNG"
+    "source": "TNG",
+    "checked": true
   },
   {
     "question": "How many lights?",
@@ -1009,7 +1100,8 @@ const vault = [
       "Depends who you ask..."
     ],
     "difficulty": 1,
-    "source": "TNG"
+    "source": "TNG",
+    "checked": true
   },
   {
     "question": "During his visit to Earth after Wolf 359, Jean-Luc Picard sings this song alongside his brother.",
@@ -1020,7 +1112,8 @@ const vault = [
       "La Marseillaise"
     ],
     "difficulty": 5,
-    "source": "TNG"
+    "source": "TNG",
+    "checked": true
   },
   {
     "question": "The barber on board the Enterprise-D is a member of this species",
@@ -1031,7 +1124,8 @@ const vault = [
       "Betazoid"
     ],
     "difficulty": 5,
-    "source": "TNG"
+    "source": "TNG",
+    "checked": true
   },
   {
     "question": "Spock's mother is a member of this species.",
@@ -1042,7 +1136,8 @@ const vault = [
       "Reman"
     ],
     "difficulty": 1,
-    "source": "TOS"
+    "source": "TOS",
+    "checked": true
   },
   {
     "question": "The \"T\" in James T. Kirk stands for...",
@@ -1053,7 +1148,8 @@ const vault = [
       "Thomas"
     ],
     "difficulty": 2,
-    "source": "TOS"
+    "source": "TOS",
+    "checked": true
   },
   {
     "question": "The pilot episode of the original Star Trek was called...",
@@ -1064,7 +1160,8 @@ const vault = [
       "Where No Man Has Gone Before"
     ],
     "difficulty": 3,
-    "source": "TOS"
+    "source": "TOS",
+    "checked": true
   },
   {
     "question": "The USS Voyager is stranded in this quadrant of the Milky Way.",
@@ -1075,7 +1172,8 @@ const vault = [
       "Beta"
     ],
     "difficulty": 1,
-    "source": "VOY"
+    "source": "VOY",
+    "checked": true
   },
   {
     "question": "The adopted crew of the USS Voyager were members of this group.",
@@ -1086,7 +1184,8 @@ const vault = [
       "The Orion syndicate"
     ],
     "difficulty": 2,
-    "source": "VOY"
+    "source": "VOY",
+    "checked": true
   },
   {
     "question": "This child was the first to be born on USS Voyager.",
@@ -1097,7 +1196,8 @@ const vault = [
       "Icheb"
     ],
     "difficulty": 3,
-    "source": "VOY"
+    "source": "VOY",
+    "checked": true
   },
   {
     "question": "This species, known only by their Borg designation and native to \"fluidic space,\" posed an existential threat to the Borg during the 24th century.",
@@ -1108,7 +1208,8 @@ const vault = [
       "Species 359"
     ],
     "difficulty": 2,
-    "source": "VOY"
+    "source": "VOY",
+    "checked": true
   },
   {
     "question": "At maximum speed, Intrepid Class starships can travel at this warp factor.",
@@ -1119,7 +1220,8 @@ const vault = [
       "9"
     ],
     "difficulty": 3,
-    "source": "VOY"
+    "source": "VOY",
+    "checked": true
   },
   {
     "question": "This species, whose culture revolves around \"the hunt,\" ritually applies paint to their faces before battle.",
@@ -1130,7 +1232,8 @@ const vault = [
       "Jem'Hadar"
     ],
     "difficulty": 3,
-    "source": "VOY"
+    "source": "VOY",
+    "checked": true
   },
   {
     "question": "Intrepid Class starships were the first to implement a computer system using these connectors.",
@@ -1141,7 +1244,8 @@ const vault = [
       "Neural interfaces"
     ],
     "difficulty": 4,
-    "source": "VOY"
+    "source": "VOY",
+    "checked": true
   },
   {
     "question": "In Star Trek: Voyager, due to a chronic, adaptable phage, this species needed to constantly harvest the organs of other species to stay alive.",
@@ -1152,7 +1256,8 @@ const vault = [
       "Vaskans"
     ],
     "difficulty": 4,
-    "source": "VOY"
+    "source": "VOY",
+    "checked": true
   },
   {
     "question": "The Doctor removes this Borg implant from Seven of Nine in the series finale, \"Endgame.\"",
@@ -1163,7 +1268,8 @@ const vault = [
       "Neural transceiver"
     ],
     "difficulty": 5,
-    "source": "VOY"
+    "source": "VOY",
+    "checked": true
   },
   {
     "question": "The Silver Blood in Voyager's \"Demon\" uses this process to populate its planet",
@@ -1174,7 +1280,8 @@ const vault = [
       "Holographic duplication"
     ],
     "difficulty": 5,
-    "source": "VOY"
+    "source": "VOY",
+    "checked": true
   },
   {
     "question": "The Caretaker's Array provided for this Delta-quadrant species.",
@@ -1185,7 +1292,8 @@ const vault = [
       "Voth"
     ],
     "difficulty": 5,
-    "source": "VOY"
+    "source": "VOY",
+    "checked": true
   },
   {
     "question": "Designed for deep-space tactical assignments, this Federation starship prototype includes a \"multi-vector assault mode\".",
@@ -1196,7 +1304,8 @@ const vault = [
       "The Delta Flier"
     ],
     "difficulty": 6,
-    "source": "VOY"
+    "source": "VOY",
+    "checked": true
   },
   {
     "question": "The Doctor's mobile emitter, in Star Trek: Voyager, comes from this future century.",
@@ -1207,7 +1316,8 @@ const vault = [
       "26th"
     ],
     "difficulty": 7,
-    "source": "VOY"
+    "source": "VOY",
+    "checked": true
   },
   {
     "question": "This species owned the subspace relay network that enabled communication between Voyager and Starfleet Command.",
@@ -1218,7 +1328,8 @@ const vault = [
       "Brunali"
     ],
     "difficulty": 7,
-    "source": "VOY"
+    "source": "VOY",
+    "checked": true
   },
   {
     "question": "The process of entering Gre'thor, a Klingon \"hell,\" involves a journey on a barge navigated by this Klingon male.",
@@ -1229,7 +1340,8 @@ const vault = [
       "T'Kuvma"
     ],
     "difficulty": 8,
-    "source": "VOY"
+    "source": "VOY",
+    "checked": true
   },
   {
     "question": "Which of these is NOT a Kazon sect?",
@@ -1240,7 +1352,8 @@ const vault = [
       "Ogla"
     ],
     "difficulty": 8,
-    "source": "VOY"
+    "source": "VOY",
+    "checked": true
   },
   {
     "question": "Tuvok's wife is named...",
@@ -1251,7 +1364,8 @@ const vault = [
       "T'Pring"
     ],
     "difficulty": 6,
-    "source": "VOY"
+    "source": "VOY",
+    "checked": true
   },
   {
     "question": "The Caretaker was a member of this species.",
@@ -1262,7 +1376,8 @@ const vault = [
       "Ocampa"
     ],
     "difficulty": 4,
-    "source": "VOY"
+    "source": "VOY",
+    "checked": true
   },
   {
     "question": "The Prime Directive is also known as...",
@@ -1273,7 +1388,8 @@ const vault = [
       "Regulation 3"
     ],
     "difficulty": 2,
-    "source": "General"
+    "source": "General",
+    "checked": true
   },
   {
     "question": "Neelix's favorite ingredient.",
@@ -1284,6 +1400,7 @@ const vault = [
       "Salt"
     ],
     "difficulty": 4,
-    "source": "VOY"
+    "source": "VOY",
+    "checked": true
   }
 ];

@@ -67,7 +67,7 @@ async function submit(request, env) {
   await write(env, 'log', log.slice(0, 500));
 
   if (verdict.verdict === 'accept') {
-    vault.push(row(verdict));
+    vault.push(row(verdict, false));
     await write(env, 'vault', vault);
   } else if (verdict.verdict === 'review') {
     const pending = await read(env, 'pending');
@@ -87,14 +87,14 @@ async function decide(request, env, approve) {
 
   if (approve) {
     const vault = await read(env, 'vault');
-    vault.push(row(entry));
+    vault.push(row(entry, true));
     await write(env, 'vault', vault);
   }
   return json({ ok: true, remaining: pending.length });
 }
 
-// what the vault stores, shaped like the rows deposit.py makes
-const row = v => ({ question: v.question, answer: v.answer, alternates: v.alternates, difficulty: v.difficulty, source: v.source });
+// what the vault stores, shaped like the rows deposit.py makes; checked means a human looked at it
+const row = (v, checked) => ({ question: v.question, answer: v.answer, alternates: v.alternates, difficulty: v.difficulty, source: v.source, checked });
 
 async function vet(submission, vault, env) {
   const messages = [{

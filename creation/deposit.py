@@ -13,6 +13,7 @@ vault = [{
   'alternates': [r['Alternate1'], r['Alternate2'], r['Alternate3']],
   'difficulty': int(r['Difficulty']),
   'source': r['Source'],
+  'checked': True, # a human wrote these
 } for r in rows if r['Verified'] == '1']
 
 with open('vault.json', 'w') as f:
