@@ -162,13 +162,6 @@ p.mini {
   min-height: 80px;
   display: flex;
   align-items: center;
-  margin-bottom: 0;
-}
-
-#difficulty {
-  font-size: 14px;
-  color: gray;
-  margin-top: 0;
 }
 
 /* one slice per question: grey to come, green or red once answered */
@@ -197,22 +190,16 @@ p.mini {
   background: #E53935;
 }
 
-/* the whole screen flashes on an answer */
+/* the verdict shows on the buttons */
 
-@keyframes correct {
-  from { background-color: #B9F6CA; }
+.guess.correct {
+  background-color: #4CAF50;
+  opacity: 1;
 }
 
-@keyframes incorrect {
-  from { background-color: #FFCDD2; }
-}
-
-body.correct {
-  animation: correct 0.6s;
-}
-
-body.incorrect {
-  animation: incorrect 0.6s;
+.guess.incorrect {
+  background-color: #E53935;
+  opacity: 1;
 }
 
 /* about-specific styling */

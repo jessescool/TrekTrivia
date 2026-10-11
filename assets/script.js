@@ -5,17 +5,9 @@ let deck = [];      // the hand dealt from the pool, easiest first
 let current;        // the question on screen, with its options shuffled
 let score = 0;
 let contents = 0;   // questions answered so far
+let paused = false; // true while the verdict is showing
 
 const hand = 25;    // questions per deal
-
-
-// constants
-
-const bands = {
-  easy: 3,
-  medium: 6,
-  hard: 10
-}; // difficulty is 1 to 10 in the vault; these are the words the player sees, keyed by the top of each band
 
 
 // helpful functions
@@ -25,22 +17,12 @@ function checked(selection) {
   return values.length ? values : null; // nothing checked means everything's allowed
 }
 
-function band(difficulty) {
-  return Object.keys(bands).find(name => difficulty <= bands[name]);
-}
-
 function shuffle(array) {
   for (let i = array.length - 1; i > 0; i--) {
     const j = Math.floor(Math.random() * (i + 1));
     [array[i], array[j]] = [array[j], array[i]];
   }
   return array;
-}
-
-function flash(verdict) {
-  document.body.classList.remove('correct', 'incorrect');
-  void document.body.offsetWidth; // restart the animation if it's already running
-  document.body.classList.add(verdict);
 }
 
 function show(id) {
@@ -70,16 +52,31 @@ function generateSet() {
 }
 
 function check(guess) {
+  if (paused) return;
+  paused = true;
+
   const verdict = current.options[guess] === current.answer ? 'correct' : 'incorrect';
 
   if (verdict === 'correct') {
     score++;
   }
 
-  flash(verdict);
+  // show the verdict on the buttons, then move along
+  document.getElementById(`option${guess}`).classList.add(verdict);
+  document.getElementById(`option${current.options.indexOf(current.answer)}`).classList.add('correct');
   document.getElementById('progress').children[contents].className = verdict;
 
   contents++;
+
+  setTimeout(advance, verdict === 'correct' ? 400 : 1200);
+}
+
+function advance() {
+  paused = false;
+
+  for (const button of document.querySelectorAll('.guess')) {
+    button.classList.remove('correct', 'incorrect');
+  }
 
   if (deck.length) {
     generateSet();
@@ -131,6 +128,7 @@ function more() {
 }
 
 function allStop() {
+  paused = false;
   document.removeEventListener('keydown', keyPress);
   document.removeEventListener('keyup', keyRelease);
   show('end');
@@ -149,7 +147,6 @@ function setButtons() {
   current.options.forEach((option, i) => {
     document.getElementById(`option${i}`).value = option;
   });
-  document.getElementById('difficulty').innerHTML = band(current.difficulty);
 }
 
 console.log(`Source successful!`);
