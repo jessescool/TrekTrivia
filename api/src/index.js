@@ -57,7 +57,9 @@ async function submit(request, env) {
   }
 
   const vault = await read(env, 'vault');
-  const verdict = await vet({ question, answer, alternates }, vault, env);
+  const verdict = await vet({ question, answer, alternates }, vault, env)
+    .catch(e => ({ ...body, verdict: 'error', difficulty: 5, source: 'General', reason: `The vetter broke: ${e.message}` }));
+  if (verdict.verdict === 'error') return json({ verdict: 'error', reason: verdict.reason }, 502);
 
   const entry = { ...verdict, submitted: body, at: new Date().toISOString() };
   const log = await read(env, 'log');
