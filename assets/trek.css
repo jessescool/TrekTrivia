@@ -403,7 +403,7 @@ body {
 /* the content column ends exactly where its last element does, so the sidebar can match it and go no further */
 
 main {
-  padding-bottom: 0;
+  padding-bottom: 0.6rem; /* just enough that the last line's descenders aren't clipped by the column's hidden overflow */
 }
 
 main > section > :last-child, main > :last-child {
