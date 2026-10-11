@@ -192,7 +192,21 @@ main p {
   overflow: hidden;
 }
 
-.answers button { background-color: var(--african-violet); } /* one resting colour, so the verdict is the only colour change */
+.answers button { background-color: var(--african-violet); position: relative; } /* one resting colour, so the verdict is the only colour change */
+
+.answers button::before { /* the key that picks this answer, tucked in the top-right corner */
+  content: attr(data-key);
+  position: absolute;
+  top: 0.35rem;
+  right: 1.1rem;
+  font-size: 0.65rem;
+  line-height: 1;
+  opacity: 0.55;
+}
+
+@media (hover: none) {
+  .answers button::before { display: none; } /* no keyboard, no hint */
+}
 
 /* the verdict shows on the buttons, in LCARS colours the answers don't use */
 
