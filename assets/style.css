@@ -121,10 +121,7 @@ main p {
   overflow: hidden;
 }
 
-.answers button:nth-child(1) { background-color: var(--african-violet); }
-.answers button:nth-child(2) { background-color: var(--butterscotch); }
-.answers button:nth-child(3) { background-color: var(--lilac); }
-.answers button:nth-child(4) { background-color: var(--almond); }
+.answers button { background-color: var(--african-violet); } /* one resting colour, so the verdict is the only colour change */
 
 /* the verdict shows on the buttons, in LCARS colours the answers don't use */
 
