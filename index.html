@@ -57,14 +57,14 @@
       <div class="left-frame">
         <button onclick="topFunction(); playSound()" id="topBtn"><span class="hop">screen</span> top</button>
         <div>
-          <button class="panel-3">03<span class="hop">-111968</span></button>
-          <button class="panel-4">04<span class="hop">-041969</span></button>
+          <button class="panel-3"><span id="seen">&nbsp;</span><span class="hop">-seen</span></button>
+          <button class="panel-4"><span id="checked">&nbsp;</span><span class="hop">-checked</span></button>
           <button class="panel-5"><span id="bank">&nbsp;</span><span class="hop">-questions</span></button>
           <button onclick="go('https://memory-alpha.fandom.com/wiki/Portal:Main')" class="panel-6">06<span class="hop">-alpha</span></button>
           <div class="panel-spacer"></div>
         </div>
         <div>
-          <button class="panel-7">07<span class="hop">-1701D</span></button>
+          <button class="panel-7"><span id="updated">&nbsp;</span><span class="hop">-updated</span></button>
         </div>
       </div>
       <div class="right-frame">
@@ -98,7 +98,7 @@
 
           <section id="game" hidden>
             <div class="lcars-text-bar"><h3 id="status">Quiz</h3></div>
-            <p id="question"></p>
+            <p id="question"><span id="text"></span><span id="unchecked" class="unchecked" title="Not yet checked by a human">*</span></p>
             <div class="buttons answers" id="interact">
               <button class="guess" id="option0" onclick="check(0);"></button>
               <button class="guess" id="option1" onclick="check(1);"></button>

@@ -14,7 +14,10 @@ const json = (body, status = 200) =>
   new Response(JSON.stringify(body), { status, headers: { 'Content-Type': 'application/json', ...cors } });
 
 const read = async (env, key) => JSON.parse((await env.VAULT.get(key)) || '[]');
-const write = (env, key, value) => env.VAULT.put(key, JSON.stringify(value));
+const write = async (env, key, value) => {
+  await env.VAULT.put(key, JSON.stringify(value));
+  if (key === 'vault') await env.VAULT.put('updated', new Date().toUTCString()); // the sidebar shows this
+};
 
 export default {
   async fetch(request, env) {
@@ -24,7 +27,13 @@ export default {
 
     if (url.pathname === '/vault' && request.method === 'GET') {
       return new Response((await env.VAULT.get('vault')) || '[]', {
-        headers: { 'Content-Type': 'application/json', 'Cache-Control': 'public, max-age=300', ...cors },
+        headers: {
+          'Content-Type': 'application/json',
+          'Cache-Control': 'public, max-age=300',
+          'Last-Modified': (await env.VAULT.get('updated')) || new Date().toUTCString(),
+          'Access-Control-Expose-Headers': 'Last-Modified',
+          ...cors,
+        },
       });
     }
 
