@@ -19,15 +19,14 @@ Live at trektrivia.com.
 
 Everything is done from the Mac, in Terminal, against the live API. There is no admin page.
 
-Set the admin key once per Terminal session:
+One-time: save your admin password where the scripts can read it (gitignored, stays on your Mac):
 
-    export TREK_ADMIN_KEY=...
+    echo "your-admin-password" > creation/.key
 
 ### Getting questions in
 
-    cd creation
-    python3 pipe.py drafts.csv            # through the vetter; accepts land unchecked. No daily cap for you.
-    python3 pipe.py drafts.csv --direct   # straight into the vault, marked checked. The god path.
+    python creation/pipe.py drafts.csv            # through the vetter; accepts land unchecked. No daily cap for you.
+    python creation/pipe.py drafts.csv --direct   # straight into the vault, marked checked. The god path.
 
 CSV columns: `Question, Answer, Alternate1, Alternate2, Alternate3`. For `--direct` also `Difficulty` (1 to 10)
 and `Source` (TOS, TNG, DS9, VOY, ENT, DIS, PIC, Movie, General).
@@ -39,8 +38,7 @@ and `Source` (TOS, TNG, DS9, VOY, ENT, DIS, PIC, Movie, General).
 
 ### Sorting the piles
 
-    cd creation
-    python3 sort.py
+    python creation/sort.py
 
 Walks you through three piles, one question at a time, with the vetter's reason and citation:
 
@@ -52,10 +50,10 @@ Enter skips, `q` quits. Rejects you've already judged are remembered in `creatio
 
 The same things by hand, if you'd rather:
 
-    curl "https://trektrivia.com/pending?key=$TREK_ADMIN_KEY"
-    curl -X POST "https://trektrivia.com/approve?key=$TREK_ADMIN_KEY" -d '{"index":0}'
-    curl -X POST "https://trektrivia.com/reject?key=$TREK_ADMIN_KEY" -d '{"index":0}'
-    curl "https://trektrivia.com/log?key=$TREK_ADMIN_KEY"            # every verdict, newest first
+    curl "https://trektrivia.com/pending?key=$(cat creation/.key)"
+    curl -X POST "https://trektrivia.com/approve?key=$(cat creation/.key)" -d '{"index":0}'
+    curl -X POST "https://trektrivia.com/reject?key=$(cat creation/.key)" -d '{"index":0}'
+    curl "https://trektrivia.com/log?key=$(cat creation/.key)"            # every verdict, newest first
 
 ### Editing or deleting live questions
 

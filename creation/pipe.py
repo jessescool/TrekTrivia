@@ -1,13 +1,13 @@
 # Feed a CSV of questions into the live site.
 #   python3 pipe.py drafts.csv            through the vetter (accepts land unchecked)
 #   python3 pipe.py drafts.csv --direct   straight into the vault, marked checked (the god path)
-# Needs TREK_ADMIN_KEY in the environment. CSV columns: Question, Answer, Alternate1, Alternate2, Alternate3,
+# Reads your admin password from creation/.key. CSV columns: Question, Answer, Alternate1, Alternate2, Alternate3,
 # and for --direct also Difficulty and Source.
 
 import csv, json, os, sys, urllib.request
 
 site = os.environ.get('TREK_SITE', 'https://trektrivia.com')
-key = os.environ['TREK_ADMIN_KEY']
+key = open(os.path.join(os.path.dirname(os.path.abspath(__file__)), '.key')).read().strip()  # your admin password, one line
 path, direct = sys.argv[1], '--direct' in sys.argv
 
 rows = list(csv.DictReader(open(path)))

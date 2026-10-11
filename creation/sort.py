@@ -1,12 +1,12 @@
 # Sort the piles. Walks you through what the vetter did and lets you overrule it.
 #   python3 sort.py
-# Needs TREK_ADMIN_KEY in the environment. Keys: y keep, n toss, enter skip, q quit.
+# Reads your admin password from creation/.key. Keys: y keep, n toss, enter skip, q quit.
 
 import json, os, urllib.request
 
 site = os.environ.get('TREK_SITE', 'https://trektrivia.com')
-key = os.environ['TREK_ADMIN_KEY']
-seen_file = os.path.join(os.path.dirname(__file__), '.sorted')  # rejects you've already looked at
+key = open(os.path.join(os.path.dirname(os.path.abspath(__file__)), '.key')).read().strip()  # your admin password, one line
+seen_file = os.path.join(os.path.dirname(os.path.abspath(__file__)), '.sorted')  # rejects you've already looked at
 
 def call(route, method='GET', body=None):
   req = urllib.request.Request(f'{site}{route}?key={key}', method=method,

@@ -7,3 +7,4 @@ api/.wrangler/
 creation/vault.json
 api/.dev.vars
 creation/.sorted
+creation/.key
