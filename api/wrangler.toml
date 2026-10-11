@@ -2,6 +2,12 @@ name = "trektrivia-api"
 main = "src/index.js"
 compatibility_date = "2026-10-01"
 compatibility_flags = ["nodejs_compat"]
+workers_dev = true
+
+routes = [
+  { pattern = "trektrivia.com", custom_domain = true },
+  { pattern = "www.trektrivia.com", custom_domain = true },
+]
 
 # the vault lives here; create with `wrangler kv namespace create VAULT` and paste the id
 [[kv_namespaces]]
