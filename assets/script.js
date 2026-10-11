@@ -10,6 +10,8 @@ let timer;          // the pause; clicking anywhere cuts it short
 
 const hand = 25;    // questions per deal
 
+const seen = new Set(JSON.parse(localStorage.getItem('seen') || '[]')); // questions this browser has already been asked
+
 
 // helpful functions
 
@@ -37,7 +39,8 @@ function show(id) {
 
 function withdraw() {
   const series = checked('seriesSelection');
-  return shuffle(vault.filter(q => !series || series.includes(q.source)));
+  const withdrawal = shuffle(vault.filter(q => !series || series.includes(q.source)));
+  return withdrawal.sort((a, b) => seen.has(a.question) - seen.has(b.question)); // fresh ones first
 }
 
 function deal() {
@@ -68,6 +71,8 @@ function check(guess) {
   document.getElementById('progress').children[contents].className = verdict;
 
   contents++;
+  seen.add(current.question);
+  localStorage.setItem('seen', JSON.stringify([...seen]));
 
   timer = setTimeout(advance, verdict === 'correct' ? 400 : 1200);
   setTimeout(() => document.addEventListener('click', advance), 0); // after this click has finished bubbling
