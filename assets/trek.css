@@ -449,19 +449,19 @@ main > section > :last-child, main > :last-child {
 /* text bars label each block of the screen; keep them in step with the content width */
 
 .lcars-text-bar {
-  margin-block: 1.3rem 0.75rem;
+  margin-block: 1.15rem 0.65rem;
 }
 
 main p {
-  margin-block: 1.3rem;
+  margin-block: 1.15rem;
 }
 
 .toggles {
-  margin-block: 0.6rem 1rem;
+  margin-block: 0.5rem 0.85rem;
 }
 
 #pose {
-  margin-top: 0.75rem;
+  margin-top: 0.65rem;
 }
 
 /* the game screen is tighter than the others so Abort stays on screen without scrolling */
