@@ -308,7 +308,7 @@ body {
 .left-frame {
   display: flex;
   flex-direction: column;
-  height: calc(95dvh - var(--header-h, 200px)); /* ends at 95% of the window on every screen; --header-h is set by quiz.js */
+  height: calc(98dvh - var(--header-h, 200px)); /* ends at 98% of the window on every screen; --header-h is set by quiz.js */
   min-height: min-content;
 }
 
