@@ -28,6 +28,12 @@ button, a, input {
   touch-action: manipulation; /* no double-tap zoom on phones; fast taps on answers were zooming the page */
 }
 
+@media (hover: none) {
+  button:hover {
+    filter: none; /* touch screens leave hover on after a tap, so the pressed answer stayed bright into the next question */
+  }
+}
+
 /* the template grows its base font on wide screens; a quiz should fit on one screen, so hold it steady */
 
 @media (width > 1300px) {

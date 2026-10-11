@@ -78,6 +78,7 @@ function generateSet() {
 function check(guess) {
   if (paused) return;
   paused = true;
+  document.activeElement.blur(); // and don't leave the tapped button focused
 
   const verdict = current.options[guess] === current.answer ? 'correct' : 'incorrect';
   beep(verdict === 'correct' ? 3 : 4);
