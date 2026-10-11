@@ -4,7 +4,7 @@
 
 import json, os, urllib.request
 
-site = os.environ.get('TREK_SITE', 'https://trektrivia.com')
+site = os.environ.get('TREK_SITE', 'https://trektrivia-api.trektrivia-api.workers.dev')
 key = open(os.path.join(os.path.dirname(os.path.abspath(__file__)), '.key')).read().strip()  # your admin password, one line
 seen_file = os.path.join(os.path.dirname(os.path.abspath(__file__)), '.sorted')  # rejects you've already looked at
 
