@@ -230,6 +230,12 @@ main > section > p:first-child {
     font-size: 1.15rem;
   }
 
+  .panel-1.logo { /* the phone panel is narrow: two short lines, no mid-word breaks */
+    font-size: 0.95rem;
+    padding: 0.2rem;
+    overflow-wrap: normal;
+  }
+
   #question { /* narrower screen, smaller type, four lines reserved */
     font-size: 1.05rem;
     min-height: calc(4 * 1.3em + 0.5rem);
