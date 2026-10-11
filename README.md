@@ -3,6 +3,9 @@
 A fan-made quiz on all things Star Trek, with a question bank that grows through player submissions.
 Live at trektrivia.com.
 
+**Status (2026-10-11):** the api, the vetting pipeline, `pipe.py`, and `sort.py` were all written in one night and are
+first drafts. They work, but expect rough edges and changes.
+
 ## How it's put together
 
 - `index.html`, `about/`, `assets/` are the site. Plain HTML, CSS, and one JS file. No build step.
