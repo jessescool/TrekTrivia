@@ -1,0 +1,3 @@
+# browsers must revalidate assets each visit, so a deploy never leaves anyone on a stale stylesheet
+/assets/*
+  Cache-Control: public, max-age=0, must-revalidate
