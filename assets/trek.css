@@ -422,9 +422,6 @@ footer:empty {
 
 .lcars-text-bar h3 {
   white-space: nowrap;
-  display: flex;
-  align-items: center; /* the label sits on the bar's centre line, not its baseline */
-  padding-bottom: 0.08em; /* Antonio's capitals sit low in their box; this evens it out to the eye */
 }
 
 @media (width <= 760px) {
