@@ -92,7 +92,7 @@ nav .nav-2 {
   padding-right: 2.75rem;
 }
 
-@media (width <= 1000px) {
+@media (width <= 760px) {
   :root {
     --panel-1-height: 60px;
   }
@@ -330,7 +330,7 @@ body {
   content: '-';
 }
 
-@media (width <= 1000px) {
+@media (width <= 760px) {
   .left-frame button, .left-frame-top .panel-2 { /* number above, label below, both flush right */
     flex-direction: column;
     align-items: flex-end;
@@ -376,10 +376,15 @@ body {
 
 /* the two bottom panels are links and readouts, not slabs */
 
+.left-frame {
+  container-type: inline-size; /* so the Memory Alpha label can size itself from the column's width */
+}
+
 .panel-6 {
   height: 70px;
   max-height: 70px;
-  white-space: nowrap; /* "06-memory alpha" stays on one line, same type as its neighbours; where it would no longer fit is where the phone layout begins */
+  white-space: nowrap;                 /* "06-memory alpha" stays on one line */
+  font-size: min(1em, 11.5cqw);        /* same type as its neighbours until the column is too narrow, then it shrinks with the column */
 }
 
 .left-frame .panel-7 {
@@ -448,7 +453,7 @@ footer:empty {
   display: none; /* the template's footer slot, unused on the quiz page */
 }
 
-@media (width <= 1000px) {
+@media (width <= 760px) {
   main {
     padding-bottom: calc(3rem + env(safe-area-inset-bottom)); /* keep the last button above a phone's floating toolbar */
   }
@@ -458,7 +463,7 @@ footer:empty {
   white-space: nowrap;
 }
 
-@media (width <= 1000px) {
+@media (width <= 760px) {
   .lcars-text-bar h3 {
     font-size: 1.15rem;
     align-content: center; /* smaller type than the template expects, so centre it in the bar ourselves */
