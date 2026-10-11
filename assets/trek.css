@@ -470,7 +470,7 @@ footer:empty {
   }
 
   .left-frame {
-    min-height: calc(98dvh - var(--header-h, 200px) - 2.5rem - env(safe-area-inset-bottom)); /* the same floor, less the page padding below it */
+    min-height: 0; /* on phones the column just runs the length of the content; a floor left a long empty strip under short screens */
   }
 }
 
