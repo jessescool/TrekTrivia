@@ -71,7 +71,7 @@ Edit files, then:
 
     cd api && npm run deploy
 
-Live in a few seconds. Secrets (`ANTHROPIC_API_KEY`, `ADMIN_KEY`) are set once with `npx wrangler secret put`
+Live in a few seconds. The deploy stamps the git hash into `assets/build.js`, which the sidebar shows as the build. Secrets (`ANTHROPIC_API_KEY`, `ADMIN_KEY`) are set once with `npx wrangler secret put`
 from the Terminal app, not from a tool that can't prompt. First-time setup is in `api/README.md`.
 
 ## Costs and caps

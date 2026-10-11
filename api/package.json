@@ -4,9 +4,11 @@
   "type": "module",
   "scripts": {
     "dev": "wrangler dev",
-    "deploy": "wrangler deploy",
+    "deploy": "npm run stamp && wrangler deploy",
     "backup": "wrangler kv key get --binding VAULT --remote vault > ../creation/vault.json && echo backed up to creation/vault.json",
-    "seed": "wrangler kv key put --binding VAULT --remote vault --path ../creation/vault.json"
+    "seed": "wrangler kv key put --binding VAULT --remote vault --path ../creation/vault.json",
+    "stamp": "echo \"const build = '$(git rev-parse --short HEAD)';\" > ../assets/build.js",
+    "preview": "npm run stamp && wrangler versions upload"
   },
   "devDependencies": {
     "wrangler": "^4"

@@ -8,3 +8,4 @@ creation/vault.json
 api/.dev.vars
 creation/.sorted
 creation/.key
+assets/build.js

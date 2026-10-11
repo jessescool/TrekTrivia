@@ -18,8 +18,22 @@ const seen = new Set(JSON.parse(localStorage.getItem('seen') || '[]')); // quest
 // helpful functions
 
 function checked(selection) {
-  const values = [...document.querySelectorAll(`#${selection} input:checked`)].map(box => box.value);
-  return values.length ? values : null; // nothing checked means everything's allowed
+  const values = [...document.querySelectorAll(`#${selection} .selected`)].map(button => button.dataset.series);
+  return values.length ? values : null; // nothing selected means everything's allowed
+}
+
+function toggleSeries(button) {
+  button.classList.toggle('selected');
+  beep(1);
+}
+
+function beep(n) {
+  document.getElementById(`audio${n}`).play().catch(() => {}); // browsers refuse to beep before the first tap
+}
+
+function go(url) {
+  beep(2);
+  window.location.href = url;
 }
 
 function shuffle(array) {
@@ -30,10 +44,14 @@ function shuffle(array) {
   return array;
 }
 
+const screens = { welcome: 'Quiz', game: 'Quiz', end: 'Results', contribute: 'Pose' };
+
 function show(id) {
   for (const section of ['welcome', 'game', 'end', 'contribute']) {
     document.getElementById(section).hidden = section !== id;
   }
+  document.getElementById('screen').textContent = screens[id];
+  window.scrollTo(0, 0);
 }
 
 
@@ -62,6 +80,7 @@ function check(guess) {
   paused = true;
 
   const verdict = current.options[guess] === current.answer ? 'correct' : 'incorrect';
+  beep(verdict === 'correct' ? 3 : 4);
 
   if (verdict === 'correct') {
     score++;
@@ -130,7 +149,9 @@ function keyRelease(event) {
 // transition functions
 
 function engage() {
+  beep(2);
   pool = withdraw();
+  document.getElementById('status').textContent = (checked('seriesSelection') || ['All series']).join(' • ');
   more();
 }
 
@@ -144,6 +165,8 @@ function more() {
 }
 
 function allStop() {
+  document.getElementById('source').textContent = '9';   // back to the resting readouts
+  document.getElementById('level').textContent = '10';
   clearTimeout(timer);
   document.removeEventListener('click', advance);
   paused = false;
@@ -161,10 +184,17 @@ function allStop() {
 // trivial functions
 
 function setButtons() {
-  document.getElementById('question').innerHTML = current.question;
+  document.getElementById('text').textContent = current.question;
+  document.getElementById('unchecked').hidden = current.checked !== false; // a tiny asterisk for the vetter's accepts
   current.options.forEach((option, i) => {
-    document.getElementById(`option${i}`).value = option;
+    document.getElementById(`option${i}`).textContent = option;
   });
+  // the sidebar shows where this question is from and how hard the vetter rated it
+  document.getElementById('source').textContent = current.source === 'Movie' ? 'Film' : current.source;
+  document.getElementById('level').textContent = String(current.difficulty).padStart(2, '0');
+  const dealt = document.getElementById('progress').children.length;
+  document.getElementById('count').textContent = `Question ${String(contents + 1).padStart(2, '0')} of ${dealt}`;
+  document.getElementById('score').textContent = `Score ${String(score).padStart(2, '0')}`;
 }
 
 // contribution
@@ -198,10 +228,21 @@ async function pose(event) {
 
 // ON LOAD
 
+// the sidebar readouts
+function readouts() {
+  const put = (id, value) => { const e = document.getElementById(id); if (e) e.textContent = value; };
+  put('bank', vault.length);
+  put('build', typeof build === 'undefined' ? 'dev' : build); // stamped by `npm run deploy`
+}
+
 // the bundled vault is the fallback; the live one has whatever's been accepted since
 fetch(`${api}/vault`)
   .then(r => r.json())
   .then(fresh => { if (fresh.length) vault.splice(0, vault.length, ...fresh); })
-  .catch(() => {});
+  .catch(() => {})
+  .finally(readouts);
+
+if (location.hash === '#pose') show('contribute');
+window.addEventListener('hashchange', () => { if (location.hash === '#pose') show('contribute'); }); // the nav button, from this same page
 
 console.log(`Source successful!`);
