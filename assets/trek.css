@@ -5,19 +5,22 @@
 
 /* the one non-LCARS flourish: the old title font, in the top-left panel */
 
-.panel-1.logo {
+.panel-1.logo { /* the lettering is a fixed fraction of this box, so it scales with the box and nothing else */
+  container-type: size;
   justify-content: center;
   align-items: center;
-  padding: 1px;
+  padding: 0;
+  text-transform: none;
+}
+
+.panel-1.logo span {
   font-family: 'Trek Headline';
   font-style: italic;
   font-weight: normal;
-  font-size: clamp(1.5rem, 2.9vw, 2.65rem); /* as big as two lines allow inside the panel */
+  font-size: min(50cqh, 40cqw);
   line-height: 0.95;
   text-align: center;
-  text-transform: none;
-  overflow-wrap: normal;
-  word-break: normal;
+  white-space: nowrap;
 }
 
 section[hidden] {
@@ -417,15 +420,6 @@ footer:empty {
 @media (width <= 760px) {
   .lcars-text-bar h3 {
     font-size: 1.15rem;
-  }
-
-  .panel-1.logo { /* the phone panel is narrow: two short lines, no mid-word breaks */
-    font-size: 1.05rem;
-    padding: 0.2rem;
-    letter-spacing: 0;
-    word-break: normal;
-    overflow-wrap: normal;
-    hyphens: none;
   }
 
   .answers { gap: 0.4rem; }
