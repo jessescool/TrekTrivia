@@ -92,7 +92,7 @@ nav .nav-2 {
   padding-right: 2.75rem;
 }
 
-@media (width <= 760px) {
+@media (width <= 1000px) {
   :root {
     --panel-1-height: 60px;
   }
@@ -330,7 +330,7 @@ body {
   content: '-';
 }
 
-@media (width <= 760px) {
+@media (width <= 1000px) {
   .left-frame button, .left-frame-top .panel-2 { /* number above, label below, both flush right */
     flex-direction: column;
     align-items: flex-end;
@@ -379,8 +379,7 @@ body {
 .panel-6 {
   height: 70px;
   max-height: 70px;
-  white-space: nowrap; /* "06-memory alpha" stays on one line; the type gives before the words do */
-  font-size: clamp(0.85rem, 1.3vw, 1rem);
+  white-space: nowrap; /* "06-memory alpha" stays on one line, same type as its neighbours; where it would no longer fit is where the phone layout begins */
 }
 
 .left-frame .panel-7 {
@@ -389,7 +388,7 @@ body {
 
 /* short windows (landscape phones, 720p laptops): no cascade, tighter top panel, so the game fits */
 
-@media (height <= 760px) {
+@media (height <= 780px) {
   .data-cascade-wrapper {
     display: none;
   }
@@ -449,7 +448,7 @@ footer:empty {
   display: none; /* the template's footer slot, unused on the quiz page */
 }
 
-@media (width <= 760px) {
+@media (width <= 1000px) {
   main {
     padding-bottom: calc(3rem + env(safe-area-inset-bottom)); /* keep the last button above a phone's floating toolbar */
   }
@@ -459,7 +458,7 @@ footer:empty {
   white-space: nowrap;
 }
 
-@media (width <= 760px) {
+@media (width <= 1000px) {
   .lcars-text-bar h3 {
     font-size: 1.15rem;
     align-content: center; /* smaller type than the template expects, so centre it in the bar ourselves */
