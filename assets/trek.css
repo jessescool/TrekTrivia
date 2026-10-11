@@ -315,14 +315,12 @@ body {
 
 #gap {
   flex: 1;
-  align-items: flex-start; /* the sidebar sizes from the window, not from the content beside it */
 }
 
 .left-frame {
   display: flex;
   flex-direction: column;
-  height: calc(98dvh - var(--header-h, 200px)); /* ends at 98% of the window on every screen; --header-h is set by quiz.js */
-  min-height: min-content;
+  min-height: calc(98dvh - var(--header-h, 200px)); /* at least 98% of the window; taller if the content beside it is taller. --header-h is set by quiz.js */
 }
 
 .left-frame > div:first-of-type {
