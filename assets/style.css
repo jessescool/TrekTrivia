@@ -47,7 +47,9 @@ nav {
 
 .data-cascade-wrapper {
   height: calc(var(--dc-row-height) * 5); /* the cascade's nine rows were most of the header */
-  justify-content: flex-start;            /* and it hugs the elbow, not the nav */
+  justify-content: flex-start;            /* runs from the elbow toward the nav; extra columns wrap out of view */
+  padding-left: 2.5rem;
+  padding-right: 2.5rem;
 }
 
 @media (width <= 600px) {
