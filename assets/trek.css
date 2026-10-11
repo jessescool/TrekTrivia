@@ -464,6 +464,10 @@ footer:empty {
   display: none; /* the template's footer slot, unused on the quiz page */
 }
 
+audio {
+  display: none; /* the beeps; some browsers would otherwise give these a box at the foot of the column */
+}
+
 @media (width <= 760px) {
   body {
     padding-bottom: calc(2.5rem + env(safe-area-inset-bottom)); /* keep the last button above a phone's floating toolbar; on the page, so the sidebar and content end together */
@@ -472,6 +476,10 @@ footer:empty {
   .left-frame {
     min-height: 0; /* on phones the column just runs the length of the content; a floor left a long empty strip under short screens */
   }
+
+  #pose { gap: 0.35rem; }
+  #pose input[type = text] { padding: 0.4rem 1rem; font-size: 0.95rem; } /* a shorter form, less to scroll */
+  #pose .buttons { margin-block: 0.75rem; }
 
   /* stacked labels need less height, and the column shouldn't outrun a short screen like the form */
   .left-frame .panel-3, .left-frame .panel-4 { height: 72px; min-height: 0; }
