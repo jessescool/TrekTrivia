@@ -198,7 +198,7 @@ function allStop() {
 
   const percentage = Math.round(100 * (score / contents)) || 0; // Checks for NaN values (divide by 0)
 
-  document.getElementById('rank').textContent = rank(percentage, contents);
+  document.getElementById('rank').textContent = deck.length ? 'Aborted.' : rank(percentage, contents); // no rank for a quiz you walked out of
   document.getElementById('scoreReport').innerHTML = `You earned ${score} out of ${contents} points, or ${percentage}%.`;
   document.getElementById('breakdown').innerHTML = breakdown();
 }
