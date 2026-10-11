@@ -76,7 +76,7 @@ nav .nav-1 {
   padding-right: 2rem;
 }
 
-@media (width <= 600px) {
+@media (width <= 760px) {
   :root {
     --panel-1-height: 60px;
   }
@@ -300,7 +300,7 @@ body {
   content: '-';
 }
 
-@media (width <= 600px) {
+@media (width <= 760px) {
   .left-frame button, .left-frame-top .panel-2 { /* number above, label below, both flush right */
     flex-direction: column;
     align-items: flex-end;
@@ -391,7 +391,7 @@ footer:empty {
   display: none; /* the template's footer slot, unused on the quiz page */
 }
 
-@media (width <= 600px) {
+@media (width <= 760px) {
   main {
     padding-bottom: calc(3rem + env(safe-area-inset-bottom)); /* keep the last button above a phone's floating toolbar */
   }
@@ -401,7 +401,7 @@ footer:empty {
   white-space: nowrap;
 }
 
-@media (width <= 600px) {
+@media (width <= 760px) {
   .lcars-text-bar h3 {
     font-size: 1.15rem;
   }
