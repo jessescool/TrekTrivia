@@ -323,8 +323,14 @@ main > section > p:first-child {
   display: none !important; /* the template's scroll-to-top button; our screens are short and it fights the phone toolbar */
 }
 
-main {
-  padding-bottom: calc(3rem + env(safe-area-inset-bottom)); /* keep the last button above a phone's floating toolbar */
+footer:empty {
+  display: none; /* the template's footer slot, unused on the quiz page */
+}
+
+@media (width <= 600px) {
+  main {
+    padding-bottom: calc(3rem + env(safe-area-inset-bottom)); /* keep the last button above a phone's floating toolbar */
+  }
 }
 
 .lcars-text-bar h3 {
