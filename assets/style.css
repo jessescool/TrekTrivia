@@ -236,6 +236,14 @@ main > section > p:first-child {
   margin-top: 0;
 }
 
+#topBtn {
+  display: none !important; /* the template's scroll-to-top button; our screens are short and it fights the phone toolbar */
+}
+
+main {
+  padding-bottom: calc(3rem + env(safe-area-inset-bottom)); /* keep the last button above a phone's floating toolbar */
+}
+
 .lcars-text-bar h3 {
   white-space: nowrap;
 }
