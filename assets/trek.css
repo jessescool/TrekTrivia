@@ -145,7 +145,14 @@ main p {
   background-color: var(--lilac);
 }
 
-.toggles {
+.right-frame, main, section {
+  min-width: 0; /* flex and grid children may shrink below their content; otherwise a wide grid pushes the whole column past the window */
+}
+
+.toggles { /* a grid whose column count quiz.js sets, so rows come out even: 9, or 5 and 4, or 3 by 3 */
+  display: grid;
+  grid-template-columns: repeat(var(--cols, 9), max-content);
+  justify-content: start;
   gap: 0.45rem;
   margin-block: 0.75rem 1.25rem;
 }

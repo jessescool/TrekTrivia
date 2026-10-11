@@ -245,6 +245,21 @@ fetch(`${api}/vault`)
   .catch(() => {})
   .finally(readouts);
 
+// the series toggles wrap into even rows: 9, or 5 and 4, or 3 by 3, never 7 and 1
+function layoutToggles() {
+  const grid = document.getElementById('seriesSelection');
+  const buttons = [...grid.children];
+  const gap = parseFloat(getComputedStyle(grid).columnGap);
+  const widest = Math.max(...buttons.map(b => b.offsetWidth));
+  const room = grid.parentElement.clientWidth; // the grid itself can be pushed wide by its own columns, so measure the space it's given
+  const perRow = Math.max(1, Math.floor((room + gap) / (widest + gap)));
+  const rows = Math.ceil(buttons.length / perRow);
+  grid.style.setProperty('--cols', Math.ceil(buttons.length / rows));
+}
+layoutToggles();
+document.fonts.ready.then(layoutToggles); // button widths change once Antonio arrives
+addEventListener('resize', layoutToggles);
+
 // the sidebar's height is 95% of the window minus the header, and the header's height depends on the layout
 const measureHeader = () => { const w = document.querySelector('.wrap'); document.documentElement.style.setProperty('--header-h', `${w.offsetTop + w.offsetHeight + 4}px`); };
 measureHeader();
