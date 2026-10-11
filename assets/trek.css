@@ -294,6 +294,42 @@ body {
   min-height: 40px;
 }
 
+/* panel labels: "153-questions" on desktop; on phones the label sits under the number in small type */
+
+.hop::before {
+  content: '-';
+}
+
+@media (width <= 600px) {
+  .left-frame button, .left-frame-top .panel-2 { /* number above, label below, both flush right */
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: flex-end;
+  }
+
+  .left-frame button > span:first-child, .panel-2 > span:first-child {
+    white-space: nowrap;
+  }
+
+  .left-frame .hop, .left-frame-top .hop {
+    display: block;
+    font-size: 0.5rem;
+    line-height: 1.1;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    overflow-wrap: normal;
+    text-align: right;
+  }
+
+  .hop::before {
+    content: none;
+  }
+
+  #build {
+    font-size: 0.7em; /* a seven-character hash in a 60px column */
+  }
+}
+
 /* readout panels at readout heights */
 
 .left-frame .panel-3 { height: 100px; }
