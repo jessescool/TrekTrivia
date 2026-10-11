@@ -385,6 +385,24 @@ body {
 .left-frame .panel-4 { height: 120px; }
 .left-frame .panel-5 { height: 80px; }
 
+/* the content column ends exactly where its last element does, so the sidebar can match it and go no further */
+
+main {
+  padding-bottom: 0;
+}
+
+main > section > :last-child, main > :last-child {
+  margin-bottom: 0;
+}
+
+#response:empty {
+  display: none; /* the verdict line takes no space until there is a verdict */
+}
+
+#pose .buttons {
+  margin-bottom: 0;
+}
+
 /* the two bottom panels are links and readouts, not slabs */
 
 .left-frame {
@@ -470,11 +488,7 @@ audio {
 
 @media (width <= 760px) {
   body {
-    padding-bottom: calc(2.5rem + env(safe-area-inset-bottom)); /* keep the last button above a phone's floating toolbar; on the page, so the sidebar and content end together */
-  }
-
-  .left-frame {
-    min-height: 0; /* on phones the column just runs the length of the content; a floor left a long empty strip under short screens */
+    padding-bottom: env(safe-area-inset-bottom);
   }
 
   #pose { gap: 0.35rem; }
