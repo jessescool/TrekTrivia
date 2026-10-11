@@ -24,7 +24,7 @@
         <h2><a href = "https://i.imgur.com/SP9Pu.gif" target = "_blank" class = "hiddennavlink">Welcome!</a></h2>
         <p> This is a fan-made quiz on all things Star Trek, programmed
           to accommodate a constantly expanding set of questions, so pose one
-          <a href = "https://docs.google.com/forms/d/e/1FAIpQLScmM7IK7FF-50tFEJUtM2Mcw79Fu8moz4isMeaPGz8PI6kXbg/viewform?usp=sf_link" target = "_blank">here</a>.
+          <a href = "#" onclick = "show('contribute'); return false;">here</a>.
           If you'd like to learn about the project, head over to the <a href = "./about" target = "_blank">about page</a>.
           Otherwise, <em>Qapla'</em>
         </p>
@@ -67,9 +67,25 @@
         <p id = "scoreReport"></p>
         <input type = "button" value = "25 MORE" id = "more" onclick = "more();">
         <input type = "button" value = "PLAY AGAIN!" id = "reset" onclick = "window.location.reload();">
-        <p>(<a href = "https://docs.google.com/forms/d/e/1FAIpQLScmM7IK7FF-50tFEJUtM2Mcw79Fu8moz4isMeaPGz8PI6kXbg/viewform?usp=sf_link" target = "_blank">contribute a question!</a>)</p>
+        <p>(<a href = "#" onclick = "show('contribute'); return false;">contribute a question!</a>)</p>
         <p>(<a href = "https://docs.google.com/forms/d/e/1FAIpQLScbsGV9TFulqs7wgHzGz0jiaeohTpK2QL4gHe8Seb59dTz1ew/viewform?usp=sf_link" target = "_blank">spotted an error?</a>)</p>
         <p>(<a href = "./about" target = "_blank">about</a>)</p>
+      </section>
+
+      <section id = "contribute" hidden>
+        <h2>Pose a Question</h2>
+        <p>Phrase it like <i>Captain Picard prefers <u>this</u> type of tea.</i>
+          The computer will check it against Memory Alpha before it goes in.</p>
+        <form id = "pose" onsubmit = "pose(event);">
+          <input type = "text" name = "question" placeholder = "The question" required>
+          <input type = "text" name = "answer" placeholder = "The answer" required>
+          <input type = "text" name = "alternate" placeholder = "A wrong answer" required>
+          <input type = "text" name = "alternate" placeholder = "Another wrong answer" required>
+          <input type = "text" name = "alternate" placeholder = "One more wrong answer" required>
+          <input type = "submit" value = "SUBMIT" id = "send">
+        </form>
+        <p id = "response"></p>
+        <p>(<a href = "#" onclick = "show('welcome'); return false;">back</a>)</p>
       </section>
 
     </main>

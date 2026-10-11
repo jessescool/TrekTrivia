@@ -118,7 +118,7 @@ input[type = button][hidden] {
   display: none;
 }
 
-#play, #reset, #more {
+#play, #reset, #more, #send {
   width: 200px;
   background-color: #F2C300;
   font-size: 20px;
@@ -212,4 +212,30 @@ ul {
 #coffee {
   width: 120px;
   margin: 50px auto;
+}
+
+/* contribute-specific styling */
+
+#pose {
+  width: 100%;
+  max-width: 400px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#pose input[type = text] {
+  width: 100%;
+  font-size: 16px;
+  padding: 10px 14px;
+  margin: 4px 0;
+  border: 1px solid gray;
+  border-radius: 20px;
+}
+
+#send {
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  margin-top: 12px;
 }

@@ -1,5 +1,7 @@
 // IMPORT FROM VAULT.js (in source order)
 
+const api = 'https://trektrivia-api.REPLACE_ME.workers.dev'; // where the live vault and the vetting live
+
 let pool = [];      // every question that fits the settings, shuffled
 let deck = [];      // the hand dealt from the pool, easiest first
 let current;        // the question on screen, with its options shuffled
@@ -29,7 +31,7 @@ function shuffle(array) {
 }
 
 function show(id) {
-  for (const section of ['welcome', 'game', 'end']) {
+  for (const section of ['welcome', 'game', 'end', 'contribute']) {
     document.getElementById(section).hidden = section !== id;
   }
 }
@@ -164,5 +166,42 @@ function setButtons() {
     document.getElementById(`option${i}`).value = option;
   });
 }
+
+// contribution
+
+async function pose(event) {
+  event.preventDefault();
+  const form = event.target;
+  const fields = new FormData(form);
+  const response = document.getElementById('response');
+
+  document.getElementById('send').disabled = true;
+  response.innerHTML = 'Consulting Memory Alpha...';
+
+  const reply = await fetch(`${api}/submit`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({
+      question: fields.get('question'),
+      answer: fields.get('answer'),
+      alternates: fields.getAll('alternate'),
+    }),
+  }).then(r => r.json()).catch(() => ({ verdict: 'error', reason: 'The computer is not responding.' }));
+
+  const openers = { accept: 'Added!', review: 'Sent to the captain for review.', reject: 'Not this time.' };
+  response.innerHTML = `${openers[reply.verdict] || 'Hmm.'} ${reply.reason}`;
+
+  document.getElementById('send').disabled = false;
+  if (reply.verdict === 'accept') form.reset();
+}
+
+
+// ON LOAD
+
+// the bundled vault is the fallback; the live one has whatever's been accepted since
+fetch(`${api}/vault`)
+  .then(r => r.json())
+  .then(fresh => { if (fresh.length) vault.splice(0, vault.length, ...fresh); })
+  .catch(() => {});
 
 console.log(`Source successful!`);

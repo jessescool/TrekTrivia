@@ -2,3 +2,7 @@
 TrekTriviaBackup/
 *#
 CLAUDE.md
+api/node_modules/
+api/.wrangler/
+creation/vault.json
+api/.dev.vars
