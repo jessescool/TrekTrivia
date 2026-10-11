@@ -377,6 +377,8 @@ body {
 .panel-6 {
   height: 70px;
   max-height: 70px;
+  white-space: nowrap; /* "06-memory alpha" stays on one line; the type gives before the words do */
+  font-size: clamp(0.7rem, 1.1vw, 1rem);
 }
 
 .left-frame .panel-7 {
