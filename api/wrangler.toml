@@ -17,3 +17,9 @@ simple = { limit = 5, period = 60 }
 # secrets, set with `wrangler secret put <NAME>`:
 #   ANTHROPIC_API_KEY   for vetting
 #   ADMIN_KEY           for /pending and /approve
+
+# the static site is served from the repo root; the api paths go to the Worker first
+[assets]
+directory = "../"
+binding = "ASSETS"
+run_worker_first = true

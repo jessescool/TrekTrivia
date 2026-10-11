@@ -31,13 +31,16 @@ export default {
     if (url.pathname === '/submit' && request.method === 'POST') return submit(request, env);
 
     // the admin bits, for Jesse
-    if (url.searchParams.get('key') !== env.ADMIN_KEY) return json({ error: 'not found' }, 404);
-    if (url.pathname === '/pending') return json(await read(env, 'pending'));
-    if (url.pathname === '/log') return json(await read(env, 'log'));
-    if (url.pathname === '/approve' && request.method === 'POST') return decide(request, env, true);
-    if (url.pathname === '/reject' && request.method === 'POST') return decide(request, env, false);
+    if (['/pending', '/log', '/approve', '/reject'].includes(url.pathname)) {
+      if (url.searchParams.get('key') !== env.ADMIN_KEY) return json({ error: 'not found' }, 404);
+      if (url.pathname === '/pending') return json(await read(env, 'pending'));
+      if (url.pathname === '/log') return json(await read(env, 'log'));
+      if (url.pathname === '/approve' && request.method === 'POST') return decide(request, env, true);
+      if (url.pathname === '/reject' && request.method === 'POST') return decide(request, env, false);
+    }
 
-    return json({ error: 'not found' }, 404);
+    // everything else is the site itself
+    return env.ASSETS.fetch(request);
   },
 };
 
