@@ -11,11 +11,10 @@
   text-transform: none;
 }
 
-.banner #stardate {
+.banner #stardate, .banner .dot {
   font-family: 'Antonio', sans-serif;
   font-style: normal;
   font-size: 0.7em;
-  margin-left: 0.3em;
 }
 
 section[hidden] {
