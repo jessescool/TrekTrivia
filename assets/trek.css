@@ -328,6 +328,10 @@ body {
   #build {
     font-size: 0.7em; /* a seven-character hash in a 60px column */
   }
+
+  .hop .wide {
+    display: none; /* "memory alpha" is just "alpha" in the narrow column */
+  }
 }
 
 /* readout panels at readout heights */
