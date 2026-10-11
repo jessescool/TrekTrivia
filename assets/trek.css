@@ -105,7 +105,12 @@ nav .nav-2 {
     width: 100%;
     gap: 0.3rem;
     padding-left: 0.9rem; /* air between the elbow and the first button */
-    margin-bottom: 0.4rem;
+    margin-bottom: 0;
+    align-self: flex-end; /* sit on the bar rather than hovering above it */
+  }
+
+  .first-bar-panel {
+    margin-top: 6px; /* the template leaves 15px; too much under small buttons */
   }
 
   nav button {
