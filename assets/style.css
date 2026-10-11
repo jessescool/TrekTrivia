@@ -17,6 +17,53 @@ section[hidden] {
   display: none;
 }
 
+/* a shorter header: smaller top panel, smaller banner, nav in one row */
+
+:root {
+  --panel-1-height: 100px;
+  --nav-width: 160px;
+  --radius-top: 0 0 0 90px;      /* the elbow's curve sets the header's minimum height */
+  --radius-bottom: 90px 0 0 0;
+  --radius-content-top: 0 0 0 40px;
+  --radius-content-bottom: 40px 0 0 0;
+}
+
+.banner {
+  font-size: clamp(1.1rem, 0.6rem + 3vw, 2.6rem);
+  padding-bottom: 0.6rem;
+}
+
+nav {
+  width: auto;
+  max-width: 100%;
+  flex-wrap: nowrap;
+}
+
+.data-cascade-wrapper {
+  height: calc(var(--dc-row-height) * 5); /* the cascade's nine rows were most of the header */
+}
+
+@media (width <= 600px) {
+  :root {
+    --panel-1-height: 60px;
+  }
+
+  nav {
+    width: 100%;
+    gap: 0.3rem;
+  }
+
+  nav button {
+    flex: 1 1 0;
+    width: auto;
+    min-width: 0;
+    height: 2.3rem;
+    padding-inline: 0.5rem;
+    padding-bottom: 0.3rem;
+    font-size: 0.7rem;
+  }
+}
+
 main p {
   color: var(--almond-creme);
 }
