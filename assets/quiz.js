@@ -168,8 +168,8 @@ function more() {
 }
 
 function allStop() {
-  document.getElementById('source').textContent = new Set(vault.map(q => q.source)).size; // back to the resting readouts
-  document.getElementById('level').textContent = '10';
+  document.getElementById('source').textContent = '1701'; // back to the resting readouts
+  document.getElementById('level').textContent = '00';
   clearTimeout(timer);
   document.removeEventListener('click', advance);
   paused = false;
@@ -240,7 +240,8 @@ function readouts() {
     button.disabled = !stocked.has(button.dataset.series);
     if (button.disabled) button.classList.remove('selected');
   }
-  put('source', stocked.size);
+  put('source', '1701'); // at rest the series panel wears a registry number; difficulty sits at zero
+  put('level', '00');
   put('bank', vault.length);
   put('build', typeof build === 'undefined' ? 'dev' : build); // stamped by `npm run deploy`
 }
