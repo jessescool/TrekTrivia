@@ -198,7 +198,7 @@ function allStop() {
 
   const percentage = Math.round(100 * (score / contents)) || 0; // Checks for NaN values (divide by 0)
 
-  document.getElementById('rank').textContent = deck.length ? 'Aborted.' : rank(percentage, contents); // no rank for a quiz you walked out of
+  document.getElementById('rank').textContent = deck.length ? 'Aborted.' : rank(percentage); // no rank for a quiz you walked out of
   document.getElementById('scoreReport').innerHTML = `You earned ${score} out of ${contents} points, or ${percentage}%.`;
   document.getElementById('breakdown').innerHTML = breakdown();
 }
@@ -208,8 +208,7 @@ function allStop() {
 
 const ranks = [[95, 'Admiral'], [80, 'Captain'], [60, 'Commander'], [40, 'Lieutenant'], [20, 'Ensign'], [0, 'Cadet']];
 
-function rank(percentage, answered) {
-  if (answered < 5) return 'Cadet'; // not enough to judge
+function rank(percentage) {
   return ranks.find(([floor]) => percentage >= floor)[1];
 }
 
