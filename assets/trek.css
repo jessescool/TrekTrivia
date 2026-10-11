@@ -427,6 +427,7 @@ footer:empty {
 @media (width <= 760px) {
   .lcars-text-bar h3 {
     font-size: 1.15rem;
+    align-content: center; /* smaller type than the template expects, so centre it in the bar ourselves */
   }
 
   .answers { gap: 0.4rem; }
