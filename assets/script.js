@@ -182,6 +182,8 @@ function setButtons() {
   current.options.forEach((option, i) => {
     document.getElementById(`option${i}`).textContent = option;
   });
+  const dealt = document.getElementById('progress').children.length;
+  document.getElementById('status').textContent = `Question ${contents + 1} of ${dealt} • Score ${score}`;
 }
 
 // contribution

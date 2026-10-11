@@ -56,7 +56,7 @@
           <div class="panel-spacer"></div>
         </div>
         <div>
-          <button class="panel-7">47<span class="hop">-1701D</span></button>
+          <button class="panel-7">07<span class="hop">-1701D</span></button>
         </div>
       </div>
       <div class="right-frame">
@@ -65,28 +65,32 @@
         </div>
         <main>
           <section id="welcome">
-            <p>This is a fan-made quiz on all things Star Trek, programmed to accommodate a constantly expanding set of questions, so
-              <a href="#" onclick="show('contribute'); return false;">pose one</a>.
-              If you'd like to learn about the project, head over to the <a href="about/">about page</a>. Otherwise, <em>Qapla'</em></p>
-            <p class="uppercase font-almond-creme">Select the series you'd like to appear. None selected means all of them.</p>
+            <p>A fan-made quiz on all things Star Trek, built to accommodate a constantly expanding set of questions.
+              Know one? <a href="#" onclick="show('contribute'); return false;">Pose it</a> and the ship's computer will check it against Memory Alpha.</p>
+
+            <div class="lcars-text-bar"><h3>Series</h3></div>
+            <p>Pick the shows you want. Pick none and you get all of them.</p>
             <div class="buttons toggles" id="seriesSelection">
-            <button type="button" data-series="TOS" onclick="toggleSeries(this)">TOS</button>
-            <button type="button" data-series="TNG" onclick="toggleSeries(this)">TNG</button>
-            <button type="button" data-series="DS9" onclick="toggleSeries(this)">DS9</button>
-            <button type="button" data-series="VOY" onclick="toggleSeries(this)">VOY</button>
-            <button type="button" data-series="ENT" onclick="toggleSeries(this)">ENT</button>
-            <button type="button" data-series="DIS" onclick="toggleSeries(this)">DIS</button>
-            <button type="button" data-series="PIC" onclick="toggleSeries(this)">PIC</button>
-            <button type="button" data-series="Movie" onclick="toggleSeries(this)">Movies</button>
-            <button type="button" data-series="General" onclick="toggleSeries(this)">General</button>
+              <button type="button" data-series="TOS" onclick="toggleSeries(this)">TOS</button>
+              <button type="button" data-series="TNG" onclick="toggleSeries(this)">TNG</button>
+              <button type="button" data-series="DS9" onclick="toggleSeries(this)">DS9</button>
+              <button type="button" data-series="VOY" onclick="toggleSeries(this)">VOY</button>
+              <button type="button" data-series="ENT" onclick="toggleSeries(this)">ENT</button>
+              <button type="button" data-series="DIS" onclick="toggleSeries(this)">DIS</button>
+              <button type="button" data-series="PIC" onclick="toggleSeries(this)">PIC</button>
+              <button type="button" data-series="Movie" onclick="toggleSeries(this)">Movies</button>
+              <button type="button" data-series="General" onclick="toggleSeries(this)">General</button>
             </div>
-            <div class="buttons justify-center">
+
+            <div class="lcars-text-bar"><h3>Ready</h3></div>
+            <div class="buttons">
               <button id="play" class="button-orange" onclick="engage();">Engage</button>
             </div>
           </section>
 
           <section id="game" hidden>
-            <p id="question" class="go-big font-almond-creme"></p>
+            <div class="lcars-text-bar"><h3 id="status">Question</h3></div>
+            <p id="question"></p>
             <div class="buttons answers" id="interact">
               <button class="guess" id="option0" onclick="check(0);"></button>
               <button class="guess" id="option1" onclick="check(1);"></button>
@@ -94,15 +98,15 @@
               <button class="guess" id="option3" onclick="check(3);"></button>
             </div>
             <div id="progress"></div>
-            <div class="buttons justify-center">
-              <button id="endquiz" class="button-red small" onclick="allStop();">Abort</button>
+            <div class="buttons">
+              <button id="endquiz" class="button-red minor" onclick="allStop();">Abort</button>
             </div>
           </section>
 
           <section id="end" hidden>
-            <h2>Thanks for Playing!</h2>
-            <p id="scoreReport" class="go-big font-almond-creme"></p>
-            <div class="buttons justify-center">
+            <div class="lcars-text-bar"><h3>Results</h3></div>
+            <p id="scoreReport"></p>
+            <div class="buttons">
               <button id="more" class="button-orange" onclick="more();">25 more</button>
               <button id="reset" class="button-butterscotch" onclick="window.location.reload();">Play again</button>
               <button class="button-lilac" onclick="show('contribute');">Pose a question</button>
@@ -111,20 +115,21 @@
           </section>
 
           <section id="contribute" hidden>
-            <h2>Pose a Question</h2>
-            <p>Phrase it like <i>Captain Picard prefers <u>this</u> type of tea.</i> The computer will check it against Memory Alpha before it goes in.</p>
+            <div class="lcars-text-bar"><h3>Pose a question</h3></div>
+            <p>Phrase it like <i>Captain Picard prefers <u>this</u> type of tea.</i> Give the answer and three plausible wrong ones.
+              The computer checks it against Memory Alpha before it goes in.</p>
             <form id="pose" onsubmit="pose(event);">
               <input type="text" name="question" placeholder="The question" required>
               <input type="text" name="answer" placeholder="The answer" required>
               <input type="text" name="alternate" placeholder="A wrong answer" required>
               <input type="text" name="alternate" placeholder="Another wrong answer" required>
               <input type="text" name="alternate" placeholder="One more wrong answer" required>
-              <div class="buttons justify-center">
+              <div class="buttons">
                 <button type="submit" id="send" class="button-orange">Submit</button>
-                <button type="button" class="button-lilac" onclick="show('welcome');">Back</button>
+                <button type="button" class="button-lilac minor" onclick="show('welcome');">Back</button>
               </div>
             </form>
-            <p id="response" class="font-almond-creme"></p>
+            <p id="response"></p>
           </section>
         </main>
         <footer></footer>
