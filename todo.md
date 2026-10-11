@@ -6,6 +6,7 @@
 -- add percentile...
 -- Original Favicon (svg or ico, or both)
 -- copy pass: welcome text, contribute instructions, results wording, About page
--- flow screens: results, contribute response states, empty-series cases
--- back-end: review queue tooling, pipeline tuning from the log, maybe percentile once scores are stored
+-- flow screens: empty-series / exhausted-series messaging; a hint for greyed series
+-- vet the pile (41: 35 vetter-accepts, 6 reviews) with sort.py; then decide whether to flip autoAccept in api/src/index.js
+-- back-end: pipeline tuning from the log, maybe percentile once scores are stored
 -- questions for SNW, LD, PRO, TAS, SFA so their toggles wake up
