@@ -1,18 +1,21 @@
 // IMPORT FROM VAULT.js (in source order)
 
-let deck = [];      // questions still to be asked, easiest first
+let pool = [];      // every question that fits the settings, shuffled
+let deck = [];      // the hand dealt from the pool, easiest first
 let current;        // the question on screen, with its options shuffled
 let score = 0;
 let contents = 0;   // questions answered so far
+
+const hand = 25;    // questions per deal
 
 
 // constants
 
 const bands = {
-  easy: [1, 3],
-  medium: [4, 6],
-  hard: [7, 10]
-}; // difficulty is 1 to 10 in the vault; these are the words the player sees
+  easy: 3,
+  medium: 6,
+  hard: 10
+}; // difficulty is 1 to 10 in the vault; these are the words the player sees, keyed by the top of each band
 
 
 // helpful functions
@@ -23,7 +26,7 @@ function checked(selection) {
 }
 
 function band(difficulty) {
-  return Object.keys(bands).find(name => difficulty <= bands[name][1]);
+  return Object.keys(bands).find(name => difficulty <= bands[name]);
 }
 
 function shuffle(array) {
@@ -51,16 +54,14 @@ function show(id) {
 
 function withdraw() {
   const series = checked('seriesSelection');
-  const difficulties = checked('difficultySelection');
-  const count = Number(document.getElementById('count').value);
+  return shuffle(vault.filter(q => !series || series.includes(q.source)));
+}
 
-  const withdrawal = vault.filter(q =>
-    (!series || series.includes(q.source)) &&
-    (!difficulties || difficulties.includes(band(q.difficulty)))
-  );
-
-  // shuffle, take a handful, then sort so the quiz ramps up
-  return shuffle(withdrawal).slice(0, count).sort((a, b) => a.difficulty - b.difficulty);
+function deal() {
+  // take a hand from the pool and sort it so the quiz ramps up
+  const dealt = pool.splice(0, hand).sort((a, b) => a.difficulty - b.difficulty);
+  deck = deck.concat(dealt);
+  document.getElementById('progress').innerHTML += '<span></span>'.repeat(dealt.length); // one slice per question
 }
 
 function generateSet() {
@@ -116,8 +117,12 @@ function keyRelease(event) {
 // transition functions
 
 function engage() {
-  deck = withdraw();
-  document.getElementById('progress').innerHTML = '<span></span>'.repeat(deck.length); // one slice per question
+  pool = withdraw();
+  more();
+}
+
+function more() {
+  deal();
   generateSet();
   setButtons();
   show('game');
@@ -129,6 +134,7 @@ function allStop() {
   document.removeEventListener('keydown', keyPress);
   document.removeEventListener('keyup', keyRelease);
   show('end');
+  document.getElementById('more').hidden = !pool.length;
 
   const percentage = Math.round(100 * (score / contents)) || 0; // Checks for NaN values (divide by 0)
 

@@ -41,23 +41,7 @@
             <label><input type = "checkbox" value = "Movie"> Movies</label>
             <label><input type = "checkbox" value = "General"> General</label>
           </div>
-          <p>And how hard they should be.</p>
-          <div id = "difficultySelection">
-            <label><input type = "checkbox" value = "easy"> easy</label>
-            <label><input type = "checkbox" value = "medium"> medium</label>
-            <label><input type = "checkbox" value = "hard"> hard</label>
-          </div>
           <p>If none are selected, they'll all appear!</p>
-          <p>
-            <label>Number of questions:
-              <select id = "count">
-                <option value = "10">10</option>
-                <option value = "25" selected>25</option>
-                <option value = "50">50</option>
-                <option value = "Infinity">all of them</option>
-              </select>
-            </label>
-          </p>
         </div>
 
         <input type = "button" value = "ENGAGE" id = "play" onclick = "engage();">
@@ -82,6 +66,7 @@
       <section id = "end" hidden>
         <h2>Thanks for Playing!</h2>
         <p id = "scoreReport"></p>
+        <input type = "button" value = "25 MORE" id = "more" onclick = "more();">
         <input type = "button" value = "PLAY AGAIN!" id = "reset" onclick = "window.location.reload();">
         <p>(<a href = "https://docs.google.com/forms/d/e/1FAIpQLScmM7IK7FF-50tFEJUtM2Mcw79Fu8moz4isMeaPGz8PI6kXbg/viewform?usp=sf_link" target = "_blank">contribute a question!</a>)</p>
         <p>(<a href = "https://docs.google.com/forms/d/e/1FAIpQLScbsGV9TFulqs7wgHzGz0jiaeohTpK2QL4gHe8Seb59dTz1ew/viewform?usp=sf_link" target = "_blank">spotted an error?</a>)</p>

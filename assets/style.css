@@ -114,11 +114,11 @@ input[type = button].button-active {
   opacity: 0.6;
 }
 
-select {
-  font-size: 16px;
+input[type = button][hidden] {
+  display: none;
 }
 
-#play, #reset {
+#play, #reset, #more {
   width: 200px;
   background-color: #F2C300;
   font-size: 20px;
@@ -135,13 +135,13 @@ select {
 
 /* welcome-specific styling */
 
-#seriesSelection, #difficultySelection {
+#seriesSelection {
   display: grid;
   grid-template-columns: repeat(3, auto);
   gap: 6px 24px;
 }
 
-#seriesSelection label, #difficultySelection label {
+#seriesSelection label {
   font-weight: bold;
 }
 
