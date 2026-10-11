@@ -3,14 +3,19 @@
 
 @import url(./fonts/fonts.css);
 
-/* the one non-LCARS flourish: the old banner font on the welcome screen */
+/* the one non-LCARS flourish: the old title font in the banner */
 
-h1.trek {
+.banner {
   font-family: 'Trek Headline';
   font-style: italic;
   text-transform: none;
-  font-size: clamp(2.6rem, 2rem + 4vw, 5rem);
-  color: var(--orange);
+}
+
+.banner #stardate {
+  font-family: 'Antonio', sans-serif;
+  font-style: normal;
+  font-size: 0.7em;
+  margin-left: 0.3em;
 }
 
 section[hidden] {
@@ -29,8 +34,9 @@ section[hidden] {
 }
 
 .banner {
-  font-size: clamp(1.1rem, 0.6rem + 3vw, 2.6rem);
+  font-size: clamp(1.7rem, 0.8rem + 4vw, 4rem);
   padding-bottom: 0.6rem;
+  line-height: 1;
 }
 
 nav {
