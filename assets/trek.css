@@ -418,6 +418,8 @@ footer:empty {
 
 .lcars-text-bar h3 {
   white-space: nowrap;
+  display: flex;
+  align-items: center; /* the label sits on the bar's centre line, not its baseline */
 }
 
 @media (width <= 760px) {
