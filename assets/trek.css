@@ -145,7 +145,7 @@ main p {
   margin-block: 0.75rem 1.25rem;
 }
 
-#play, #send, #end .buttons button {
+#play, #pose .buttons button, #end .buttons button {
   height: 3rem;
   padding-bottom: 0.45rem;
 }
