@@ -287,7 +287,6 @@ button[hidden] {
 /* the sidebar runs to the bottom of the window: the spacer stretches, build sits at the foot */
 
 body {
-  min-height: 95dvh; /* the column stops a little short of the window's bottom edge */
   display: flex;
   flex-direction: column;
 }
@@ -303,11 +302,14 @@ body {
 
 #gap {
   flex: 1;
+  align-items: flex-start; /* the sidebar sizes from the window, not from the content beside it */
 }
 
 .left-frame {
   display: flex;
   flex-direction: column;
+  height: calc(95dvh - var(--header-h, 200px)); /* ends at 95% of the window on every screen; --header-h is set by quiz.js */
+  min-height: min-content;
 }
 
 .left-frame > div:first-of-type {

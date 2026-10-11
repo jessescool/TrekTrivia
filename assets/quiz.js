@@ -245,6 +245,11 @@ fetch(`${api}/vault`)
   .catch(() => {})
   .finally(readouts);
 
+// the sidebar's height is 95% of the window minus the header, and the header's height depends on the layout
+const measureHeader = () => { const w = document.querySelector('.wrap'); document.documentElement.style.setProperty('--header-h', `${w.offsetTop + w.offsetHeight + 4}px`); };
+measureHeader();
+addEventListener('resize', measureHeader);
+
 if (location.hash === '#pose') show('contribute');
 window.addEventListener('hashchange', () => { if (location.hash === '#pose') show('contribute'); }); // the nav button, from this same page
 
