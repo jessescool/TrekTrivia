@@ -44,7 +44,7 @@ function shuffle(array) {
   return array;
 }
 
-const screens = { welcome: 'Quiz', game: 'Quiz', end: 'Results', contribute: 'Pose' };
+const screens = { welcome: 'Quiz', game: 'Quiz', end: 'Results', contribute: 'Contribute' };
 
 function show(id) {
   for (const section of ['welcome', 'game', 'end', 'contribute']) {
