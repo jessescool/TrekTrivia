@@ -4,7 +4,6 @@
 -- push repo to GitHub, then maybe connect the Worker to it for deploy-on-push (Cloudflare Workers Builds, not Actions)
 -- find and shut down the DigitalOcean droplet (nothing points at it)
 -- add percentile...
--- Audio on correct/incorrect answers
 -- Original Favicon (svg or ico, or both)
 -- copy pass: welcome text, contribute instructions, results wording, About page
 -- flow screens: results, contribute response states, empty-series cases
