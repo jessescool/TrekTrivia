@@ -497,6 +497,7 @@ audio {
 
   /* stacked labels need less height, and the column shouldn't outrun a short screen like the form */
   .left-frame .panel-3, .left-frame .panel-4 { height: 72px; min-height: 0; }
+  .left-frame::before { height: 72px; } /* the black square behind the first panel's curve must match the panel, or it shows below it */
   .left-frame .panel-5 { height: 60px; }
   .panel-6 { height: 56px; max-height: 56px; font-size: 1em; } /* the column-width sizing is for desktop; here the label is stacked anyway */
   .left-frame .panel-7 { height: 50px; }
