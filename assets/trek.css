@@ -240,6 +240,46 @@ button[hidden] {
   color: var(--lilac);
 }
 
+/* the sidebar runs to the bottom of the window: the spacer stretches, build sits at the foot */
+
+body {
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+}
+
+.wrap-standard {
+  display: flex;
+  flex-direction: column;
+}
+
+#gap {
+  flex: 1;
+}
+
+.left-frame {
+  display: flex;
+  flex-direction: column;
+}
+
+.left-frame > div:first-of-type {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.panel-spacer {
+  flex: 1;
+  height: auto;
+  min-height: 40px;
+}
+
+/* readout panels at readout heights */
+
+.left-frame .panel-3 { height: 100px; }
+.left-frame .panel-4 { height: 120px; }
+.left-frame .panel-5 { height: 80px; }
+
 /* the two bottom panels are links and readouts, not slabs */
 
 .panel-6 {
