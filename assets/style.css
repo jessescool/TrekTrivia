@@ -135,13 +135,13 @@ select {
 
 /* welcome-specific styling */
 
-#seriesSelection {
+#seriesSelection, #difficultySelection {
   display: grid;
   grid-template-columns: repeat(3, auto);
   gap: 6px 24px;
 }
 
-#seriesSelection label {
+#seriesSelection label, #difficultySelection label {
   font-weight: bold;
 }
 

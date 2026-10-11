@@ -6,7 +6,25 @@ let score = 0;
 let contents = 0;   // questions answered so far
 
 
+// constants
+
+const bands = {
+  easy: [1, 3],
+  medium: [4, 6],
+  hard: [7, 10]
+}; // difficulty is 1 to 10 in the vault; these are the words the player sees
+
+
 // helpful functions
+
+function checked(selection) {
+  const values = [...document.querySelectorAll(`#${selection} input:checked`)].map(box => box.value);
+  return values.length ? values : null; // nothing checked means everything's allowed
+}
+
+function band(difficulty) {
+  return Object.keys(bands).find(name => difficulty <= bands[name][1]);
+}
 
 function shuffle(array) {
   for (let i = array.length - 1; i > 0; i--) {
@@ -32,12 +50,14 @@ function show(id) {
 // critical functions
 
 function withdraw() {
-  const checked = [...document.querySelectorAll('#seriesSelection input:checked')].map(box => box.value);
-  const allowed = checked.length ? checked : null; // nothing checked means everything's allowed
-
+  const series = checked('seriesSelection');
+  const difficulties = checked('difficultySelection');
   const count = Number(document.getElementById('count').value);
 
-  const withdrawal = vault.filter(q => !allowed || allowed.includes(q.source));
+  const withdrawal = vault.filter(q =>
+    (!series || series.includes(q.source)) &&
+    (!difficulties || difficulties.includes(band(q.difficulty)))
+  );
 
   // shuffle, take a handful, then sort so the quiz ramps up
   return shuffle(withdrawal).slice(0, count).sort((a, b) => a.difficulty - b.difficulty);
@@ -123,7 +143,7 @@ function setButtons() {
   current.options.forEach((option, i) => {
     document.getElementById(`option${i}`).value = option;
   });
-  document.getElementById('difficulty').innerHTML = `difficulty ${current.difficulty} of 10`;
+  document.getElementById('difficulty').innerHTML = band(current.difficulty);
 }
 
 console.log(`Source successful!`);
