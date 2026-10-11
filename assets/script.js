@@ -224,29 +224,21 @@ async function pose(event) {
 
 // ON LOAD
 
-// stardates the way the template reckons them: TNG season one is 1987
-function stardate(date) {
-  const year = date.getFullYear();
-  const start = new Date(year, 0, 1), end = new Date(year + 1, 0, 1);
-  return Math.floor((year - 1987 + 41) * 1000 + (date - start) / (end - start) * 1000);
-}
-
 // the sidebar readouts
-function readouts(updated) {
+function readouts() {
   const put = (id, value) => { const e = document.getElementById(id); if (e) e.textContent = value; };
   put('bank', vault.length);
   put('checked', vault.filter(q => q.checked).length);
   put('seen', seen.size);
-  put('updated', stardate(updated));
+  put('build', typeof build === 'undefined' ? 'dev' : build); // stamped by `npm run deploy`
 }
 
 // the bundled vault is the fallback; the live one has whatever's been accepted since
-let updated = new Date();
 fetch(`${api}/vault`)
-  .then(r => { updated = new Date(r.headers.get('Last-Modified') || Date.now()); return r.json(); })
+  .then(r => r.json())
   .then(fresh => { if (fresh.length) vault.splice(0, vault.length, ...fresh); })
   .catch(() => {})
-  .finally(() => readouts(updated));
+  .finally(readouts);
 
 if (location.hash === '#pose') show('contribute');
 window.addEventListener('hashchange', () => { if (location.hash === '#pose') show('contribute'); }); // the nav button, from this same page
