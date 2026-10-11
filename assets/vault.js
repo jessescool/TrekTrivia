@@ -1274,16 +1274,5 @@ const vault = [
     ],
     "difficulty": 2,
     "source": "General"
-  },
-  {
-    "question": "Neelix's favorite ingredient.",
-    "answer": "Leola root",
-    "alternates": [
-      "Hasperat",
-      "Chadre'kab",
-      "Salt"
-    ],
-    "difficulty": 4,
-    "source": "VOY"
   }
 ];

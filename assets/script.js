@@ -52,10 +52,12 @@ function withdraw() {
   const checked = [...document.querySelectorAll('#seriesSelection input:checked')].map(box => box.value);
   const allowed = checked.length ? checked : null; // nothing checked means everything's allowed
 
+  const count = Number(document.getElementById('count').value);
+
   const withdrawal = vault.filter(q => !allowed || allowed.includes(q.source));
 
-  // shuffle first so questions of equal difficulty come out in random order
-  return shuffle(withdrawal).sort((a, b) => a.difficulty - b.difficulty);
+  // shuffle, take a handful, then sort so the quiz ramps up
+  return shuffle(withdrawal).slice(0, count).sort((a, b) => a.difficulty - b.difficulty);
 }
 
 function generateSet() {
@@ -84,10 +86,19 @@ function check(guess) {
 
 // keypress functionality
 
+function keyPress(event) {
+  const x = event.key;
+
+  if (1 <= x && x <= 4) {
+    document.getElementById(`option${x - 1}`).classList.add('button-active');
+  }
+}
+
 function keyRelease(event) {
   const x = event.key;
 
   if (1 <= x && x <= 4) {
+    document.getElementById(`option${x - 1}`).classList.remove('button-active');
     check(x - 1);
   }
 
@@ -105,10 +116,12 @@ function engage() {
   generateSet();
   setButtons();
   show('game');
+  document.addEventListener('keydown', keyPress);
   document.addEventListener('keyup', keyRelease);
 }
 
 function allStop() {
+  document.removeEventListener('keydown', keyPress);
   document.removeEventListener('keyup', keyRelease);
   show('end');
 

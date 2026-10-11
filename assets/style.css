@@ -110,6 +110,14 @@ input[type = button]:focus {
   outline: 0;
 }
 
+input[type = button].button-active {
+  opacity: 0.6;
+}
+
+select {
+  font-size: 16px;
+}
+
 #play, #reset {
   width: 200px;
   background-color: #F2C300;

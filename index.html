@@ -42,6 +42,16 @@
             <label><input type = "checkbox" value = "General"> General</label>
           </div>
           <p>If none are selected, they'll all appear!</p>
+          <p>
+            <label>Number of questions:
+              <select id = "count">
+                <option value = "10">10</option>
+                <option value = "25" selected>25</option>
+                <option value = "50">50</option>
+                <option value = "Infinity">all of them</option>
+              </select>
+            </label>
+          </p>
         </div>
 
         <input type = "button" value = "ENGAGE" id = "play" onclick = "engage();">
