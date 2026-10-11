@@ -148,6 +148,7 @@ function keyRelease(event) {
 function engage() {
   beep(2);
   pool = withdraw();
+  document.getElementById('status').textContent = (checked('seriesSelection') || ['All series']).join(' • ');
   more();
 }
 
@@ -183,7 +184,8 @@ function setButtons() {
     document.getElementById(`option${i}`).textContent = option;
   });
   const dealt = document.getElementById('progress').children.length;
-  document.getElementById('status').textContent = `Question ${contents + 1} of ${dealt} • Score ${score}`;
+  document.getElementById('count').textContent = `Question ${String(contents + 1).padStart(2, '0')} of ${dealt}`;
+  document.getElementById('score').textContent = `Score ${String(score).padStart(2, '0')}`;
 }
 
 // contribution

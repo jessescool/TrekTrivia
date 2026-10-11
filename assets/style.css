@@ -113,13 +113,13 @@ main p {
 
 .answers button:nth-child(1) { background-color: var(--african-violet); }
 .answers button:nth-child(2) { background-color: var(--butterscotch); }
-.answers button:nth-child(3) { background-color: var(--bluey); }
+.answers button:nth-child(3) { background-color: var(--lilac); }
 .answers button:nth-child(4) { background-color: var(--almond); }
 
-/* the verdict shows on the buttons */
+/* the verdict shows on the buttons, in LCARS colours the answers don't use */
 
-.answers button.correct   { background-color: #7fdc8a; }   /* not canon LCARS, but right is right */
-.answers button.incorrect { background-color: var(--mars); }
+.answers button.correct   { background-color: var(--bluey); }
+.answers button.incorrect { background-color: var(--red); }
 
 .buttons button.button-active {
   filter: brightness(115%);
@@ -138,7 +138,7 @@ button[hidden] {
   margin-block: 1.25rem;
 }
 
-/* one slice per question: mauve to come, go or no once answered */
+/* one slice per question: mauve to come, blue or red once answered */
 
 #progress {
   max-width: 36rem;
@@ -156,8 +156,19 @@ button[hidden] {
 
 #progress span:first-child { border-radius: 100vmax 0 0 100vmax; }
 #progress span:last-child  { border-radius: 0 100vmax 100vmax 0; }
-#progress .correct   { background: #7fdc8a; }
-#progress .incorrect { background: var(--mars); }
+#progress .correct   { background: var(--bluey); }
+#progress .incorrect { background: var(--red); }
+
+/* the readout under the bar */
+
+#readout {
+  display: flex;
+  justify-content: space-between;
+  max-width: 36rem;
+  font-size: var(--sub-fonts);
+  text-transform: uppercase;
+  color: var(--lcars-bar-text-color);
+}
 
 /* the pose form */
 

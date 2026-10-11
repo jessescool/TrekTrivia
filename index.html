@@ -89,7 +89,7 @@
           </section>
 
           <section id="game" hidden>
-            <div class="lcars-text-bar"><h3 id="status">Question</h3></div>
+            <div class="lcars-text-bar"><h3 id="status">Quiz</h3></div>
             <p id="question"></p>
             <div class="buttons answers" id="interact">
               <button class="guess" id="option0" onclick="check(0);"></button>
@@ -98,6 +98,7 @@
               <button class="guess" id="option3" onclick="check(3);"></button>
             </div>
             <div id="progress"></div>
+            <div id="readout"><span id="count"></span><span id="score"></span></div>
             <div class="buttons">
               <button id="endquiz" class="button-red minor" onclick="allStop();">Abort</button>
             </div>
