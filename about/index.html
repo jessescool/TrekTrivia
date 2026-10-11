@@ -1,79 +1,119 @@
 <!DOCTYPE html>
-
-<html lang = "en">
-
-  <head>
-    <title>Trek Trivia - About</title>
-    <meta charset = "UTF-8">
-    <meta name = "viewport" content = "width=device-width, initial-scale=1.0">
-    <link rel = "icon" type = "image/svg+xml" href = "../assets/icons/favicon.svg">
-    <link href = "../assets/style.css" rel = "stylesheet" type = "text/css">
-  </head>
-
-  <body>
-    <header class = "top">
-      <div class = "elbow"></div>
-      <div class = "topbar"><span></span><span></span><span></span></div>
-    </header>
-    <div class = "frame">
-      <aside class = "sidebar">
-        <div>LCARS 47</div>
-        <div>ABOUT</div>
-        <div>NCC-1701</div>
-        <div>LOG</div>
-      </aside>
-      <main>
-      <section>
-
-        <h1>About</h1>
-
-        <h2>The Quiz</h2>
-        <p>There's a lot of trivia about the Trek franchise scattered throughout the web.
-          I'm hoping trektrivia.com can become a place where that trivia (and more) can centralize, so Trekkies can flock here to get their dose of trivia and flex their muscles.
-          The site is built to accommodate a vast number of questions and relies on constant user submission to keep the questions fresh.
-        </p>
-
-        <h2>Writing a Question</h2>
-        <p>I've tried my best to phrase most questions in this format: <br>
-          <br>
-          <i>Captain Picard prefers <u>this</u> type of tea.</i> <br>
-          <br>
-          Where "<i>this</i>" represents the correct answer.
-          This seems like an eloquent and easy way to frame a question. <br>
-          <br>
-          The hardest part is brainstorming <u>plausible</u> alternative responses.
-          When you're writing a question, try to pick a topic that seems conducive to alternatives. <br>
-          <br>
-          All information should be verifiable on Memory Alpha (i.e. questions should be <a href = "https://en.wikipedia.org/wiki/Canon_(fiction)" target = "_blank">canon</a>).
-        </p>
-
-        <h2>Links</h2>
-        <p>(<a href = "https://docs.google.com/forms/d/e/1FAIpQLScmM7IK7FF-50tFEJUtM2Mcw79Fu8moz4isMeaPGz8PI6kXbg/viewform?usp=sf_link" target = "_blank">contribute a question!</a>)</p>
-        <p>(<a href = "https://docs.google.com/forms/d/e/1FAIpQLScbsGV9TFulqs7wgHzGz0jiaeohTpK2QL4gHe8Seb59dTz1ew/viewform?usp=sf_link" target = "_blank">spotted an error?</a>)</p>
-        <p>(<a href = "https://memory-alpha.fandom.com/wiki/Portal:Main" target = "_blank">Memory Alpha</a>, to help brainstorm and verify questions)</p>
-        <p>(<a href = "../">back to the quiz</a>)</p>
-
-        <h2>About the Creator</h2>
-        <p>I've been a Trek fan since primary school, when my parents introduced me to The Next Generation.
-          DS9 shortly followed and became my favorite series.
-          The optimistic and principled attitudes of many characters in the franchise are powerful; this optimism is likely the reason why I adore the series so much.</p>
-
-        <p>Making this quiz was my first venture into programming, back in high school.
-          I've since come back to tidy it up, but the bones are the same.</p>
-
-        <h2>Notes...</h2>
-        <ul>
-          <li>I tend to misspell things... if you find an error, submit it <a href = "https://docs.google.com/forms/d/e/1FAIpQLScbsGV9TFulqs7wgHzGz0jiaeohTpK2QL4gHe8Seb59dTz1ew/viewform?usp=sf_link" target = "_blank">here</a>.</li>
-          <li>Questions about TOS, ENT, DIS, and PIC are in short supply! If you know these series well, please submit some questions about them!</li>
-          <li>You can answer with the 1, 2, 3, and 4 keys, and abort with Escape.</li>
-          <li>The favicon is an attempt to recreate the disks from TNG's "<a href = "https://memory-alpha.fandom.com/wiki/The_Game_(episode)" target = "_blank">The Game</a>."</li>
-        </ul>
-
-        <input type = "image" id = "coffee" src = "../assets/icons/coffee.svg" alt = "A donation to the cause." onclick = "alert(`I'm off the stuff, but thanks anyway!`);">
-
-      </section>
-      </main>
+<html lang="en">
+<head>
+  <title>Trek Trivia - About</title>
+  <meta charset="UTF-8">
+  <meta name="description" content="A community-made quiz on all things Star Trek!">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="keywords" content="Star Trek, Trek, Trek Trivia, Star Trek Quiz, Star Trek Trivia, LCARS">
+  <meta name="robots" content="index, follow">
+  <link rel="icon" type="image/svg+xml" href="../assets/icons/favicon.svg">
+  <link rel="stylesheet" href="../assets/lcars/classic.css">
+  <link rel="stylesheet" href="../assets/style.css">
+  <script defer src="../assets/vault.js"></script>
+  <script defer src="../assets/script.js"></script>
+</head>
+<body>
+  <section class="wrap-standard" id="column-3">
+    <div class="wrap">
+      <div class="left-frame-top">
+        <button onclick="go('../')" class="panel-1">Trek<span class="hop">Trivia</span></button>
+        <button onclick="go('../about/')" class="panel-2">02<span class="hop">-about</span></button>
+      </div>
+      <div class="right-frame-top">
+        <div class="banner">Trek Trivia &#149; <span id="stardate"> </span></div>
+        <div class="data-cascade-button-group">
+          <div class="data-cascade-wrapper" id="default">
+          <div class="data-column"><div class="dc-row-1">93-939200</div><div class="dc-row-1">51-170314</div><div class="dc-row-2">17-342736</div><div class="dc-row-3">69-482196</div><div class="dc-row-3">97-707654</div><div class="dc-row-4">54-502709</div><div class="dc-row-5">95-243799</div><div class="dc-row-6">56-820395</div><div class="dc-row-7">87-171415</div></div>
+					<div class="data-column"><div class="dc-row-1">24-791499</div><div class="dc-row-1">57-180374</div><div class="dc-row-2">37-720223</div><div class="dc-row-3">24-587216</div><div class="dc-row-3">34-373627</div><div class="dc-row-4">35-441563</div><div class="dc-row-5">41-867853</div><div class="dc-row-6">50-260241</div><div class="dc-row-7">33-116811</div></div>
+					<div class="data-column"><div class="dc-row-1">76-136816</div><div class="dc-row-1">18-493990</div><div class="dc-row-2">92-240240</div><div class="dc-row-3">46-800712</div><div class="dc-row-3">91-738023</div><div class="dc-row-4">22-895467</div><div class="dc-row-5">16-770371</div><div class="dc-row-6">59-524953</div><div class="dc-row-7">29-658921</div></div>
+					<div class="data-column"><div class="dc-row-1">54-925754</div><div class="dc-row-1">62-266201</div><div class="dc-row-2">53-497097</div><div class="dc-row-3">43-915502</div><div class="dc-row-3">31-378153</div><div class="dc-row-4">31-218246</div><div class="dc-row-5">23-664904</div><div class="dc-row-6">77-642672</div><div class="dc-row-7">65-747753</div></div>
+					<div class="data-column"><div class="dc-row-1">18-335618</div><div class="dc-row-1">56-777492</div><div class="dc-row-2">82-401333</div><div class="dc-row-3">83-125057</div><div class="dc-row-3">72-619394</div><div class="dc-row-4">13-675305</div><div class="dc-row-5">38-707962</div><div class="dc-row-6">84-371703</div><div class="dc-row-7">82-160919</div></div>
+					<div class="data-column"><div class="dc-row-1">47-884540</div><div class="dc-row-1">55-606817</div><div class="dc-row-2">24-978167</div><div class="dc-row-3">51-145513</div><div class="dc-row-3">24-744196</div><div class="dc-row-4">74-412519</div><div class="dc-row-5">78-983368</div><div class="dc-row-6">77-707540</div><div class="dc-row-7">90-541766</div></div>
+					<div class="data-column"><div class="dc-row-1">19-331678</div><div class="dc-row-1">19-101443</div><div class="dc-row-2">36-794835</div><div class="dc-row-3">20-528665</div><div class="dc-row-3">41-866174</div><div class="dc-row-4">49-519513</div><div class="dc-row-5">73-369027</div><div class="dc-row-6">76-998993</div><div class="dc-row-7">59-496090</div></div>
+					<div class="data-column"><div class="dc-row-1">10-253364</div><div class="dc-row-1">58-167673</div><div class="dc-row-2">13-519149</div><div class="dc-row-3">45-699865</div><div class="dc-row-3">92-217103</div><div class="dc-row-4">66-171157</div><div class="dc-row-5">69-546336</div><div class="dc-row-6">27-570062</div><div class="dc-row-7">74-498205</div></div>
+          </div>
+          <nav>
+            <button onclick="go('../')" class="nav-1 ">01-quiz</button>
+            <button onclick="go('../about/')" class="nav-2 animation-on">02-about</button>
+            <button onclick="go('../#pose')" class="nav-3">03-pose</button>
+            <button onclick="go('https://memory-alpha.fandom.com/wiki/Portal:Main')" class="nav-4">04-memory alpha</button>
+          </nav>
+        </div>
+        <div class="bar-panel first-bar-panel">
+          <div class="bar-1"></div><div class="bar-2"></div><div class="bar-3"></div><div class="bar-4"></div><div class="bar-5"></div>
+        </div>
+      </div>
     </div>
-  </body>
+    <div class="wrap" id="gap">
+      <div class="left-frame">
+        <button onclick="topFunction(); playSound()" id="topBtn"><span class="hop">screen</span> top</button>
+        <div>
+          <button onclick="go('../')" class="panel-3">03<span class="hop">-quiz</span></button>
+          <button onclick="go('../#pose')" class="panel-4">04<span class="hop">-pose</span></button>
+          <button class="panel-5"><span id="bank">&nbsp;</span><span class="hop">-questions</span></button>
+          <button onclick="go('https://memory-alpha.fandom.com/wiki/Portal:Main')" class="panel-6">06<span class="hop">-alpha</span></button>
+          <div class="panel-spacer"></div>
+        </div>
+        <div>
+          <button class="panel-7">47<span class="hop">-1701D</span></button>
+        </div>
+      </div>
+      <div class="right-frame">
+        <div class="bar-panel">
+          <div class="bar-6"></div><div class="bar-7"></div><div class="bar-8"></div><div class="bar-9"></div><div class="bar-10"></div>
+        </div>
+        <main>
+          <h1>About</h1>
 
+          <h2>The Quiz</h2>
+          <p>There's a lot of trivia about the Trek franchise scattered throughout the web.
+            I'm hoping trektrivia.com can become a place where that trivia (and more) can centralize, so Trekkies can flock here to get their dose of trivia and flex their muscles.
+            The site is built to accommodate a vast number of questions and relies on constant user submission to keep the questions fresh.</p>
+
+          <h2>Writing a Question</h2>
+          <p>I've tried my best to phrase most questions in this format:</p>
+          <blockquote>Captain Picard prefers <u>this</u> type of tea.</blockquote>
+          <p>Where "<i>this</i>" represents the correct answer. This seems like an eloquent and easy way to frame a question.
+            The hardest part is brainstorming <u>plausible</u> alternative responses. When you're writing a question, try to pick a topic that seems conducive to alternatives.
+            All information should be verifiable on Memory Alpha (i.e. questions should be <a href="https://en.wikipedia.org/wiki/Canon_(fiction)">canon</a>).
+            When you submit one, the ship's computer checks it against Memory Alpha before it goes in.</p>
+
+          <h2>About the Creator</h2>
+          <p>I've been a Trek fan since primary school, when my parents introduced me to The Next Generation.
+            DS9 shortly followed and became my favorite series.
+            The optimistic and principled attitudes of many characters in the franchise are powerful; this optimism is likely the reason why I adore the series so much.</p>
+          <p>Making this quiz was my first venture into programming, back in high school. I've since come back to tidy it up, but the bones are the same.</p>
+
+          <h2>Notes</h2>
+          <ul class="lcars-list">
+            <li>I tend to misspell things... if you find an error, <a href="https://docs.google.com/forms/d/e/1FAIpQLScbsGV9TFulqs7wgHzGz0jiaeohTpK2QL4gHe8Seb59dTz1ew/viewform?usp=sf_link">submit it here</a>.</li>
+            <li>Questions about TOS, ENT, DIS, and PIC are in short supply! If you know these series well, please pose some.</li>
+            <li>You can answer with the 1, 2, 3, and 4 keys, and abort with Escape.</li>
+            <li>The favicon is an attempt to recreate the disks from TNG's "<a href="https://memory-alpha.fandom.com/wiki/The_Game_(episode)">The Game</a>."</li>
+          </ul>
+
+          <div class="buttons justify-center">
+            <button class="button-orange" onclick="go('../')">Back to the quiz</button>
+            <button class="button-lilac" onclick="go('../#pose')">Pose a question</button>
+            <button class="button-butterscotch" onclick="alert(`I'm off the stuff, but thanks anyway!`)">Buy me a coffee</button>
+          </div>
+        </main>
+        <footer>
+          LCARS Inspired Website Template by <a href="https://www.thelcars.com">www.TheLCARS.com</a>, with modifications.<br>
+          STAR TREK &#174; and related marks are trademarks of CBS Studios Inc. All rights reserved. trektrivia.com is in no way affiliated with CBS Studios Inc.<br>
+          LCARS was designed by graphic artist Michael Okuda.
+        </footer>
+        <script src="../assets/lcars/lcars.js"></script>
+        <div class="headtrim"> </div>
+        <div class="baseboard"> </div>
+        <audio id="audio1" src="../assets/lcars/beep1.mp3" preload="auto"></audio>
+        <audio id="audio2" src="../assets/lcars/beep2.mp3" preload="auto"></audio>
+        <audio id="audio3" src="../assets/lcars/beep3.mp3" preload="auto"></audio>
+        <audio id="audio4" src="../assets/lcars/beep4.mp3" preload="auto"></audio>
+        <audio id="audio5" src="../assets/lcars/beep5.mp3" preload="auto"></audio>
+      </div>
+    </div>
+  </section>
+</body>
 </html>

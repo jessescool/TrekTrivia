@@ -1,106 +1,148 @@
 <!DOCTYPE html>
-
-<html lang = "en">
-
-  <head>
-    <title>Trek Trivia</title>
-    <meta charset = "UTF-8">
-    <meta name = "description" content = "A community-made quiz on all things Star Trek!">
-    <meta name = "viewport" content = "width=device-width, initial-scale=1.0">
-    <meta name = "keywords" content = "Star Trek, Trek, Trek Trivia, Star Trek Quiz, Star Trek Trivia, Star Trek">
-    <meta name = "robots" content = "index, follow">
-    <link rel = "icon" type = "image/svg+xml" href = "assets/icons/favicon.svg">
-    <link rel = "mask-icon" type = "image/svg+xml" href = "assets/icons/favicon.svg">
-    <script defer src = "assets/vault.js"></script>
-    <script defer src = "assets/script.js"></script>
-    <link href = "assets/style.css" rel = "stylesheet" type = "text/css">
-  </head>
-
-  <body>
-    <header class = "top">
-      <div class = "elbow"></div>
-      <div class = "topbar"><span></span><span></span><span></span></div>
-    </header>
-    <div class = "frame">
-      <aside class = "sidebar">
-        <div>LCARS 47</div>
-        <div>TRIVIA</div>
-        <div>NCC-1701</div>
-        <div>ENGAGE</div>
-      </aside>
-      <main>
-
-      <section id = "welcome">
-        <h1 class = "banner">Trek Trivia</h1>
-        <h2><a href = "https://i.imgur.com/SP9Pu.gif" target = "_blank" class = "hiddennavlink">Welcome!</a></h2>
-        <p> This is a fan-made quiz on all things Star Trek, programmed
-          to accommodate a constantly expanding set of questions, so pose one
-          <a href = "#" onclick = "show('contribute'); return false;">here</a>.
-          If you'd like to learn about the project, head over to the <a href = "./about" target = "_blank">about page</a>.
-          Otherwise, <em>Qapla'</em>
-        </p>
-        <div id = "settings">
-          <p> Select the series you'd like to appear. </p>
-          <div id = "seriesSelection">
-            <label><input type = "checkbox" value = "TOS"> TOS</label>
-            <label><input type = "checkbox" value = "TNG"> TNG</label>
-            <label><input type = "checkbox" value = "DS9"> DS9</label>
-            <label><input type = "checkbox" value = "VOY"> VOY</label>
-            <label><input type = "checkbox" value = "ENT"> ENT</label>
-            <label><input type = "checkbox" value = "DIS"> DIS</label>
-            <label><input type = "checkbox" value = "PIC"> PIC</label>
-            <label><input type = "checkbox" value = "Movie"> Movies</label>
-            <label><input type = "checkbox" value = "General"> General</label>
+<html lang="en">
+<head>
+  <title>Trek Trivia</title>
+  <meta charset="UTF-8">
+  <meta name="description" content="A community-made quiz on all things Star Trek!">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="keywords" content="Star Trek, Trek, Trek Trivia, Star Trek Quiz, Star Trek Trivia, LCARS">
+  <meta name="robots" content="index, follow">
+  <link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg">
+  <link rel="stylesheet" href="assets/lcars/classic.css">
+  <link rel="stylesheet" href="assets/style.css">
+  <script defer src="assets/vault.js"></script>
+  <script defer src="assets/script.js"></script>
+</head>
+<body>
+  <section class="wrap-standard" id="column-3">
+    <div class="wrap">
+      <div class="left-frame-top">
+        <button onclick="go('')" class="panel-1">Trek<span class="hop">Trivia</span></button>
+        <button onclick="go('about/')" class="panel-2">02<span class="hop">-about</span></button>
+      </div>
+      <div class="right-frame-top">
+        <div class="banner">Trek Trivia &#149; <span id="stardate"> </span></div>
+        <div class="data-cascade-button-group">
+          <div class="data-cascade-wrapper" id="default">
+          <div class="data-column"><div class="dc-row-1">72-494725</div><div class="dc-row-1">69-599984</div><div class="dc-row-2">85-210700</div><div class="dc-row-3">41-268110</div><div class="dc-row-3">17-356370</div><div class="dc-row-4">75-269901</div><div class="dc-row-5">45-733505</div><div class="dc-row-6">58-287449</div><div class="dc-row-7">17-776163</div></div>
+					<div class="data-column"><div class="dc-row-1">31-934433</div><div class="dc-row-1">87-318794</div><div class="dc-row-2">82-290790</div><div class="dc-row-3">87-322387</div><div class="dc-row-3">92-918782</div><div class="dc-row-4">32-349198</div><div class="dc-row-5">48-726238</div><div class="dc-row-6">97-955879</div><div class="dc-row-7">38-849196</div></div>
+					<div class="data-column"><div class="dc-row-1">24-762756</div><div class="dc-row-1">73-288268</div><div class="dc-row-2">75-373687</div><div class="dc-row-3">61-864159</div><div class="dc-row-3">35-817247</div><div class="dc-row-4">40-850437</div><div class="dc-row-5">47-800812</div><div class="dc-row-6">33-979780</div><div class="dc-row-7">47-458673</div></div>
+					<div class="data-column"><div class="dc-row-1">31-108136</div><div class="dc-row-1">97-617359</div><div class="dc-row-2">70-618082</div><div class="dc-row-3">10-876131</div><div class="dc-row-3">71-847812</div><div class="dc-row-4">87-478322</div><div class="dc-row-5">71-354824</div><div class="dc-row-6">47-679323</div><div class="dc-row-7">87-599667</div></div>
+					<div class="data-column"><div class="dc-row-1">41-575252</div><div class="dc-row-1">95-809542</div><div class="dc-row-2">37-924195</div><div class="dc-row-3">93-294911</div><div class="dc-row-3">47-499983</div><div class="dc-row-4">19-857727</div><div class="dc-row-5">93-415625</div><div class="dc-row-6">98-343055</div><div class="dc-row-7">20-984369</div></div>
+					<div class="data-column"><div class="dc-row-1">31-360281</div><div class="dc-row-1">61-524194</div><div class="dc-row-2">10-437521</div><div class="dc-row-3">57-851542</div><div class="dc-row-3">84-205896</div><div class="dc-row-4">13-272734</div><div class="dc-row-5">12-563733</div><div class="dc-row-6">58-973699</div><div class="dc-row-7">87-960541</div></div>
+					<div class="data-column"><div class="dc-row-1">42-384294</div><div class="dc-row-1">42-993511</div><div class="dc-row-2">16-911104</div><div class="dc-row-3">68-446624</div><div class="dc-row-3">95-556480</div><div class="dc-row-4">40-257973</div><div class="dc-row-5">48-359728</div><div class="dc-row-6">86-592440</div><div class="dc-row-7">60-750124</div></div>
+					<div class="data-column"><div class="dc-row-1">80-938543</div><div class="dc-row-1">74-738915</div><div class="dc-row-2">32-556561</div><div class="dc-row-3">30-662230</div><div class="dc-row-3">15-492419</div><div class="dc-row-4">45-119758</div><div class="dc-row-5">51-546838</div><div class="dc-row-6">16-380163</div><div class="dc-row-7">14-408928</div></div>
           </div>
-          <p>If none are selected, they'll all appear!</p>
+          <nav>
+            <button onclick="go('')" class="nav-1 animation-on">01-quiz</button>
+            <button onclick="go('about/')" class="nav-2 ">02-about</button>
+            <button onclick="go('#pose')" class="nav-3">03-pose</button>
+            <button onclick="go('https://memory-alpha.fandom.com/wiki/Portal:Main')" class="nav-4">04-memory alpha</button>
+          </nav>
         </div>
-
-        <input type = "button" value = "ENGAGE" id = "play" onclick = "engage();">
-      </section>
-
-      <section id = "game" hidden>
-
-        <div id = "interact">
-          <p id = "question"></p>
-          <input type = "button" value = "" class = "guess" id = "option0" onclick = "check(0);">
-          <input type = "button" value = "" class = "guess" id = "option1" onclick = "check(1);">
-          <input type = "button" value = "" class = "guess" id = "option2" onclick = "check(2);">
-          <input type = "button" value = "" class = "guess" id = "option3" onclick = "check(3);">
+        <div class="bar-panel first-bar-panel">
+          <div class="bar-1"></div><div class="bar-2"></div><div class="bar-3"></div><div class="bar-4"></div><div class="bar-5"></div>
         </div>
-
-        <div id = "progress"></div>
-
-        <input type = "button" value = "Abort" id = "endquiz" onclick = "allStop();">
-      </section>
-
-      <section id = "end" hidden>
-        <h2>Thanks for Playing!</h2>
-        <p id = "scoreReport"></p>
-        <input type = "button" value = "25 MORE" id = "more" onclick = "more();">
-        <input type = "button" value = "PLAY AGAIN!" id = "reset" onclick = "window.location.reload();">
-        <p>(<a href = "#" onclick = "show('contribute'); return false;">contribute a question!</a>)</p>
-        <p>(<a href = "https://docs.google.com/forms/d/e/1FAIpQLScbsGV9TFulqs7wgHzGz0jiaeohTpK2QL4gHe8Seb59dTz1ew/viewform?usp=sf_link" target = "_blank">spotted an error?</a>)</p>
-        <p>(<a href = "./about" target = "_blank">about</a>)</p>
-      </section>
-
-      <section id = "contribute" hidden>
-        <h2>Pose a Question</h2>
-        <p>Phrase it like <i>Captain Picard prefers <u>this</u> type of tea.</i>
-          The computer will check it against Memory Alpha before it goes in.</p>
-        <form id = "pose" onsubmit = "pose(event);">
-          <input type = "text" name = "question" placeholder = "The question" required>
-          <input type = "text" name = "answer" placeholder = "The answer" required>
-          <input type = "text" name = "alternate" placeholder = "A wrong answer" required>
-          <input type = "text" name = "alternate" placeholder = "Another wrong answer" required>
-          <input type = "text" name = "alternate" placeholder = "One more wrong answer" required>
-          <input type = "submit" value = "SUBMIT" id = "send">
-        </form>
-        <p id = "response"></p>
-        <p>(<a href = "#" onclick = "show('welcome'); return false;">back</a>)</p>
-      </section>
-
-      </main>
+      </div>
     </div>
-  </body>
+    <div class="wrap" id="gap">
+      <div class="left-frame">
+        <button onclick="topFunction(); playSound()" id="topBtn"><span class="hop">screen</span> top</button>
+        <div>
+          <button onclick="go('')" class="panel-3">03<span class="hop">-quiz</span></button>
+          <button onclick="go('#pose')" class="panel-4">04<span class="hop">-pose</span></button>
+          <button class="panel-5"><span id="bank">&nbsp;</span><span class="hop">-questions</span></button>
+          <button onclick="go('https://memory-alpha.fandom.com/wiki/Portal:Main')" class="panel-6">06<span class="hop">-alpha</span></button>
+          <div class="panel-spacer"></div>
+        </div>
+        <div>
+          <button class="panel-7">47<span class="hop">-1701D</span></button>
+        </div>
+      </div>
+      <div class="right-frame">
+        <div class="bar-panel">
+          <div class="bar-6"></div><div class="bar-7"></div><div class="bar-8"></div><div class="bar-9"></div><div class="bar-10"></div>
+        </div>
+        <main>
+          <section id="welcome">
+            <h1 class="trek">Trek Trivia</h1>
+            <p>This is a fan-made quiz on all things Star Trek, programmed to accommodate a constantly expanding set of questions, so
+              <a href="#" onclick="show('contribute'); return false;">pose one</a>.
+              If you'd like to learn about the project, head over to the <a href="about/">about page</a>. Otherwise, <em>Qapla'</em></p>
+            <p class="uppercase font-almond-creme">Select the series you'd like to appear. None selected means all of them.</p>
+            <div class="buttons toggles" id="seriesSelection">
+            <button type="button" data-series="TOS" onclick="toggleSeries(this)">TOS</button>
+            <button type="button" data-series="TNG" onclick="toggleSeries(this)">TNG</button>
+            <button type="button" data-series="DS9" onclick="toggleSeries(this)">DS9</button>
+            <button type="button" data-series="VOY" onclick="toggleSeries(this)">VOY</button>
+            <button type="button" data-series="ENT" onclick="toggleSeries(this)">ENT</button>
+            <button type="button" data-series="DIS" onclick="toggleSeries(this)">DIS</button>
+            <button type="button" data-series="PIC" onclick="toggleSeries(this)">PIC</button>
+            <button type="button" data-series="Movie" onclick="toggleSeries(this)">Movies</button>
+            <button type="button" data-series="General" onclick="toggleSeries(this)">General</button>
+            </div>
+            <div class="buttons justify-center">
+              <button id="play" class="button-orange" onclick="engage();">Engage</button>
+            </div>
+          </section>
 
+          <section id="game" hidden>
+            <p id="question" class="go-big font-almond-creme"></p>
+            <div class="buttons answers" id="interact">
+              <button class="guess" id="option0" onclick="check(0);"></button>
+              <button class="guess" id="option1" onclick="check(1);"></button>
+              <button class="guess" id="option2" onclick="check(2);"></button>
+              <button class="guess" id="option3" onclick="check(3);"></button>
+            </div>
+            <div id="progress"></div>
+            <div class="buttons justify-center">
+              <button id="endquiz" class="button-red small" onclick="allStop();">Abort</button>
+            </div>
+          </section>
+
+          <section id="end" hidden>
+            <h2>Thanks for Playing!</h2>
+            <p id="scoreReport" class="go-big font-almond-creme"></p>
+            <div class="buttons justify-center">
+              <button id="more" class="button-orange" onclick="more();">25 more</button>
+              <button id="reset" class="button-butterscotch" onclick="window.location.reload();">Play again</button>
+              <button class="button-lilac" onclick="show('contribute');">Pose a question</button>
+              <button class="button-bluey" onclick="go('https://docs.google.com/forms/d/e/1FAIpQLScbsGV9TFulqs7wgHzGz0jiaeohTpK2QL4gHe8Seb59dTz1ew/viewform?usp=sf_link')">Spotted an error?</button>
+            </div>
+          </section>
+
+          <section id="contribute" hidden>
+            <h2>Pose a Question</h2>
+            <p>Phrase it like <i>Captain Picard prefers <u>this</u> type of tea.</i> The computer will check it against Memory Alpha before it goes in.</p>
+            <form id="pose" onsubmit="pose(event);">
+              <input type="text" name="question" placeholder="The question" required>
+              <input type="text" name="answer" placeholder="The answer" required>
+              <input type="text" name="alternate" placeholder="A wrong answer" required>
+              <input type="text" name="alternate" placeholder="Another wrong answer" required>
+              <input type="text" name="alternate" placeholder="One more wrong answer" required>
+              <div class="buttons justify-center">
+                <button type="submit" id="send" class="button-orange">Submit</button>
+                <button type="button" class="button-lilac" onclick="show('welcome');">Back</button>
+              </div>
+            </form>
+            <p id="response" class="font-almond-creme"></p>
+          </section>
+        </main>
+        <footer>
+          LCARS Inspired Website Template by <a href="https://www.thelcars.com">www.TheLCARS.com</a>, with modifications.<br>
+          STAR TREK &#174; and related marks are trademarks of CBS Studios Inc. All rights reserved. trektrivia.com is in no way affiliated with CBS Studios Inc.<br>
+          LCARS was designed by graphic artist Michael Okuda.
+        </footer>
+        <script src="assets/lcars/lcars.js"></script>
+        <div class="headtrim"> </div>
+        <div class="baseboard"> </div>
+        <audio id="audio1" src="assets/lcars/beep1.mp3" preload="auto"></audio>
+        <audio id="audio2" src="assets/lcars/beep2.mp3" preload="auto"></audio>
+        <audio id="audio3" src="assets/lcars/beep3.mp3" preload="auto"></audio>
+        <audio id="audio4" src="assets/lcars/beep4.mp3" preload="auto"></audio>
+        <audio id="audio5" src="assets/lcars/beep5.mp3" preload="auto"></audio>
+      </div>
+    </div>
+  </section>
+</body>
 </html>

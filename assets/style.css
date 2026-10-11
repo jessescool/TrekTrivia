@@ -1,341 +1,87 @@
 /* hello and welcome to the STYLESHEET */
+/* The look is thelcars.com's classic theme (assets/lcars/classic.css). These are our modifications. */
 
-/* font imports */
 @import url(./fonts/fonts.css);
 
-/* the LCARS palette (hexes after thelcars.com's classic theme) */
+/* the one non-LCARS flourish: the old banner font on the welcome screen */
 
-:root {
-  --orange: #eb943a;
-  --butterscotch: #ea9c72;
-  --almond: #d29b7f;
-  --almond-creme: #fcc19f;
-  --barley: #edb378;
-  --african-violet: #baa4e5;
-  --lilac: #8a72a7;
-  --bluey: #89f;
-  --mars: #f20;
-  --red: #cf4f4f;
-  --dirty-mauve: #7a506d;
-  --go: #7fdc8a;     /* not canon LCARS, but right is right */
-  --no: var(--mars);
-
-  --side: 140px;     /* sidebar width */
-  --bar: 18px;       /* top bar height */
-  --gap: 4px;        /* the black between panels */
-}
-
-/* global styling */
-
-* {
-  box-sizing: border-box;
-}
-
-body {
-  margin: 0;
-  padding: 12px;
-  min-height: 100vh;
-  background: black;
-  color: var(--almond-creme);
-  font-family: 'Tiempos Text', serif;
-}
-
-/* the frame: an elbow top-left, a thin bar across the top, a column of panels down the side */
-
-.top {
-  display: flex;
-  height: 60px;
-}
-
-.elbow {
-  position: relative;
-  flex: none;
-  width: calc(var(--side) + 60px);
-  background: var(--orange);
-  border-top-left-radius: 50px;
-}
-
-.elbow::after { /* the inner curve, cut out in black */
-  content: '';
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  width: 60px;
-  height: calc(60px - var(--bar));
-  background: black;
-  border-top-left-radius: 24px;
-}
-
-.topbar {
-  flex: 1;
-  height: var(--bar);
-  margin-left: var(--gap);
-  display: flex;
-  gap: var(--gap);
-}
-
-.topbar span {
-  display: block;
-  height: 100%;
-  background: var(--butterscotch);
-}
-
-.topbar span:first-child { flex: 1; }
-.topbar span:nth-child(2) { width: 80px; background: var(--african-violet); }
-.topbar span:last-child { width: 40px; background: var(--almond); border-top-right-radius: 9px; border-bottom-right-radius: 9px; }
-
-.frame {
-  display: flex;
-  margin-top: var(--gap);
-  min-height: calc(100vh - 60px - 24px - var(--gap));
-}
-
-.sidebar {
-  flex: none;
-  width: var(--side);
-  display: flex;
-  flex-direction: column;
-  gap: var(--gap);
-}
-
-.sidebar div {
-  display: flex;
-  align-items: flex-end;
-  justify-content: flex-end;
-  padding: 4px 8px;
-  font-family: 'Antonio', sans-serif;
-  font-size: 15px;
-  letter-spacing: 0.02em;
-  color: black;
-  text-align: right;
-  text-transform: uppercase;
-}
-
-.sidebar div:nth-child(1) { height: 90px; background: var(--butterscotch); }
-.sidebar div:nth-child(2) { height: 40px; background: var(--african-violet); }
-.sidebar div:nth-child(3) { height: 140px; background: var(--almond); }
-.sidebar div:nth-child(4) { flex: 1; min-height: 60px; background: var(--orange); border-bottom-left-radius: 50px; }
-
-main {
-  flex: 1;
-  min-width: 0;
-  padding: 40px 24px 40px 36px;
-  text-align: center;
-}
-
-section {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  max-width: 600px;
-  margin: 0 auto;
+h1.trek {
+  font-family: 'Trek Headline';
+  font-style: italic;
+  text-transform: none;
+  font-size: clamp(2.6rem, 2rem + 4vw, 5rem);
+  color: var(--orange);
 }
 
 section[hidden] {
   display: none;
 }
 
-/* type */
-
-.banner {
-  font-family: 'Trek Headline';
-  font-style: italic;
-  font-weight: normal;
-  font-size: clamp(44px, 12vw, 80px);
-  color: var(--orange);
-  margin: 0;
+main p {
+  color: var(--almond-creme);
 }
 
-h1 {
-  font-family: 'Antonio', sans-serif;
-  font-weight: 400;
-  font-size: clamp(40px, 10vw, 64px);
-  text-transform: uppercase;
-  color: var(--orange);
-  margin: 0;
+/* series toggles: small LCARS buttons that light up when selected */
+
+.toggles button {
+  width: auto;
+  min-width: 6rem;
+  height: 3rem;
+  padding-inline: 1.1rem;
+  padding-bottom: 0.45rem;
+  background-color: var(--lilac);
 }
 
-h2 {
-  font-family: 'Antonio', sans-serif;
-  font-weight: 400;
-  font-size: 26px;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  color: var(--african-violet);
-  margin: 32px 0 8px;
+.toggles button.selected {
+  background-color: var(--orange);
 }
 
-p {
-  font-size: 19px;
-  line-height: 1.45;
-  margin: 10px 0;
+/* answers: full-width LCARS buttons, long text wraps */
+
+.answers {
+  flex-direction: column;
+  align-items: stretch;
+  max-width: 40rem;
 }
 
-a {
-  text-decoration: none;
-  color: var(--bluey);
-}
-
-a.hiddennavlink {
-  color: inherit;
-}
-
-em {
-  font-style: normal;
-  color: var(--mars);
-}
-
-i {
-  font-style: italic;
-}
-
-u {
-  text-decoration-color: var(--orange);
-}
-
-ul {
-  padding: 0;
-  max-width: 500px;
-  list-style-position: inside;
-}
-
-li {
-  font-size: 16px;
-  margin: 6px 0;
-}
-
-/* buttons: pills, black type, Antonio, alternating panel colours */
-
-input[type = button], input[type = submit] {
-  font-family: 'Antonio', sans-serif;
-  font-size: 19px;
-  letter-spacing: 0.03em;
-  text-transform: uppercase;
-  color: black;
-  background: var(--butterscotch);
-  border: none;
-  border-radius: 999px;
-  min-height: 46px;
+.answers button {
   width: 100%;
-  max-width: 400px;
-  padding: 10px 24px;
-  margin: 3px 0;
+  height: auto;
+  min-height: 4rem;
+  padding-block: 0.9rem 0.7rem;
   white-space: normal;
-  cursor: pointer;
-  transition: filter 0.15s;
-  -webkit-tap-highlight-color: transparent;
-  touch-action: manipulation;
 }
 
-@media (hover: hover) {
-  input[type = button]:hover, input[type = submit]:hover {
-    filter: brightness(1.18);
-  }
-}
-
-input[type = button]:focus, input[type = submit]:focus {
-  outline: 0;
-}
-
-input[type = button].button-active {
-  filter: brightness(1.18);
-}
-
-input[type = button][hidden] {
-  display: none;
-}
-
-.guess:nth-of-type(1) { background: var(--african-violet); }
-.guess:nth-of-type(2) { background: var(--butterscotch); }
-.guess:nth-of-type(3) { background: var(--bluey); }
-.guess:nth-of-type(4) { background: var(--almond); }
-
-#play, #reset, #more, #send {
-  background: var(--orange);
-  font-size: 22px;
-  width: 220px;
-  margin-top: 16px;
-}
-
-#endquiz {
-  background: var(--red);
-  width: 110px;
-  min-height: 34px;
-  font-size: 16px;
-  margin-top: 24px;
-}
+.answers button:nth-child(1) { background-color: var(--african-violet); }
+.answers button:nth-child(2) { background-color: var(--butterscotch); }
+.answers button:nth-child(3) { background-color: var(--bluey); }
+.answers button:nth-child(4) { background-color: var(--almond); }
 
 /* the verdict shows on the buttons */
 
-input[type = button].correct {
-  background: var(--go);
-  filter: none;
+.answers button.correct   { background-color: #7fdc8a; }   /* not canon LCARS, but right is right */
+.answers button.incorrect { background-color: var(--mars); }
+
+.buttons button.button-active {
+  filter: brightness(115%);
 }
 
-input[type = button].incorrect {
-  background: var(--no);
-  filter: none;
+.buttons button.small {
+  width: 8rem;
+  height: 2.6rem;
+  padding-bottom: 0.4rem;
 }
 
-/* welcome-specific styling: series toggles are little pills */
-
-#seriesSelection {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 6px;
-  max-width: 420px;
-}
-
-#seriesSelection label {
-  font-family: 'Antonio', sans-serif;
-  font-size: 16px;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  color: var(--almond-creme);
-  border: 2px solid var(--lilac);
-  border-radius: 999px;
-  padding: 5px 16px;
-  cursor: pointer;
-  -webkit-tap-highlight-color: transparent;
-}
-
-#seriesSelection label:has(input:checked) {
-  background: var(--african-violet);
-  border-color: var(--african-violet);
-  color: black;
-}
-
-#seriesSelection input { /* hidden but still there for the keyboard */
-  position: absolute;
-  opacity: 0;
-  width: 0;
-  height: 0;
-}
-
-/* game-specific styling */
-
-#interact {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-#question {
-  min-height: 80px;
-  display: flex;
-  align-items: center;
-  font-size: 22px;
+button[hidden] {
+  display: none;
 }
 
 /* one slice per question: mauve to come, go or no once answered */
 
 #progress {
-  width: 100%;
-  max-width: 400px;
-  height: 10px;
-  margin-top: 16px;
+  max-width: 40rem;
+  height: 0.6rem;
+  margin-block: 0.5rem 1.5rem;
   display: flex;
   gap: 2px;
 }
@@ -346,31 +92,31 @@ input[type = button].incorrect {
   transition: background 0.3s;
 }
 
-#progress span:first-child { border-radius: 5px 0 0 5px; }
-#progress span:last-child { border-radius: 0 5px 5px 0; }
-#progress .correct { background: var(--go); }
-#progress .incorrect { background: var(--no); }
+#progress span:first-child { border-radius: 100vmax 0 0 100vmax; }
+#progress span:last-child  { border-radius: 0 100vmax 100vmax 0; }
+#progress .correct   { background: #7fdc8a; }
+#progress .incorrect { background: var(--mars); }
 
-/* contribute-specific styling */
+#question {
+  min-height: 3.5em;
+}
+
+/* the pose form */
 
 #pose {
-  width: 100%;
-  max-width: 400px;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  gap: 0.5rem;
+  max-width: 40rem;
 }
 
 #pose input[type = text] {
-  width: 100%;
-  font-family: 'Tiempos Text', serif;
-  font-size: 16px;
+  font: inherit;
   color: var(--almond-creme);
   background: black;
-  border: 2px solid var(--lilac);
-  border-radius: 999px;
-  padding: 10px 16px;
-  margin: 3px 0;
+  border: 0.15rem solid var(--lilac);
+  border-radius: 100vmax;
+  padding: 0.6rem 1.2rem;
 }
 
 #pose input[type = text]:focus {
@@ -382,31 +128,6 @@ input[type = button].incorrect {
   color: var(--lilac);
 }
 
-/* about-specific styling */
-
-#coffee {
-  width: 120px;
-  margin: 40px auto;
-}
-
-/* phones: the sidebar becomes a strip under the bar */
-
-@media (max-width: 640px) {
-  :root { --side: 90px; }
-
-  .frame { display: block; min-height: 0; }
-
-  .sidebar {
-    flex-direction: row;
-    width: auto;
-    height: 14px;
-  }
-
-  .sidebar div { height: auto !important; min-height: 0 !important; padding: 0; font-size: 0; }
-  .sidebar div:nth-child(1) { flex: 2; }
-  .sidebar div:nth-child(2) { flex: 1; }
-  .sidebar div:nth-child(3) { flex: 3; }
-  .sidebar div:nth-child(4) { flex: 1; border-bottom-left-radius: 0; border-radius: 0 7px 7px 0; }
-
-  main { padding: 16px 4px 32px; }
+#pose .buttons {
+  margin-block: 1rem;
 }

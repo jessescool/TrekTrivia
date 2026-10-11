@@ -18,8 +18,22 @@ const seen = new Set(JSON.parse(localStorage.getItem('seen') || '[]')); // quest
 // helpful functions
 
 function checked(selection) {
-  const values = [...document.querySelectorAll(`#${selection} input:checked`)].map(box => box.value);
-  return values.length ? values : null; // nothing checked means everything's allowed
+  const values = [...document.querySelectorAll(`#${selection} .selected`)].map(button => button.dataset.series);
+  return values.length ? values : null; // nothing selected means everything's allowed
+}
+
+function toggleSeries(button) {
+  button.classList.toggle('selected');
+  beep(1);
+}
+
+function beep(n) {
+  document.getElementById(`audio${n}`).play().catch(() => {}); // browsers refuse to beep before the first tap
+}
+
+function go(url) {
+  beep(2);
+  window.location.href = url;
 }
 
 function shuffle(array) {
@@ -34,6 +48,7 @@ function show(id) {
   for (const section of ['welcome', 'game', 'end', 'contribute']) {
     document.getElementById(section).hidden = section !== id;
   }
+  window.scrollTo(0, 0);
 }
 
 
@@ -62,6 +77,7 @@ function check(guess) {
   paused = true;
 
   const verdict = current.options[guess] === current.answer ? 'correct' : 'incorrect';
+  beep(verdict === 'correct' ? 3 : 4);
 
   if (verdict === 'correct') {
     score++;
@@ -130,6 +146,7 @@ function keyRelease(event) {
 // transition functions
 
 function engage() {
+  beep(2);
   pool = withdraw();
   more();
 }
@@ -163,7 +180,7 @@ function allStop() {
 function setButtons() {
   document.getElementById('question').innerHTML = current.question;
   current.options.forEach((option, i) => {
-    document.getElementById(`option${i}`).value = option;
+    document.getElementById(`option${i}`).textContent = option;
   });
 }
 
@@ -202,6 +219,9 @@ async function pose(event) {
 fetch(`${api}/vault`)
   .then(r => r.json())
   .then(fresh => { if (fresh.length) vault.splice(0, vault.length, ...fresh); })
-  .catch(() => {});
+  .catch(() => {})
+  .finally(() => { document.getElementById('bank').textContent = vault.length; });
+
+if (location.hash === '#pose') show('contribute');
 
 console.log(`Source successful!`);
