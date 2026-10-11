@@ -8,12 +8,12 @@
 .panel-1.logo {
   justify-content: center;
   align-items: center;
-  padding: 2px 4px;
+  padding: 1px;
   font-family: 'Trek Headline';
   font-style: italic;
   font-weight: normal;
-  font-size: clamp(1.5rem, 2.6vw, 2.35rem); /* as big as two lines allow inside the panel */
-  line-height: 1;
+  font-size: clamp(1.5rem, 2.9vw, 2.65rem); /* as big as two lines allow inside the panel */
+  line-height: 0.95;
   text-align: center;
   text-transform: none;
   overflow-wrap: normal;
@@ -39,7 +39,7 @@ button, a, input {
 /* a shorter header: smaller top panel, smaller banner, nav in one row */
 
 :root {
-  --panel-1-height: 100px;
+  --panel-1-height: 108px;
   --nav-width: 160px;
   --radius-top: 0 0 0 90px;      /* the elbow's curve sets the header's minimum height */
   --radius-bottom: 90px 0 0 0;
@@ -116,7 +116,7 @@ main p {
   margin-block: 0.75rem 1.25rem;
 }
 
-#play, #more, #reset, #send {
+#play, #send, #end .buttons button {
   height: 3rem;
   padding-bottom: 0.45rem;
 }
