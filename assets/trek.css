@@ -97,6 +97,10 @@ nav .nav-2 {
     --panel-1-height: 60px;
   }
 
+  .data-cascade-wrapper {
+    display: none; /* no room for the number cascade beside the nav on small screens */
+  }
+
   nav {
     width: 100%;
     gap: 0.3rem;
@@ -420,6 +424,7 @@ footer:empty {
   white-space: nowrap;
   display: flex;
   align-items: center; /* the label sits on the bar's centre line, not its baseline */
+  padding-bottom: 0.08em; /* Antonio's capitals sit low in their box; this evens it out to the eye */
 }
 
 @media (width <= 760px) {
