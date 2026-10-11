@@ -149,6 +149,22 @@ function keyRelease(event) {
 
 // transition functions
 
+// back to the welcome screen without a reload, with the quiz state cleared
+function home() {
+  beep(2);
+  clearTimeout(timer);
+  document.removeEventListener('click', advance);
+  document.removeEventListener('keydown', keyPress);
+  document.removeEventListener('keyup', keyRelease);
+  paused = false;
+  pool = []; deck = []; score = 0; contents = 0;
+  document.getElementById('progress').innerHTML = '';
+  document.getElementById('source').textContent = '1701';
+  document.getElementById('level').textContent = '00';
+  history.replaceState(null, '', location.pathname);
+  show('welcome');
+}
+
 function engage() {
   beep(2);
   pool = withdraw();
@@ -275,6 +291,6 @@ measureHeader();
 addEventListener('resize', measureHeader);
 
 if (location.hash === '#pose') show('contribute');
-window.addEventListener('hashchange', () => { if (location.hash === '#pose') show('contribute'); }); // the nav button, from this same page
+window.addEventListener('hashchange', () => { if (location.hash === '#pose') show('contribute'); else if (!location.hash) home(); }); // the nav buttons, from this same page
 
 console.log(`Source successful!`);

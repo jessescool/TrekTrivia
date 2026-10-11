@@ -18,7 +18,7 @@
   <section class="wrap-standard" id="column-3">
     <div class="wrap">
       <div class="left-frame-top">
-        <button onclick="go('')" class="panel-1 logo"><span>Trek<br>Trivia</span></button>
+        <button onclick="home()" class="panel-1 logo"><span>Trek<br>Trivia</span></button>
         <button onclick="go('about/')" class="panel-2">03<span class="hop">about</span></button>
       </div>
       <div class="right-frame-top">
@@ -53,8 +53,8 @@
 					<div class="data-column"><div class="dc-row-1">85-854156</div><div class="dc-row-1">41-423235</div><div class="dc-row-2">37-270357</div><div class="dc-row-3">69-780440</div><div class="dc-row-3">59-815487</div><div class="dc-row-4">91-512778</div><div class="dc-row-5">25-691160</div><div class="dc-row-6">97-958825</div><div class="dc-row-7">42-861820</div></div>
           </div>
           <nav>
-            <button onclick="go('')" class="nav-1">01-quiz</button>
-            <button onclick="go('#pose')" class="nav-2">02-contribute</button>
+            <button onclick="home()" class="nav-1">01-quiz</button>
+            <button onclick="beep(2); show('contribute'); history.replaceState(null, '', '#pose')" class="nav-2">02-contribute</button>
           </nav>
         </div>
         <div class="bar-panel first-bar-panel">
