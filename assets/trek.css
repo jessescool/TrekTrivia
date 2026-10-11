@@ -12,7 +12,7 @@
   font-family: 'Trek Headline';
   font-style: italic;
   font-weight: normal;
-  font-size: clamp(1.3rem, 2vw, 2rem); /* two lines fit the panel's height, and "Trivia" fits its width, at every size */
+  font-size: clamp(1.3rem, 2vw, 1.8rem); /* two lines fit the panel's height, and "Trivia" fits its width, at every size */
   line-height: 1;
   text-align: center;
   text-transform: none;
@@ -64,7 +64,7 @@ nav .nav-1 {
 }
 
 .data-cascade-wrapper {
-  height: calc(var(--dc-row-height) * 5); /* the cascade's nine rows were most of the header */
+  height: calc(var(--dc-row-height) * 4); /* the cascade's nine rows were most of the header */
   justify-content: flex-start;            /* runs from the elbow toward the nav; extra columns wrap out of view */
   padding-left: 2.5rem;
   padding-right: 2.5rem;
@@ -127,8 +127,8 @@ main p {
 
 .answers button { /* fixed height so the stack never shifts; two lines fit */
   width: 100%;
-  height: 3.1rem;
-  padding-block: 0.4rem;
+  height: 2.9rem;
+  padding-block: 0.35rem;
   font-size: 0.95rem;
   line-height: 1.1;
   white-space: normal;
@@ -244,6 +244,24 @@ button[hidden] {
 
 .lcars-text-bar {
   margin-block: 1.75rem 1rem;
+}
+
+/* the game screen is tighter than the others so Abort stays on screen without scrolling */
+
+main {
+  padding-top: 0.75rem;
+}
+
+#game .lcars-text-bar {
+  margin-block: 0.5rem 0.75rem;
+}
+
+#game .answers {
+  margin-block: 0.5rem;
+}
+
+#game .buttons:last-child {
+  margin-block: 0.75rem 0;
 }
 
 main > section > p:first-child {
