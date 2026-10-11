@@ -334,7 +334,11 @@ body {
   }
 }
 
-/* readout panels at readout heights */
+/* readout panels at readout heights, and not clickable */
+
+.left-frame .panel-3, .left-frame .panel-4, .left-frame .panel-5 {
+  pointer-events: none;
+}
 
 .left-frame .panel-3 { height: 100px; }
 .left-frame .panel-4 { height: 120px; }
