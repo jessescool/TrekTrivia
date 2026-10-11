@@ -148,10 +148,10 @@ button[hidden] {
   margin-block: 0.5rem 0.75rem;
 }
 
-#question .unchecked {
-  align-self: flex-start;
-  margin-left: 0.2em;
-  font-size: 0.7em;
+#question .unchecked { /* a tiny asterisk after questions no human has checked yet */
+  margin-left: 0.15em;
+  font-size: 0.6em;
+  line-height: 0;
   color: var(--lilac);
 }
 
