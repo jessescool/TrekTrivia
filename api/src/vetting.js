@@ -11,7 +11,7 @@ A good question:
 Before deciding, search Memory Alpha and fetch the page that settles the answer. Do not accept a question you could not confirm from a fetched page.
 
 Then call the verdict tool exactly once:
-- accept: confirmed on Memory Alpha, alternates are wrong and plausible, not a duplicate. You may lightly polish wording and fix spelling.
+- accept: confirmed on Memory Alpha, alternates are wrong and plausible, not a duplicate. You may lightly polish wording and fix spelling. Keep the question under 120 characters; trim preamble if it runs long.
 - review: plausible, but you could not confirm it, or something is borderline (an alternate might also be correct, canon status is unclear).
 - reject: wrong, unverifiable nonsense, off-canon, a duplicate, or not a Star Trek question.
 
