@@ -11,7 +11,7 @@ Capped at 40 submissions a day (`daily` in src/index.js), roughly three cents ea
     npx wrangler secret put ADMIN_KEY           # anything long and random
     (cd ../creation && python3 deposit.py)      # CSV -> creation/vault.json, first time only
     npm run seed                                # creation/vault.json -> KV
-    npm run deploy                              # prints the workers.dev URL; paste it into assets/script.js
+    npm run deploy                              # prints the workers.dev URL; paste it into assets/quiz.js
 
 ## After that, the live vault in KV is the source of truth
     npm run backup                              # KV -> creation/vault.json

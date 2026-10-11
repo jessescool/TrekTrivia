@@ -1,7 +1,7 @@
 /* hello and welcome to the STYLESHEET */
 /* The look is thelcars.com's classic theme (assets/lcars/classic.css). These are our modifications. */
 
-@import url(./fonts/fonts.css);
+@import url(./fonts/trek-fonts.css);
 
 /* the one non-LCARS flourish: the old title font, in the top-left panel */
 
