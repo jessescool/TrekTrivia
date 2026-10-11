@@ -7,6 +7,7 @@ let deck = [];      // the hand dealt from the pool, easiest first
 let current;        // the question on screen, with its options shuffled
 let score = 0;
 let contents = 0;   // questions answered so far
+let played = [];    // every question answered this game, for the results screen
 let paused = false; // true while the verdict is showing
 let timer;          // the pause; clicking anywhere cuts it short
 
@@ -86,6 +87,7 @@ function check(guess) {
   if (verdict === 'correct') {
     score++;
   }
+  played.push({ source: current.source, difficulty: current.difficulty, correct: verdict === 'correct' });
 
   // show the verdict on the buttons, then move along
   document.getElementById(`option${guess}`).classList.add(verdict);
@@ -157,7 +159,7 @@ function home() {
   document.removeEventListener('keydown', keyPress);
   document.removeEventListener('keyup', keyRelease);
   paused = false;
-  pool = []; deck = []; score = 0; contents = 0;
+  pool = []; deck = []; score = 0; contents = 0; played = [];
   document.getElementById('progress').innerHTML = '';
   document.getElementById('source').textContent = '1701';
   document.getElementById('level').textContent = '00';
@@ -196,7 +198,33 @@ function allStop() {
 
   const percentage = Math.round(100 * (score / contents)) || 0; // Checks for NaN values (divide by 0)
 
+  document.getElementById('rank').textContent = rank(percentage, contents);
   document.getElementById('scoreReport').innerHTML = `You earned ${score} out of ${contents} points, or ${percentage}%.`;
+  document.getElementById('breakdown').innerHTML = breakdown();
+}
+
+
+// the results screen
+
+const ranks = [[95, 'Admiral'], [80, 'Captain'], [60, 'Commander'], [40, 'Lieutenant'], [20, 'Ensign'], [0, 'Cadet']];
+
+function rank(percentage, answered) {
+  if (answered < 5) return 'Cadet'; // not enough to judge
+  return ranks.find(([floor]) => percentage >= floor)[1];
+}
+
+function breakdown() {
+  const bySeries = {};
+  for (const q of played) {
+    const s = q.source === 'Movie' ? 'Film' : q.source;
+    bySeries[s] = bySeries[s] || { right: 0, total: 0 };
+    bySeries[s].total++;
+    if (q.correct) bySeries[s].right++;
+  }
+  const parts = Object.entries(bySeries).map(([s, r]) => `<span>${s} ${r.right}/${r.total}</span>`);
+  const hardest = Math.max(0, ...played.filter(q => q.correct).map(q => q.difficulty));
+  if (hardest) parts.push(`<span>hardest right ${String(hardest).padStart(2, '0')}</span>`);
+  return parts.join('');
 }
 
 
