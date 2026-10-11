@@ -259,7 +259,7 @@ button[hidden] {
 /* the sidebar runs to the bottom of the window: the spacer stretches, build sits at the foot */
 
 body {
-  min-height: 100dvh;
+  min-height: 95dvh; /* the column stops a little short of the window's bottom edge */
   display: flex;
   flex-direction: column;
 }
