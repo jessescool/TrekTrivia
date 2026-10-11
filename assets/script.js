@@ -94,7 +94,6 @@ function check(guess) {
   contents++;
   seen.add(current.question);
   localStorage.setItem('seen', JSON.stringify([...seen]));
-  document.getElementById('seen').textContent = seen.size;
 
   timer = setTimeout(advance, verdict === 'correct' ? 400 : 1200);
   setTimeout(() => document.addEventListener('click', advance), 0); // after this click has finished bubbling
@@ -166,6 +165,8 @@ function more() {
 }
 
 function allStop() {
+  document.getElementById('source').textContent = '9';   // back to the resting readouts
+  document.getElementById('level').textContent = '10';
   clearTimeout(timer);
   document.removeEventListener('click', advance);
   paused = false;
@@ -188,6 +189,9 @@ function setButtons() {
   current.options.forEach((option, i) => {
     document.getElementById(`option${i}`).textContent = option;
   });
+  // the sidebar shows where this question is from and how hard the vetter rated it
+  document.getElementById('source').textContent = current.source === 'Movie' ? 'Film' : current.source;
+  document.getElementById('level').textContent = String(current.difficulty).padStart(2, '0');
   const dealt = document.getElementById('progress').children.length;
   document.getElementById('count').textContent = `Question ${String(contents + 1).padStart(2, '0')} of ${dealt}`;
   document.getElementById('score').textContent = `Score ${String(score).padStart(2, '0')}`;
@@ -228,8 +232,6 @@ async function pose(event) {
 function readouts() {
   const put = (id, value) => { const e = document.getElementById(id); if (e) e.textContent = value; };
   put('bank', vault.length);
-  put('checked', vault.filter(q => q.checked).length);
-  put('seen', seen.size);
   put('build', typeof build === 'undefined' ? 'dev' : build); // stamped by `npm run deploy`
 }
 
