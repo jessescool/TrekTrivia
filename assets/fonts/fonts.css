@@ -71,3 +71,12 @@
     font-weight: bold;
     font-style: normal;
 }
+
+
+/* Antonio (SIL Open Font License, see Antonio/OFL.txt) */
+
+@font-face {
+  font-family: 'Antonio';
+  src: url(./Antonio/Antonio.ttf) format('truetype');
+  font-weight: 100 700;
+}
