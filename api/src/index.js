@@ -47,7 +47,7 @@ export default {
     if (url.pathname === '/submit' && request.method === 'POST') return submit(request, env, admin);
 
     // the admin bits, for Jesse
-    if (['/pending', '/log', '/approve', '/reject', '/add', '/vault'].includes(url.pathname)) {
+    if (['/pending', '/log', '/approve', '/reject', '/add', '/pile', '/vault'].includes(url.pathname)) {
       if (!admin) return json({ error: 'not found' }, 404);
       if (url.pathname === '/vault' && request.method === 'PUT') { // sort.py writes the whole vault back
         const vault = await request.json();
@@ -59,6 +59,7 @@ export default {
       if (url.pathname === '/approve' && request.method === 'POST') return decide(request, env, true);
       if (url.pathname === '/reject' && request.method === 'POST') return decide(request, env, false);
       if (url.pathname === '/add' && request.method === 'POST') return add(request, env);
+      if (url.pathname === '/pile' && request.method === 'POST') return pile(request, env);
     }
 
     // everything else is the site itself
@@ -129,6 +130,16 @@ async function add(request, env) {
   for (const q of incoming) vault.push(row(q, true));
   await write(env, 'vault', vault);
   return json({ ok: true, added: incoming.length, vault: vault.length });
+}
+
+// skip the vetter: Jesse drops already-checked drafts straight into the pile for his own look
+async function pile(request, env) {
+  const body = await request.json();
+  const incoming = Array.isArray(body) ? body : [body];
+  const pending = await read(env, 'pending');
+  for (const q of incoming) pending.push({ ...q, verdict: 'accept', reason: q.reason || 'Checked offline.', at: new Date().toISOString() });
+  await write(env, 'pending', pending);
+  return json({ ok: true, piled: incoming.length, pending: pending.length });
 }
 
 function csv(vault) {
