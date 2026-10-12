@@ -1,6 +1,7 @@
 # Feed a CSV of questions into the live site.
 #   python3 pipe.py drafts.csv            through the vetter (accepts land unchecked)
 #   python3 pipe.py drafts.csv --direct   straight into the vault, marked checked (the god path)
+#   add --origin ai to stamp every question with where it came from
 # Reads your admin password from creation/.key. CSV columns: Question, Answer, Alternate1, Alternate2, Alternate3,
 # and for --direct also Difficulty and Source (TOS TNG DS9 VOY ENT DIS PIC SNW LD PRO TAS SFA Movie General).
 
@@ -9,12 +10,14 @@ import csv, json, os, sys, urllib.request
 site = os.environ.get('TREK_SITE', 'https://trektrivia-api.trektrivia-api.workers.dev')
 key = os.environ.get('TREK_ADMIN_KEY') or open(os.path.join(os.path.dirname(os.path.abspath(__file__)), '.key')).read().strip()  # your admin password
 path, direct = sys.argv[1], '--direct' in sys.argv
+origin = sys.argv[sys.argv.index('--origin') + 1] if '--origin' in sys.argv else None
 
 rows = list(csv.DictReader(open(path)))
 questions = [{
   'question': r['Question'], 'answer': r['Answer'],
   'alternates': [r['Alternate1'], r['Alternate2'], r['Alternate3']],
   **({'difficulty': int(r['Difficulty']), 'source': r['Source']} if direct else {}),
+  **({'origin': origin} if origin else {}),
 } for r in rows]
 
 def post(route, body):

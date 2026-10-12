@@ -24,7 +24,7 @@ def edit(q):
 
 def ask(q, extra=''):
   print(f"\n  {q['question']}\n    answer:     {q['answer']}\n    alternates: {', '.join(q['alternates'])}"
-        f"\n    {q.get('source', '?')} / difficulty {q.get('difficulty', '?')}{extra}")
+        f"\n    {q.get('source', '?')} / difficulty {q.get('difficulty', '?')}" + (f" / by {q['origin']}" if q.get('origin') else '') + extra)
   while True:
     k = input('  [y]keep [n]toss [e]edit [enter]skip [q]quit > ').strip().lower()
     if k == 'e':
@@ -33,7 +33,7 @@ def ask(q, extra=''):
     if k in ('y', 'n', '', 'q'): return k
 
 def fields(q):
-  return {k: q[k] for k in ('question', 'answer', 'alternates', 'difficulty', 'source')}
+  return {k: q[k] for k in ('question', 'answer', 'alternates', 'difficulty', 'source', 'origin') if k in q}
 
 def verdict_note(e):
   return f"\n    vetter:     {e.get('verdict', '?').upper()}: {e.get('reason', '')}" + (f"\n    source:     {e['citation']}" if e.get('citation') else '')

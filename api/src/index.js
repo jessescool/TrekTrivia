@@ -88,6 +88,7 @@ async function submit(request, env, admin) {
     .catch(e => ({ ...body, verdict: 'error', difficulty: 5, source: 'General', reason: `The vetter broke: ${e.message}` }));
   if (verdict.verdict === 'error') return json({ verdict: 'error', reason: verdict.reason }, 502);
 
+  if (admin && body.origin) verdict.origin = body.origin; // only Jesse's pipe gets to label where a question came from
   const entry = { ...verdict, submitted: body, at: new Date().toISOString() };
   const log = await read(env, 'log');
   log.unshift(entry);
@@ -132,13 +133,13 @@ async function add(request, env) {
 
 function csv(vault) {
   const cell = v => `"${String(v).replace(/"/g, '""')}"`;
-  const header = 'Question,Answer,Alternate1,Alternate2,Alternate3,Difficulty,Source,Checked';
-  const lines = vault.map(q => [q.question, q.answer, ...q.alternates, q.difficulty, q.source, q.checked ? 1 : 0].map(cell).join(','));
+  const header = 'Question,Answer,Alternate1,Alternate2,Alternate3,Difficulty,Source,Checked,Origin';
+  const lines = vault.map(q => [q.question, q.answer, ...q.alternates, q.difficulty, q.source, q.checked ? 1 : 0, q.origin || ''].map(cell).join(','));
   return [header, ...lines].join('\n') + '\n';
 }
 
-// what the vault stores, shaped like the rows deposit.py makes; checked means a human looked at it
-const row = (v, checked) => ({ question: v.question, answer: v.answer, alternates: v.alternates, difficulty: v.difficulty, source: v.source, checked });
+// what the vault stores, shaped like the rows deposit.py makes; checked means a human looked at it, origin marks who wrote it (ai) when it wasn't a person
+const row = (v, checked) => ({ question: v.question, answer: v.answer, alternates: v.alternates, difficulty: v.difficulty, source: v.source, checked, ...(v.origin && { origin: v.origin }) });
 
 async function vet(submission, vault, env) {
   const messages = [{
