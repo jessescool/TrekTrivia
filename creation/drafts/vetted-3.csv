@@ -1,41 +1,43 @@
 Question,Answer,Alternate1,Alternate2,Alternate3,Difficulty,Source,Verdict,Note
-Zefram Cochrane's warp ship in First Contact has this name.,Phoenix,Prometheus,Pegasus,Icarus,2,Movie,pass,
-"In First Contact, Picard orders this helmsman to follow the Borg into the past.",Hawk,Barclay,Daniels,Kellogg,7,Movie,pass,
-The Ba'ku stay young in Insurrection thanks to this radiation from their planet's rings.,Metaphasic radiation,Tetryon radiation,Chroniton radiation,Thalaron radiation,5,Movie,pass,
-Data befriends this Ba'ku boy in Insurrection.,Artim,Sojef,Ru'afo,Dougherty,8,Movie,pass,
-Shinzon's Scimitar carries a weapon emitting this radiation in Nemesis.,Thalaron radiation,Metaphasic radiation,Tetryon radiation,Chroniton radiation,5,Movie,pass,
-Kirk is marooned on this snowy planet in the 2009 Star Trek film.,Delta Vega,Rura Penthe,Andoria,Vulcan,4,Movie,pass,
-Nero kills this captain of the USS Kelvin in the 2009 Star Trek film.,Richard Robau,Christopher Pike,Robert April,Matt Decker,7,Movie,pass,
-Admiral Marcus commands this ship in Into Darkness.,USS Vengeance,USS Reliant,USS Excelsior,USS Defiant,3,Movie,pass,
-Krall's original name in Star Trek Beyond is this.,Balthazar Edison,Alexander Marcus,Richard Robau,Christopher Pike,6,Movie,pass,
-Krall's bioweapon in Star Trek Beyond has this name.,Abronath,Genesis Device,Omega Molecule,Doomsday Machine,9,Movie,pass,
-The Enterprise crew blasts this Beastie Boys song at the swarm in Star Trek Beyond.,Sabotage,Intergalactic,Brass Monkey,Fight for Your Right,4,Movie,pass,
-"In The Voyage Home, Scotty trades the transparent aluminum formula to this plant manager.",Dr. Nichols,Dr. Taylor,Dr. Marcus,Dr. Chapel,6,Movie,fixed,"""Plant head"" reworded to ""plant manager"", as Memory Alpha has Nichols."
-Rok-Tahk gives this name to the slime worm she finds on Tars Lamora.,Murf,Boxy,Pik-Pox,Larry,1,PRO,pass,
-Dal R'El and Rok-Tahk escape Tars Lamora aboard this Federation starship.,USS Protostar,USS Dauntless,USS Voyager,USS Prodigy,1,PRO,pass,
-The Protostar's holographic training advisor is modeled on this Starfleet captain.,Kathryn Janeway,Chakotay,Edward Jellico,Benjamin Sisko,1,PRO,fixed,"Swapped alternate Thadiun Okona (not a Starfleet captain, and an answer in another row) for Benjamin Sisko."
-"Zero is a member of this telepathic, non-corporeal species.",Medusan,Betazoid,Trill,Ocampa,2,PRO,pass,
-Rok-Tahk is a member of this species.,Brikar,Horta,Tellarite,Gorn,2,PRO,pass,
-Jankom Pog is a member of this pig-like species from Tellar Prime.,Tellarite,Denobulan,Andorian,Brikar,2,PRO,pass,
-The Unwanted mine this luminescent orange mineral on Tars Lamora.,Chimerium,Dilithium,Latinum,Topaline,2,PRO,pass,
-Gwyn belongs to this species native to the planet Solum.,Vau N'Akat,Kazon,Hirogen,Brikar,3,PRO,pass,
-The Unwanted are imprisoned on this planetoid in the Carina Nebula.,Tars Lamora,Solum,Noble Isle,Ysida,3,PRO,pass,
-Rok-Tahk wants to name the man-eating planet in the Hirogen system this.,Larry,Gary,Barry,Terry,3,PRO,pass,
-Dal's stolen starship crosses thousands of light years in minutes using this experimental propulsion system.,Protostar drive,Quantum slipstream drive,Transwarp drive,Coaxial warp drive,3,PRO,fixed,"Question named the Protostar, leaking the answer, so reworded. Answer respelled to MA title ""Protostar drive"". Replaced near-duplicate alternate Slipstream drive with Coaxial warp drive."
-The Ferengi DaiMon who raised Dal aboard the Damsel has this name.,Nandi,Brunt,Zek,Quark,4,PRO,pass,
-The crew finds a dormant Borg cube in this episode.,Let Sleeping Borg Lie,Starstruck,Dream Catcher,Kobayashi,4,PRO,pass,
-Cadet Maj'el of Nova Squadron belongs to this species.,Vulcan,Andorian,Betazoid,Bajoran,4,PRO,pass,
-DaiMon Nandi buys this cube-shaped hovering robot after selling Dal to the Diviner.,Pik-Pox,Boxy,Drednok,Lore,5,PRO,pass,
-Jankom Pog's right hand is replaced by this cybernetic implant.,Multi-mitt,Tool-mitt,Hammer-hand,Hand-o-matic,5,PRO,pass,
-Jankom Pog picked up his third-person speech habit from this sleeper-ship robot.,Boxy,Pik-Pox,Drednok,Data,6,PRO,pass,
-Dal swaps minds with Vice Admiral Janeway in this episode.,Mindwalk,Preludes,Starstruck,Asylum,6,PRO,pass,
-Murf overpowers a Tal Shiar squad at Noble Isle in this episode.,Masquerade,Asylum,Crossroads,Time Amok,6,PRO,pass,
-Trans-dimensional creatures that devour timelines suffering paradoxes are called this.,Loom,Species 8472,Hirogen,Krenim,6,PRO,pass,
-The Diviner is a future version of this Vau N'Akat astronomer.,Ilthuran,Kathon,Borom,Tysess,6,PRO,pass,
-"Commander Tysess, first officer of the Dauntless, belongs to this species.",Andorian,Denobulan,Tellarite,Vulcan,6,PRO,pass,
-The Protostar was launched from this location.,San Francisco Fleet Yards,Utopia Planitia Fleet Yards,Earth Station McKinley,Antares Fleet Yards,7,PRO,pass,
-Thadiun Okona captains this Class 9 cargo carrier.,Erstwhile,Damsel,Runaway,Dauntless,7,PRO,pass,
-"Asencia's future self, who seizes control of Solum, goes by this title.",The Vindicator,The Unifier,The Diviner,The Progeny,7,PRO,pass,
-The USS Protostar carries this registry number.,NX-76884,NX-74205,NX-01,NX-76656,8,PRO,pass,
-The Borg designate the Medusans by this name.,Species 802,Species 8472,Species 5618,Species 125,8,PRO,pass,
-Hologram Janeway spends ten years marooned with Chakotay on this planet.,Ysida,Solum,Noble Isle,Relva VII,8,PRO,pass,
+Rule of Acquisition 47 warns against trusting a man wearing a better one of these than yours.,Suit,Hat,Watch,Coat,8,DS9,fixed,Source General -> DS9 (Rivals)
+Rule of Acquisition 217 says you can't free this creature from water.,Fish,Frog,Eel,Whale,9,DS9,fixed,"Source General -> DS9 (Past Tense, Part I)"
+In the Ferengi afterlife this being reviews a deceased Ferengi's profit and loss statements.,Blessed Exchequer,Registrar,Celestial Auctioneers,Divine Auditor,9,DS9,fixed,Source General -> DS9 (Little Green Men)
+Archer used this Andorian ice miner's tool to lop off one of Shran's antennae.,Ushaan-tor,Lirpa,Mek'leth,D'k tahg,8,ENT,fixed,Source General -> ENT (United)
+Vulcan children keep these teddy-bear-like predators with six-inch fangs as pets.,Sehlat,Le-matya,Targ,Mugato,6,General,pass,
+T'Pring invoked this Vulcan challenge to name Kirk her champion.,Kal-if-fee,Fal-tor-pan,Kolinahr,Pon farr,6,TOS,fixed,Source General -> TOS (Amok Time)
+High Priestess T'Lar performed this Vulcan ritual to reunite Spock's katra with his body.,Fal-tor-pan,Kolinahr,Kal-if-fee,Pon farr,8,Movie,fixed,Source General -> Movie (Star Trek III)
+The name Kira marks a Bajoran as belonging to this D'jarra caste.,Ih'valla,Te'nari,Imutta,Va'telo,9,DS9,fixed,Source General -> DS9 (Accession)
+Bajorans traditionally say this part of their name first.,Family name,Given name,Mother's name,Rank,6,General,pass,
+Bajorans address their religious leader the Kai with this honorific.,Eminence,Excellency,Holiness,Grace,7,DS9,fixed,Source General -> DS9
+A Guardian oversees this Trill rite in which a host meets the symbiont's previous hosts.,Zhian'tara,Shan'tara,Gha'tara,Ke'tara,9,General,pass,
+Klingons customarily serve this dish on the Day of Honor.,Rokeg blood pie,Gagh,Pipius claw,Gladst,8,VOY,fixed,"Question said blood-based, which leaked 'blood' from the answer; reworded. Source General -> VOY (Day of Honor)"
+Klingon children light these at the Rite of Ascension to represent a warrior's fire.,Kor'tova candles,Blood lamps,Kahless torches,Beacon stones,8,TNG,fixed,Source General -> TNG (Firstborn)
+The Klingons use this icy planetoid as a penal colony nicknamed the alien's graveyard.,Rura Penthe,Khitomer,Boreth,Narendra III,6,General,pass,
+"When pure, this ore is 21.4 times as hard as diamond.",Tritanium,Duranium,Pergium,Topaline,8,TOS,fixed,Source General -> TOS (Obsession)
+Transporters hold the matter stream in this component so Doppler compensators can adjust.,Pattern buffer,Biofilter,Targeting scanner,Emitter array,7,General,pass,
+Sisko worked on the prototype Defiant at these Starfleet shipyards on Mars.,Utopia Planitia,Tycho City,Antares Fleet Yards,Mars Defense Perimeter,5,DS9,fixed,"Source General -> DS9 (Emissary, The Search)"
+Starfleet Command and the Academy occupy the grounds of this old San Francisco army base.,Presidio,Alcatraz,Treasure Island,Twin Peaks,7,General,fixed,"Alternate Fort Mason is a real old SF army post, defensible from the question text; replaced"
+These 2293 accords superseded the Organian Peace Treaty between the Federation and Klingons.,Khitomer Accords,Treaty of Algeron,Bajoran-Cardassian Treaty,Treaty of Armens,6,SFA,fixed,Source General -> SFA (Vox In Excelso)
+Kirk called this order to destroy all life on a planet an order of last resort.,General Order 24,General Order 7,General Order 12,General Order 15,7,SNW,fixed,"Source General -> SNW (Orders of Magnitude, where Kirk calls it last resort)"
+This Romulan agency is the empire's feared secret police.,Tal Shiar,Obsidian Order,Section 31,Bureau of Investigation,6,General,pass,
+The Ferengi call the river-like force flowing from have to want by this name.,Great Material Continuum,Divine Treasury,Ferengi Commerce Authority,Celestial Ledger,7,DS9,fixed,"Source General -> DS9 (Progress, Treachery Faith and the Great River)"
+Spock's katra was returned to his body at a temple atop this sacred Vulcan mountain.,Mount Seleya,Mount Surak,Mount T'Pau,Mount Zakal,6,Movie,fixed,"Hall of Ancient Thought is a screenplay name, and the rite was done at the exterior altar, not in the hall; reworded. Source General -> Movie"
+This Klingon coffee is served steamed or iced.,Raktajino,Bloodwine,Prune juice,Kanar,5,General,fixed,"Question claimed Klingons start the day with it, which canon does not say; reworded"
+Kayshon is the first member of this species to serve in Starfleet.,Tamarian,Gorn,Hirogen,Breen,5,LD,pass,
+Ferengi poacher Kynk harvests the horns of these animals on Frylon IV.,Mugato,Targ,Sehlat,Tribble,5,LD,pass,
+Pakled ambassador Grubdin mistakes Captain Freeman for this famous captain.,Kathryn Janeway,Jean-Luc Picard,Benjamin Sisko,Jonathan Archer,6,LD,pass,
+Freeman is possessed by the god Minooki after touching a mask from this archive.,D'Arsay archive,Guardian of Forever,Daystrom Institute,Memory Alpha,6,LD,fixed,"Minooki possessed her once, not repeatedly; reworded"
+Dr. T'Ana sends Tendi for a family heirloom stored on this planet.,Qualor II,Ferenginar,Risa,Deneva,6,LD,pass,
+A Pakled who fakes seeking asylum to spy on the Cerritos has this name.,Rumdar,Grubdin,Jackabog,Siggi,6,LD,pass,
+Captain Vendome's rapid rise leaves him with a bridge crew made up entirely of this species.,Bolian,Andorian,Benzite,Bajoran,6,LD,pass,
+"In the alternate Cerritos, Mariner is the captain and goes by this name.",Becky Freeman,Beckett Ransom,Becky Mariner,Carol Mariner,6,LD,fixed,Alternate Beckett Freeman is arguably her full alt name; replaced
+Mariner and Tendi hustle Nausicaans at this game to raise latinum.,Dom-jot,Tongo,Dabo,Fizzbin,7,LD,pass,
+A transporter accident merges T'Ana and Billups into this hybrid.,T'Illups,Bill'ana,T'Anups,Billana,7,LD,pass,
+Boimler dispenses unwanted advice to ensigns under this alliterative name.,Boimler's Bointers,Boimler's Bulletin,Boimler's Boon,Brad's Briefing,7,LD,fixed,Answer was singular; Memory Alpha has Boimler's Bointers
+Shaxs grumbles that a mission to Dilmer III makes him miss this recurring ship event.,Taquito night,Pizza night,Pancake night,Sushi night,7,LD,pass,
+Boimler and Rutherford pass the time in the mess hall playing this game.,Diplomath,Kal-toh,Tongo,Parrises squares,8,LD,fixed,"They played Diplomath in the mess hall, not a lounge"
+"Mariner, Boimler, Tendi, and Rutherford bond over a role-playing game with this title.",Bat'leths & BiHnuchs,Targs & Tribbles,Phasers & Pakleds,Gorn & Gagh,8,LD,pass,
+"Ma'ah, G'reck, and the Klingon lower deckers serve aboard this Bird-of-Prey.",IKS Che'Ta',IKS Rotarran,IKS Negh'Var,IKS Bortas,8,LD,pass,
+House Tendi and House Azure settle a feud with a sailing race through this nebula.,Excellon Nebula,Mutara Nebula,Veil Nebula,Paulson Nebula,8,LD,pass,
+The Ornarans kicked their addiction to this drug after Picard cut off the Brekkians.,Felicium,Ketracel-white,Ryetalyn,Cordrazine,8,LD,pass,
+Steve Levy and Boimler are captured in a cave by these shapeshifters.,Vendorian,Horta,Tholian,Husnock,8,LD,pass,

@@ -1,41 +1,43 @@
 Question,Answer,Alternate1,Alternate2,Alternate3,Difficulty,Source,Verdict,Note
-Beckett Mariner's mother is the captain of the Cerritos and has this name.,Carol Freeman,Kathryn Janeway,Sonya Gomez,Beverly Crusher,1,LD,pass,
-Ensign D'Vana Tendi is a member of this species.,Orion,Andorian,Tellarite,Betazoid,1,LD,pass,
-"Dr. T'Ana, the Cerritos chief medical officer, is a member of this species.",Caitian,Kzinti,Bolian,Trill,2,LD,pass,
-Ransom is bitten by an insect on the home world of this species and brings a rage virus aboard the Cerritos.,Second Contact,Envoys,Temporal Edict,Crisis Point,2,LD,fixed,"Reworded: he brings the virus aboard the ship, not spreads it on the planet."
-Ransom is bitten by an insect and spreads a rage virus on the home world of this species.,Galardonian,Drookmani,Doopler,Pakled,3,LD,pass,
-Brad Boimler accepts a promotion to this starship.,USS Titan,USS Vancouver,USS Hood,USS Merced,2,LD,pass,
-Captain Freeman was close friends with this Enterprise officer and often got into trouble with him.,William T. Riker,Jean-Luc Picard,Worf,Geordi La Forge,3,LD,pass,
-Security chief Shaxs fought in the resistance on this planet.,Bajor,Cardassia Prime,Andoria,Trill,3,LD,pass,
-Ensign Peanut Hamper is this kind of being.,Exocomp,Android,Hologram,Borg drone,3,LD,pass,
-"In this Season 1 episode, Mariner makes herself the villain of a holodeck movie.",Crisis Point,Veritas,Envoys,Moist Vessel,4,LD,pass,
-Season 2 of Lower Decks ends with this episode.,First First Contact,"I, Excretus",The Spy Humongous,"Mugato, Gumato",4,LD,pass,
-Captain Freeman stands trial for the destruction of this planet in the Season 3 premiere.,Pakled Planet,Romulus,Cardassia Prime,Ferenginar,4,LD,pass,
-Members of this species involuntarily duplicate themselves when embarrassed.,Doopler,Galardonian,Pakled,Brikar,4,LD,pass,
-Sam Rutherford's cybernetic implant has this name.,Oculus,Cortical node,Isolinear chip,Neural bridge,4,LD,pass,
-"Beckett Mariner's father, an admiral, has this name.",Alonzo Freeman,Les Buenamigo,Jack Ransom,Edward Jellico,5,LD,pass,
-Peanut Hamper deserts the Cerritos in this Season 1 finale.,No Small Parts,Veritas,Crisis Point,Cupid's Errant Arrow,5,LD,pass,
-"The lovable, awkward Ensign in ""Terminal Provocations"" has this surname.",Fletcher,Kim,Ro,Crusher,5,LD,pass,
-Jack Ransom takes command of the Cerritos after Captain Freeman transfers to this starbase.,Starbase 80,Starbase 25,Starbase 74,Deep Space 9,5,LD,pass,
-Vice Admiral Les Buenamigo secretly develops automated starships of this class.,Texas-class,Parliament-class,Oberth-class,Nova-class,6,LD,pass,
-The Cerritos has a salvage standoff over a wrecked cargo ship with this species.,Drookmani,Orion,Galardonian,Doopler,6,LD,pass,
-Jack Ransom was born in this city.,Tycho City,Honolulu,Barcelona,San Francisco,6,LD,pass,Honolulu is where his CO was from (he falsely claimed Hawaii); not his birthplace.
-Tendi's younger sister has this name.,D'Erika,T'Lyn,Shona,Sonya,7,LD,pass,
-Andy Billups was born a prince on this planet.,Hysperia,Risa,Betazed,Pacifica,7,LD,pass,
-"The Scrubble, a silicate species with mind-reading stones, are native to this planet.",Jengus IV,Mixtus III,Grottonus,Tulgana IV,7,LD,fixed,Original premise (Scrubble turn scientists to stone) not in Memory Alpha; the Scrubble are native to Jengus IV and spy on minds with stones. Rewrote the question.
-Freeman and Captain Durango both once served aboard this starship.,USS Illinois,USS Vancouver,USS Hood,USS Titan,7,LD,pass,
-"In ""Fissure Quest,"" Captain William Boimler commands this ship.",USS Anaximander,USS Aledo,USS Merced,USS Vancouver,8,LD,pass,
-Billups's childhood pet dragon was called this.,Fiddlesticks,Sparky,Cinders,Puff,9,LD,pass,
-"Peanut Hamper's exocomp father, whom she left behind, has this name.",Kevin,Gary,Dennis,Brian,8,LD,pass,
-"V'Ger, the entity in The Motion Picture, began as this Earth probe.",Voyager 6,Pioneer 10,Nomad,Friendship One,4,Movie,pass,
-"Kirk exiled Khan to this planet, where Khan is found again in The Wrath of Khan.",Ceti Alpha V,Talos IV,Organia,Rigel VII,3,Movie,fixed,"Exile happened in Space Seed, not in the film; reworded."
-Saavik takes this no-win training scenario at the start of The Wrath of Khan.,Kobayashi Maru,Corbomite Maneuver,Kolinahr,Babel Conference,2,Movie,pass,
-"In The Search for Spock, Spock's katra turns out to be in the mind of this person.",Leonard McCoy,Sarek,Montgomery Scott,Hikaru Sulu,4,Movie,pass,
-"In The Voyage Home, the humpback whales are named George and this.",Gracie,Gillian,Georgia,Gloria,3,Movie,pass,
-McCoy christens the stolen Klingon ship in The Voyage Home with this name.,HMS Bounty,HMS Pinafore,HMS Victory,HMS Beagle,3,Movie,pass,
-"In The Final Frontier, Sybok leads the Enterprise through the Great Barrier to find this mythical place.",Sha Ka Ree,Genesis,Gol,Mount Seleya,5,Movie,fixed,Original question misstated the claim; also Eden is MA's alternate name for Sha Ka Ree so it was a defensible answer; swapped for Genesis.
-She succeeds her father Gorkon as Klingon Chancellor in The Undiscovered Country.,Azetbur,Lursa,B'Etor,K'Ehleyr,3,Movie,pass,
-Kirk and McCoy are sent to this frozen penal world in The Undiscovered Country.,Rura Penthe,Tantalus V,Elba II,Cestus III,3,Movie,pass,
-"In Generations, Data's cat has this name.",Spot,Mittens,Whiskers,Fluffy,2,Movie,pass,
-The USS Enterprise-B in Generations is a starship of this class.,Excelsior,Constitution,Miranda,Galaxy,4,Movie,pass,
-Lily Sloane compares Picard to this obsessed whaling captain in First Contact.,Ahab,Ishmael,Queequeg,Starbuck,4,Movie,pass,
+"A Prophet possessed this woman, Sisko's mother, to ensure he would be born.",Sarah Sisko,Jennifer Sisko,Judith Sisko,Kasidy Yates,5,DS9,pass,
+"After being demoted, Dukat was given command of this small freighter.",Groumall,Prakesh,Bok'Nor,Vetar,9,DS9,pass,
+"Quark, Rom, and Nog crash-landed in 1947 near this New Mexico town.",Roswell,Alamogordo,Santa Fe,Taos,6,DS9,pass,
+This son of Grand Nagus Zek plotted with Rom to assassinate the new Nagus.,Krax,Gaila,Brunt,Maihar'du,8,DS9,pass,
+"Jake Sisko's girlfriend, a dabo girl four years his senior, was named this.",Mardah,Leeta,Ziyal,Kasidy Yates,6,DS9,pass,
+"In ""Second Skin"", Kira was surgically altered to become this Cardassian woman.",Iliana Ghemor,Natima Lang,Rekelen,Tora Ziyal,7,DS9,pass,
+"Curzon Dax, Kor, Koloth, and Kang swore a blood oath to kill this Klingon.",The Albino,Duras,Gowron,Kruge,7,DS9,pass,
+Sisko's father Joseph owns this New Orleans restaurant.,Sisko's Creole Kitchen,Sisko's Soul Kitchen,Sisko's Cajun Bayou,Joseph's Gumbo Shack,7,DS9,pass,
+"In ""Move Along Home"", the Wadi turn Sisko and three officers into pieces in this game.",Chula,Dabo,Tongo,Kotra,8,DS9,pass,
+"In ""If Wishes Were Horses"", Jake's imagination conjures this long-dead baseball star.",Buck Bokai,Babe Ruth,Joe DiMaggio,Hank Aaron,9,DS9,fixed,"It is Jake's imagination, not an alien"
+This Jem'Hadar First injured Martok's left eye in Internment Camp 371.,Ikat'ika,Remata'Klan,Omet'iklan,Goran'Agar,9,DS9,fixed,"MA says injured, not destroyed"
+Dukat's daughter Ziyal was shot dead by this Cardassian.,Damar,Garak,Gul Rusot,Gul Evek,5,DS9,pass,
+Archer's Klingon death sentence was commuted to life on this penal colony.,Rura Penthe,Elba II,Tantalus V,Ceti Alpha V,5,ENT,pass,
+"The Vissian cogenitor claimed this name for itself, after Trip Tucker.",Charles,Jonathan,Malcolm,Travis,6,ENT,pass,
+T'Pol contracted this stigmatized Vulcan condition through a forced mind meld.,Pa'nar Syndrome,Bendii Syndrome,Rigelian fever,Terellian plague,6,ENT,pass,
+Trip Tucker became pregnant after bonding with an engineer from this species.,Xyrillian,Suliban,Kantare,Vissian,6,ENT,pass,
+T'Pol's tale of stranded Vulcans in 1957 is set in this Pennsylvania mining town.,Carbon Creek,Centralia,Pottsville,Hazleton,6,ENT,pass,
+The Humans of the Expanse's Wild West town were once slave labor for these aliens.,Skagarans,Tandarans,Suliban,Triannons,6,ENT,pass,
+"T'Pol named the Terra Prime hybrid infant this, after Trip's late sister.",Elizabeth,Charlotte,Rebecca,Michelle,6,ENT,pass,
+"In ""Oasis"", all but two of the colonists on the supposedly haunted ship were really these.",Holograms,Androids,Clones,Telepathic illusions,6,ENT,fixed,Clearer wording
+A first contact with these aliens ended in an airlock exit before the web creature slipped aboard.,Kreetassans,Tandarans,Vissians,Orions,6,ENT,pass,
+Reed and Tucker plugged Shuttlepod One's hull breaches with leftover rations of this food.,Mashed potatoes,Oatmeal,Scrambled eggs,Peanut butter,7,ENT,pass,
+Tucker would sooner realign circuits than read this novel Reed brought on Shuttlepod One.,Ulysses,Moby-Dick,Great Expectations,War and Peace,7,ENT,pass,
+"T'Pol's prearranged marriage in ""Home"" was to this Vulcan.",Koss,Stonn,Tolaris,Soval,7,ENT,pass,
+This Augment tried to seize command from Dr. Soong and blew up their Bird-of-Prey rather than surrender.,Malik,Persis,Khan,Joaquin,7,ENT,pass,
+T'Pol left Archer this book to read during his Risa shore leave.,The Teachings of Surak,The Kir'Shara,The Way of Logic,The Book of Vulcan,7,ENT,pass,
+Hoshi was lured by this exiled telepath who wanted her as his next companion.,Tarquin,Tolaris,Silik,Rellus Tagrim,7,ENT,pass,
+"In ""The Catwalk"", Phlox thanked T'Pol for extra cargo space on behalf of these creatures.",Edosian slugs,Pyrithian bats,Regulan bloodworms,Osmotic eels,7,ENT,pass,
+Archer and Tucker were mistakenly put on a prison ship bound for this penal colony.,Canamar,Elba II,Tantalus V,Rura Penthe,7,ENT,fixed,They never reached it; ship was bound for it
+"Phlox objected to curing the Valakians, saying this other native species deserved to thrive.",Menk,M'klexa,Kreetassans,Skagarans,7,ENT,pass,
+"T'Pol once served as deputy science officer aboard this Vulcan ship, later lost in the Expanse.",Seleya,Vahklas,T'Plana-Hath,Ti'Mur,8,ENT,pass,
+"In ""First Flight"", this friendly rival beat Archer to pilot the NX-Alpha.",A.G. Robinson,Maxwell Forrest,Zefram Cochrane,Henry Archer,8,ENT,pass,
+Archer's reluctant Klingon advocate at his tribunal bore this name.,Kolos,Orak,Duras,Kor,8,ENT,pass,
+Archer met hunters of this species on the rogue planet Dakala.,Eska,Kantare,Tandaran,Skagaran,8,ENT,pass,
+Reed bragged about earning this many Eagle Scout merit badges.,28,24,26,32,9,ENT,fail,too obscure (single line in Rogue Planet)
+"Hoshi's late grandfather, whom she was close with, bore this name.",Michio,Hiroshi,Takeshi,Kenji,9,ENT,fail,too obscure (single line in Exile)
+Tucker and Reed discovered they both knew this waitress at the 602 Club.,Ruby,Rosie,Daisy,Stella,9,ENT,pass,
+"The transporter's inventor spent fifteen years trying to rescue his son, lost in a test, named this.",Quinn Erickson,Danica Erickson,Daniel Erickson,Emory Erickson,9,ENT,pass,
+"Enterprise's movie night in ""Vox Sola"" was to feature this classic French film.",The Wages of Fear,Diabolique,Breathless,Jules and Jim,9,ENT,fail,too obscure (film title is background chatter)
+This monstrous guardian stands at the gates of Gre'thor in Klingon myth.,Fek'lhr,Kos'Karii,Morath,Molor,7,TNG,fixed,Source: first appears in TNG 'Devil's Due'
+Garak drank too much of this Cardassian liquor when his implant malfunctioned.,Kanar,Bloodwine,Saurian brandy,Tranya,7,DS9,fixed,Source: DS9 'The Wire'
+Massaging a Ferengi's lobes goes by this word with no translation.,Oo-mox,Hew-mon,Tongo,Dabo,7,TNG,fixed,Source: TNG 'Menage a Troi'
