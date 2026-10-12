@@ -11,3 +11,6 @@ creation/.key
 assets/build.js
 images/
 assets/lcars/
+__pycache__/
+creation/drafts/existing-*.txt
+creation/drafts/pipe.log
