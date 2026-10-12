@@ -14,3 +14,4 @@ assets/lcars/
 __pycache__/
 creation/drafts/existing-*.txt
 creation/drafts/pipe.log
+creation/drafts/vault-merged.json

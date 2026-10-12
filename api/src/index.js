@@ -54,6 +54,11 @@ export default {
         await write(env, 'vault', vault);
         return json({ ok: true, vault: vault.length });
       }
+      if (url.pathname === '/pending' && request.method === 'PUT') { // and the pile too
+        const pending = await request.json();
+        await write(env, 'pending', pending);
+        return json({ ok: true, pending: pending.length });
+      }
       if (url.pathname === '/pending') return json(await read(env, 'pending'));
       if (url.pathname === '/log') return json(await read(env, 'log'));
       if (url.pathname === '/approve' && request.method === 'POST') return decide(request, env, true);
