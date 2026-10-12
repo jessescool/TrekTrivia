@@ -1,7 +1,7 @@
 # trektrivia.com TODO
 
 -- more questions (TOS, ENT, DIS, PIC are thin; 50 per series would be nice)
--- push repo to GitHub, then maybe connect the Worker to it for deploy-on-push (Cloudflare Workers Builds, not Actions)
+-- maybe connect the Worker to GitHub for deploy-on-push (Cloudflare Workers Builds, not Actions). Needs a build step that fetches the LCARS template, since assets/lcars/ isn't in the repo
 -- find and shut down the DigitalOcean droplet (nothing points at it)
 -- add percentile...
 -- Original Favicon (svg or ico, or both)

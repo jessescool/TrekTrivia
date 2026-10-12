@@ -9,6 +9,9 @@ first drafts. They work, but expect rough edges and changes.
 ## How it's put together
 
 - `index.html`, `about/`, `assets/` are the site. Plain HTML, CSS, and one JS file. No build step.
+- The look is the classic LCARS template from [thelcars.com](https://www.thelcars.com), with modifications. Its EULA
+  forbids redistribution, so `assets/lcars/` is gitignored: after cloning, download the classic template and put its
+  CSS, JS, Antonio fonts, and beep MP3s there as `classic.css`, `lcars.js`, `Antonio-*.woff(2)`, `beep1-5.mp3`.
 - `api/` is a Cloudflare Worker (a small program on Cloudflare's servers, nothing to do with AI). It serves the
   site files and a handful of API routes. One deploy ships both.
 - The question bank lives in Cloudflare KV, a hosted key-value store, under one key called `vault`. It is the
