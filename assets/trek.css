@@ -29,6 +29,7 @@ section[hidden] {
 
 button, a, input {
   touch-action: manipulation; /* no double-tap zoom on phones; fast taps on answers were zooming the page */
+  -webkit-tap-highlight-color: transparent; /* iOS paints a grey box over anything tapped; the template's :active dim is feedback enough */
 }
 
 @media (hover: none) {
